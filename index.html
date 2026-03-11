@@ -1494,9 +1494,10 @@
                 </a>
 
                 <!-- ====== AQUÍ PONES EL ENLACE DE UNIFORMES ====== -->
-                <!-- Cambia "https://tu-pagina-uniformes.com" por tu link real -->
-                <a href="https://tu-pagina-uniformes.com"
-                    class="group block border-2 border-gray-100 rounded-xl p-4 md:p-6 text-center hover:border-blue-500 hover:shadow-lg hover:-translate-y-1 transition duration-300 bg-gray-50 hover:bg-white flex flex-col items-center justify-center">
+                <!-- Este botón cierra el modal para quedarse en la página actual (raíz) -->
+                <a href="#"
+                    onclick="document.getElementById('welcomeModal').classList.add('hidden'); event.preventDefault();"
+                    class="group block border-2 border-gray-100 rounded-xl p-4 md:p-6 text-center hover:border-blue-500 hover:shadow-lg hover:-translate-y-1 transition duration-300 bg-gray-50 hover:bg-white flex flex-col items-center justify-center cursor-pointer">
                     <div
                         class="h-24 md:h-40 w-full flex items-center justify-center mb-3 md:mb-4 bg-white rounded-lg p-2 shadow-inner">
                         <!-- Cambia el src por el enlace de tu logo -->
