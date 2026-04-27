@@ -102,12 +102,13 @@
         .nav-link {
             position: relative;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
             color: #111827;
             padding: 1rem 0;
             transition: color 0.2s;
+            white-space: nowrap;
         }
         
         .nav-link::after {
@@ -209,15 +210,15 @@
     <!-- Navegación Principal -->
     <nav class="header-main w-full z-40 bg-white sticky top-0 transition-all duration-300">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20 md:h-24">
+            <div class="flex justify-between items-center h-16 md:h-[4.5rem]">
                 
                 <!-- Logo -->
                 <div class="flex-shrink-0 cursor-pointer flex items-center" onclick="mostrarVistaPrincipal()">
-                    <img src="logoheaderupe.png" alt="Logo UPE" class="h-10 md:h-14 object-contain">
+                    <img src="logoheaderupe.png" alt="Logo UPE" class="h-8 md:h-10 object-contain">
                 </div>
 
                 <!-- Buscador Central (Desktop) -->
-                <div class="hidden lg:flex flex-1 max-w-xl mx-8 search-container-header relative">
+                <div class="hidden lg:flex flex-1 max-w-xs mx-4 search-container-header relative">
                     <input type="text" id="buscador-header" onkeyup="buscarDesdeHeader(event)" placeholder="Buscar prendas, marcas o códigos..." class="w-full pl-5 pr-12 py-3 btn-square text-sm focus:outline-none focus:ring-0 transition-all font-medium text-gray-700">
                     <button onclick="ejecutarBusquedaHeader()" class="absolute right-0 top-0 h-full px-4 text-gray-500 hover:text-brand-blue hover:bg-gray-200 transition-colors btn-square">
                         <i data-lucide="search" class="w-5 h-5"></i>
@@ -225,7 +226,7 @@
                 </div>
 
                 <!-- Menú de Escritorio -->
-                <div class="hidden md:flex items-center space-x-6 h-full">
+                <div class="hidden md:flex items-center space-x-4 h-full">
 
                     <!-- Categorías con mega menú 3 columnas -->
                     <div class="relative nav-item-group flex items-center h-full">
@@ -307,8 +308,8 @@
                     </div>
 
                     <!-- CTA Principal -->
-                    <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="bg-brand-blue text-white px-5 py-2.5 font-extrabold text-sm tracking-widest uppercase hover:bg-blue-600 transition-colors btn-square flex items-center gap-2">
-                        <i data-lucide="file-text" class="w-4 h-4"></i> Cotiza tu Proyecto
+                    <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="bg-brand-blue text-white px-4 py-2.5 font-extrabold text-xs tracking-widest uppercase hover:bg-blue-600 transition-colors btn-square flex items-center gap-2 whitespace-nowrap">
+                        <i data-lucide="file-text" class="w-4 h-4 shrink-0"></i> Cotiza tu Proyecto
                     </button>
                 </div>
 
