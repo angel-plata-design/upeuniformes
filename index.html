@@ -197,12 +197,11 @@
     <div class="top-bar w-full py-2 z-50 relative hidden md:block">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <div class="flex items-center gap-6">
-                <span class="flex items-center gap-2 font-semibold"><i data-lucide="shield-check" class="w-4 h-4 text-brand-blue"></i> Distribuidor Autorizado</span>
-                <span class="flex items-center gap-2 font-semibold"><i data-lucide="truck" class="w-4 h-4 text-brand-blue"></i> Envíos a todo México</span>
+                <span class="flex items-center gap-2 font-semibold"><i data-lucide="percent" class="w-4 h-4 text-brand-blue"></i> Descuentos por mayoreo arriba de 12 piezas</span>
+                <span class="flex items-center gap-2 font-semibold"><i data-lucide="truck" class="w-4 h-4 text-brand-blue"></i> Entregas a todo México</span>
             </div>
-            <div class="flex items-center gap-6">
-                <a href="tel:+525512345678" class="hover:text-brand-blue transition flex items-center gap-2 font-bold"><i data-lucide="phone" class="w-4 h-4"></i> +52 55 1234 5678</a>
-                <button onclick="mostrarVistaPrincipalYScroll('contacto')" class="hover:text-brand-blue transition font-bold">Solicitar Cotización</button>
+            <div class="flex items-center gap-4">
+                <button onclick="abrirLoginAdmin(event)" class="hover:text-brand-blue transition font-bold flex items-center gap-2"><i data-lucide="log-in" class="w-4 h-4"></i> Ingresar</button>
             </div>
         </div>
     </div>
@@ -225,44 +224,92 @@
                     </button>
                 </div>
 
-                <!-- Menú de Escritorio & Contacto -->
-                <div class="hidden md:flex items-center space-x-8 h-full">
-                    <button onclick="mostrarVistaPrincipalYScroll('inicio')" class="nav-link">Inicio</button>
-                    
+                <!-- Menú de Escritorio -->
+                <div class="hidden md:flex items-center space-x-6 h-full">
+
+                    <!-- Categorías con mega menú 3 columnas -->
                     <div class="relative nav-item-group flex items-center h-full">
                         <button onclick="window.location.href='catalogo.html?cat=todos'" class="nav-link flex items-center gap-1 cursor-pointer">
-                            Productos <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            Categorías <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
-                        
-                        <!-- Mega Menu Productos -->
-                        <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full w-[600px] bg-white border-t-4 border-brand-blue flex text-left z-50">
-                            <div class="w-1/2 bg-gray-50 p-6 border-r border-gray-100">
-                                <h4 class="font-extrabold text-brand-navy mb-4 text-sm uppercase tracking-wider">Por Categoría</h4>
-                                <ul class="space-y-3">
-                                    <li><button onclick="window.location.href='catalogo.html?cat=industrial'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i> Industrial / Operativo</button></li>
-                                    <li><button onclick="window.location.href='catalogo.html?cat=corporativo'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i> Corporativo / Ejecutivo</button></li>
-                                    <li><button onclick="window.location.href='catalogo.html?cat=seguridad'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i> Alta Visibilidad / Seguridad</button></li>
-                                    <li><button onclick="window.location.href='catalogo.html?cat=casual'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i> Casual / Ventas</button></li>
-                                </ul>
+                        <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full w-[860px] bg-white border-t-4 border-brand-blue text-left z-50">
+                            <div class="grid grid-cols-3 divide-x divide-gray-100">
+                                <!-- Col 1: Tipo de Prenda -->
+                                <div class="p-6 bg-gray-50">
+                                    <h4 class="font-extrabold text-brand-navy mb-4 text-xs uppercase tracking-wider">Tipo de Prenda</h4>
+                                    <ul class="space-y-2">
+                                        <li><button onclick="window.location.href='catalogo.html?prenda=camisas'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Camisas</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?prenda=polos'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Polos</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?prenda=playeras'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Playeras</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?prenda=chamarras'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Chamarras</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?prenda=pantalones'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Pantalones</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?prenda=chalecos'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Chalecos</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?prenda=filipinas'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Filipinas</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?prenda=scrubs'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Scrubs</button></li>
+                                    </ul>
+                                </div>
+                                <!-- Col 2: Categorías -->
+                                <div class="p-6 bg-white">
+                                    <h4 class="font-extrabold text-brand-navy mb-4 text-xs uppercase tracking-wider">Categorías</h4>
+                                    <ul class="space-y-2">
+                                        <li><button onclick="window.location.href='catalogo.html?cat=corporativo'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="briefcase" class="w-3 h-3 text-brand-blue"></i>Corporativo</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?cat=industrial'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="hard-hat" class="w-3 h-3 text-brand-blue"></i>Industrial</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?cat=restaurante'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="utensils" class="w-3 h-3 text-brand-blue"></i>Restaurante</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?cat=medico'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="stethoscope" class="w-3 h-3 text-brand-blue"></i>Médico</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?cat=calzado'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="footprints" class="w-3 h-3 text-brand-blue"></i>Calzado</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?cat=epp'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="shield" class="w-3 h-3 text-brand-blue"></i>EPP</button></li>
+                                        <li><button onclick="window.location.href='catalogo.html?cat=accesorios'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="tag" class="w-3 h-3 text-brand-blue"></i>Accesorios</button></li>
+                                    </ul>
+                                </div>
+                                <!-- Col 3: Marcas Destacadas -->
+                                <div class="p-6 bg-gray-50">
+                                    <h4 class="font-extrabold text-brand-navy mb-3 text-xs uppercase tracking-wider">Marcas Destacadas</h4>
+                                    <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Industrial</p>
+                                    <p class="text-xs text-gray-600 mb-3">Red Kap · Dickies · Bulwark FR · Carhartt · Kishigo</p>
+                                    <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Corporativo</p>
+                                    <p class="text-xs text-gray-600 mb-3">OGIO · The North Face · Port Authority · Eddie Bauer</p>
+                                    <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Restaurante</p>
+                                    <p class="text-xs text-gray-600 mb-3">Chef Works · Reprime · Chef Designs</p>
+                                    <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Médico</p>
+                                    <p class="text-xs text-gray-600 mb-3">Dagacci · WonderWink · Dickies Medical</p>
+                                </div>
                             </div>
-                            <div class="w-1/2 p-6 flex flex-col pt-8 bg-white">
-                                <!-- Enlace FR Destacado -->
-                                <a href="https://flowmx.github.io/upefr/" class="group block mb-4 border border-gray-100 p-4 btn-square hover:border-brand-blue transition-colors bg-gray-50 hover:bg-brand-light">
-                                    <h4 class="font-extrabold text-brand-blue mb-1 text-sm uppercase flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4"></i> Línea FR Antiflama</h4>
-                                    <p class="text-xs text-gray-500 font-medium">Protección especializada normada (NFPA 2112)</p>
-                                </a>
-                                <button onclick="window.location.href='catalogo.html?cat=todos'" class="mt-auto block w-full text-center bg-brand-navy text-white text-xs font-bold uppercase tracking-widest py-3 btn-square hover:bg-brand-blue transition-colors">
-                                    Ver Todo El Catálogo
+                            <!-- Footer del mega menu -->
+                            <div class="border-t border-gray-100 px-6 py-3 bg-white flex justify-between items-center">
+                                <button onclick="window.location.href='marcas.html'" class="text-sm font-bold text-brand-blue hover:text-brand-navy transition-colors flex items-center gap-2">
+                                    👉 Ver todas las marcas →
+                                </button>
+                                <button onclick="window.location.href='catalogo.html?cat=todos'" class="text-xs font-bold uppercase tracking-widest text-white bg-brand-navy px-4 py-2 hover:bg-brand-blue transition-colors btn-square">
+                                    Ver catálogo completo
                                 </button>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Nuestras Marcas -->
+                    <button onclick="window.location.href='marcas.html'" class="nav-link">Nuestras Marcas</button>
+
+                    <!-- Servicios -->
                     <button onclick="mostrarVistaPrincipalYScroll('servicios')" class="nav-link">Servicios</button>
-                    
-                    <a href="https://flowmx.github.io/upefr/" class="text-[#c1272d] font-bold text-sm uppercase tracking-wide hover:text-red-800 transition-colors border-2 border-[#c1272d] px-4 py-2 hover:bg-red-50 flex items-center gap-2" style="border-radius:2px;">
-                        <i data-lucide="flame" class="w-4 h-4 fill-current"></i> FR Antiflama
-                    </a>
+
+                    <!-- Sobre Nosotros con hover -->
+                    <div class="relative nav-item-group flex items-center h-full">
+                        <button class="nav-link flex items-center gap-1">
+                            Sobre Nosotros <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="mega-menu absolute left-0 top-full w-48 bg-white border-t-4 border-brand-blue z-50">
+                            <div class="p-4">
+                                <button onclick="mostrarVistaPrincipalYScroll('nosotros')" class="text-sm font-semibold text-gray-700 hover:text-brand-blue transition-colors flex items-center gap-2 w-full text-left">
+                                    <i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i> Nuestra Empresa
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Principal -->
+                    <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="bg-brand-blue text-white px-5 py-2.5 font-extrabold text-sm tracking-widest uppercase hover:bg-blue-600 transition-colors btn-square flex items-center gap-2">
+                        <i data-lucide="file-text" class="w-4 h-4"></i> Cotiza tu Proyecto
+                    </button>
                 </div>
 
                 <!-- Botones Der (Admin / Mobile Menu) -->
@@ -290,23 +337,24 @@
         <!-- Menú Móvil Desplegable -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl max-h-[85vh] overflow-y-auto z-50">
             <div class="px-6 py-4 space-y-1 flex flex-col">
-                <button onclick="manejarMenuMovil('inicio')" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Inicio</button>
-                
                 <div class="py-4 border-b border-gray-100">
-                    <span class="block text-sm font-extrabold text-gray-400 uppercase tracking-widest mb-3">Productos</span>
+                    <span class="block text-sm font-extrabold text-gray-400 uppercase tracking-widest mb-3">Categorías</span>
                     <button onclick="window.location.href='catalogo.html?cat=todos'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Ver Todo</button>
-                    <button onclick="window.location.href='catalogo.html?cat=industrial'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Industrial</button>
                     <button onclick="window.location.href='catalogo.html?cat=corporativo'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Corporativo</button>
-                    <button onclick="window.location.href='catalogo.html?cat=seguridad'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Alta Visibilidad</button>
+                    <button onclick="window.location.href='catalogo.html?cat=industrial'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Industrial</button>
+                    <button onclick="window.location.href='catalogo.html?cat=restaurante'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Restaurante</button>
+                    <button onclick="window.location.href='catalogo.html?cat=medico'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Médico</button>
+                    <button onclick="window.location.href='catalogo.html?cat=calzado'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Calzado</button>
+                    <button onclick="window.location.href='catalogo.html?cat=epp'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> EPP</button>
+                    <button onclick="window.location.href='catalogo.html?cat=accesorios'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Accesorios</button>
                 </div>
-
-                <a href="https://flowmx.github.io/upefr/" class="block w-full text-left py-4 text-sm font-bold uppercase tracking-wider text-[#c1272d] border-b border-gray-100 flex items-center gap-2">
-                    <i data-lucide="flame" class="w-4 h-4 fill-current"></i> Info FR Antiflama
-                </a>
-                
+                <button onclick="window.location.href='marcas.html'" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Nuestras Marcas</button>
                 <button onclick="manejarMenuMovil('servicios')" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Servicios</button>
-                <button onclick="manejarMenuMovil('contacto')" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Contacto</button>
-                <button onclick="abrirLoginAdmin(event)" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-gray-500 hover:text-brand-blue">Log In Admin</button>
+                <button onclick="manejarMenuMovil('nosotros')" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Sobre Nosotros</button>
+                <button onclick="manejarMenuMovil('cotiza')" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-blue border-b border-gray-100">Cotiza tu Proyecto</button>
+                <a href="https://flowmx.github.io/upefr/" class="block w-full text-left py-4 text-sm font-bold uppercase tracking-wider text-[#c1272d] border-b border-gray-100 flex items-center gap-2">
+                    <i data-lucide="flame" class="w-4 h-4 fill-current"></i> FR Antiflama
+                </a>
             </div>
         </div>
     </nav>
@@ -326,90 +374,135 @@
                 <!-- Text Box (Left Aligned on Desktop) -->
                 <div class="lg:w-1/2 bg-white/5 backdrop-blur-sm p-8 md:p-12 lg:p-16 border-l-4 border-brand-blue text-left mt-10 md:mt-0">
                     <span class="text-brand-blue font-extrabold tracking-widest uppercase text-xs mb-4 block inline-flex items-center gap-2 bg-brand-navy/80 px-4 py-1 btn-square text-white">
-                        <i data-lucide="check-circle-2" class="w-3 h-3"></i> Equipamiento Profesional
+                        <i data-lucide="check-circle-2" class="w-3 h-3"></i> Uniformes Profesionales
                     </span>
                     <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-[1.1] uppercase tracking-tight">
-                        Uniformamos <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-blue-200">Tu Industria</span>
+                        Programas de <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-blue-200">Uniformes a tu Medida</span>
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-200 mb-10 font-medium leading-relaxed max-w-lg">
-                        Prendas operativas, corporativas y equipo de protección con los más altos estándares de calidad y durabilidad.
+                    <p class="text-lg md:text-xl text-gray-200 mb-4 font-medium leading-relaxed max-w-lg">
+                        Ya sea que requieras uniforme para un equipo de 2 ó 500,000, estás en el lugar correcto.
+                    </p>
+                    <p class="text-base text-gray-300 mb-10 font-medium leading-relaxed max-w-lg">
+                        Explora nuestros recursos o conecta con un especialista en uniformes para comenzar.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="window.location.href='catalogo.html'" class="bg-brand-blue text-white px-8 py-4 font-extrabold text-sm tracking-widest uppercase hover:bg-blue-600 transition-colors btn-square">
+                        <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="bg-brand-blue text-white px-8 py-4 font-extrabold text-sm tracking-widest uppercase hover:bg-blue-600 transition-colors btn-square">
+                            Cotiza tu Proyecto
+                        </button>
+                        <button onclick="window.location.href='catalogo.html'" class="bg-transparent border-2 border-white text-white px-8 py-4 font-extrabold text-sm tracking-widest uppercase hover:bg-white hover:text-brand-navy transition-colors btn-square text-center">
                             Ver Catálogo
                         </button>
-                        <a href="https://flowmx.github.io/upefr/" class="bg-transparent border-2 border-white text-white px-8 py-4 font-extrabold text-sm tracking-widest uppercase hover:bg-white hover:text-brand-navy transition-colors btn-square text-center">
-                            Ver Línea FR
-                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tipos de Uniformes -->
+        <!-- Categorías Principales -->
         <section id="lineas" class="py-20 bg-white border-t border-gray-100">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 flex flex-col md:flex-row justify-between items-end gap-4 border-b border-gray-200 pb-4">
                     <div>
-                        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase">Líneas de Trabajo</h2>
-                        <p class="text-gray-500 font-medium mt-2">Encuentra el equipo ideal para tu sector</p>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase">Categorías Principales</h2>
+                        <p class="text-gray-500 font-medium mt-2">Encuentra el uniforme ideal para tu sector. Filtra por marca, tipo de prenda o sexo.</p>
                     </div>
                     <button onclick="window.location.href='catalogo.html?cat=todos'" class="font-bold text-sm uppercase tracking-widest text-brand-blue hover:text-brand-navy transition-colors flex items-center gap-2">
-                        Ver todas las líneas <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        Ver todas las categorías <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div onclick="window.location.href='catalogo.html?cat=industrial'"
-                        class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
-                        <!-- ✏️ [EDITAR IMAGEN CATEGORÍA INDUSTRIAL] -->
-                        <div class="h-4/5 overflow-hidden w-full"><img src="Industrial_img.jpg"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                alt="Industrial"></div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Corporativo -->
+                    <div onclick="window.location.href='catalogo.html?cat=corporativo'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                        <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
+                            <img src="Coorporativo_img.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Corporativo">
+                        </div>
                         <div class="h-1/5 bg-gray-50 flex items-center justify-between p-4 group-hover:bg-brand-light transition-colors border-t border-gray-200">
-                            <h3 class="text-lg font-extrabold text-brand-navy uppercase tracking-wider">Industrial</h3>
+                            <h3 class="text-base font-extrabold text-brand-navy uppercase tracking-wider">Corporativo</h3>
                             <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-blue transition-colors"></i>
                         </div>
                     </div>
-                    
-                    <div onclick="window.location.href='catalogo.html?cat=corporativo'"
-                        class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
-                        <!-- ✏️ [EDITAR IMAGEN CATEGORÍA CORPORATIVO] -->
-                        <div class="h-4/5 overflow-hidden w-full"><img src="Coorporativo_img.jpg"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                alt="Corporativo"></div>
+                    <!-- Industrial -->
+                    <div onclick="window.location.href='catalogo.html?cat=industrial'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                        <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
+                            <img src="Industrial_img.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Industrial">
+                        </div>
                         <div class="h-1/5 bg-gray-50 flex items-center justify-between p-4 group-hover:bg-brand-light transition-colors border-t border-gray-200">
-                            <h3 class="text-lg font-extrabold text-brand-navy uppercase tracking-wider">Corporativo</h3>
+                            <h3 class="text-base font-extrabold text-brand-navy uppercase tracking-wider">Industrial</h3>
                             <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-blue transition-colors"></i>
                         </div>
                     </div>
-                    
-                    <div onclick="window.location.href='catalogo.html?cat=seguridad'"
-                        class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
-                        <!-- ✏️ [EDITAR IMAGEN CATEGORÍA SEGURIDAD] -->
-                        <div class="h-4/5 overflow-hidden w-full"><img src="Seguridad_img.jpg"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                alt="Seguridad"></div>
+                    <!-- Restaurante -->
+                    <div onclick="window.location.href='catalogo.html?cat=restaurante'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                        <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
+                            <div class="text-center p-6 flex flex-col items-center gap-3">
+                                <i data-lucide="utensils" class="w-16 h-16 text-gray-300 group-hover:text-brand-blue transition-colors"></i>
+                                <span class="text-xs text-gray-400 font-semibold">Imagen próximamente</span>
+                            </div>
+                        </div>
                         <div class="h-1/5 bg-gray-50 flex items-center justify-between p-4 group-hover:bg-brand-light transition-colors border-t border-gray-200">
-                            <h3 class="text-lg font-extrabold text-brand-navy uppercase tracking-wider">Seguridad</h3>
+                            <h3 class="text-base font-extrabold text-brand-navy uppercase tracking-wider">Restaurante</h3>
                             <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-blue transition-colors"></i>
                         </div>
                     </div>
-                    
-                    <!-- ✏️ [EDITAR ENLACE TARJETA ANTIFLAMA] -->
-                    <a href="https://flowmx.github.io/upefr/"
-                        class="block cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col border-b-4 border-b-[#c1272d]">
-                        <!-- ✏️ [EDITAR IMAGEN CATEGORÍA ANTIFLAMA] -->
+                    <!-- Médico -->
+                    <div onclick="window.location.href='catalogo.html?cat=medico'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                        <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
+                            <div class="text-center p-6 flex flex-col items-center gap-3">
+                                <i data-lucide="stethoscope" class="w-16 h-16 text-gray-300 group-hover:text-brand-blue transition-colors"></i>
+                                <span class="text-xs text-gray-400 font-semibold">Imagen próximamente</span>
+                            </div>
+                        </div>
+                        <div class="h-1/5 bg-gray-50 flex items-center justify-between p-4 group-hover:bg-brand-light transition-colors border-t border-gray-200">
+                            <h3 class="text-base font-extrabold text-brand-navy uppercase tracking-wider">Médico</h3>
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-blue transition-colors"></i>
+                        </div>
+                    </div>
+                    <!-- Calzado -->
+                    <div onclick="window.location.href='catalogo.html?cat=calzado'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                        <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
+                            <div class="text-center p-6 flex flex-col items-center gap-3">
+                                <i data-lucide="footprints" class="w-16 h-16 text-gray-300 group-hover:text-brand-blue transition-colors"></i>
+                                <span class="text-xs text-gray-400 font-semibold">Imagen próximamente</span>
+                            </div>
+                        </div>
+                        <div class="h-1/5 bg-gray-50 flex items-center justify-between p-4 group-hover:bg-brand-light transition-colors border-t border-gray-200">
+                            <h3 class="text-base font-extrabold text-brand-navy uppercase tracking-wider">Calzado</h3>
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-blue transition-colors"></i>
+                        </div>
+                    </div>
+                    <!-- EPP -->
+                    <div onclick="window.location.href='catalogo.html?cat=epp'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                        <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
+                            <img src="Seguridad_img.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="EPP">
+                        </div>
+                        <div class="h-1/5 bg-gray-50 flex items-center justify-between p-4 group-hover:bg-brand-light transition-colors border-t border-gray-200">
+                            <h3 class="text-base font-extrabold text-brand-navy uppercase tracking-wider">EPP</h3>
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-blue transition-colors"></i>
+                        </div>
+                    </div>
+                    <!-- Accesorios -->
+                    <div onclick="window.location.href='catalogo.html?cat=accesorios'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                        <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
+                            <div class="text-center p-6 flex flex-col items-center gap-3">
+                                <i data-lucide="tag" class="w-16 h-16 text-gray-300 group-hover:text-brand-blue transition-colors"></i>
+                                <span class="text-xs text-gray-400 font-semibold">Imagen próximamente</span>
+                            </div>
+                        </div>
+                        <div class="h-1/5 bg-gray-50 flex items-center justify-between p-4 group-hover:bg-brand-light transition-colors border-t border-gray-200">
+                            <h3 class="text-base font-extrabold text-brand-navy uppercase tracking-wider">Accesorios</h3>
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-blue transition-colors"></i>
+                        </div>
+                    </div>
+                    <!-- FR Antiflama (enlace externo) -->
+                    <a href="https://flowmx.github.io/upefr/" class="block cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col border-b-4 border-b-[#c1272d]">
                         <div class="h-4/5 overflow-hidden w-full relative">
                             <div class="absolute top-3 left-3 bg-[#c1272d] text-white text-xs font-bold uppercase px-2 py-1 z-10 flex items-center gap-1">
                                 <i data-lucide="flame" class="w-3 h-3 fill-current"></i> NFPA 2112
                             </div>
-                            <img src="Antiflama_img.jpg"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
-                                alt="Antiflama">
+                            <img src="Antiflama_img.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90" alt="Antiflama">
                         </div>
                         <div class="h-1/5 bg-red-50 flex items-center justify-between p-4 group-hover:bg-red-100 transition-colors border-t border-gray-200">
-                            <h3 class="text-lg font-extrabold text-[#c1272d] uppercase tracking-wider">Antiflama (FR)</h3>
+                            <h3 class="text-base font-extrabold text-[#c1272d] uppercase tracking-wider">Antiflama FR</h3>
                             <i data-lucide="external-link" class="w-5 h-5 text-[#c1272d] opacity-50 group-hover:opacity-100 transition-opacity"></i>
                         </div>
                     </a>
@@ -417,29 +510,86 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 1: SERVICIOS (Value Props) -->
-        <section id="servicios" class="py-16 bg-brand-navy text-white">
+        <!-- PROPUESTA DE VALOR (strip rápido) -->
+        <section class="py-10 bg-brand-blue text-white">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-slate-700">
-                    <div class="p-6 text-center flex flex-col items-center">
-                        <i data-lucide="pen-tool" class="w-10 h-10 text-brand-blue mb-4"></i>
-                        <h3 class="text-lg font-extrabold uppercase tracking-widest mb-2">Bordado y Serigrafía</h3>
-                        <p class="text-sm text-gray-400 font-medium">Personalización premium para destacar tu marca corporativa.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+                    <div class="flex flex-col items-center gap-2">
+                        <i data-lucide="tag" class="w-7 h-7 opacity-80"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider">Decoración gratuita</span>
                     </div>
-                    <div class="p-6 text-center flex flex-col items-center">
-                        <i data-lucide="truck" class="w-10 h-10 text-brand-blue mb-4"></i>
-                        <h3 class="text-lg font-extrabold uppercase tracking-widest mb-2">Envíos Nacionales</h3>
-                        <p class="text-sm text-gray-400 font-medium">Cobertura a toda la República Mexicana. Puntualidad garantizada.</p>
+                    <div class="flex flex-col items-center gap-2">
+                        <i data-lucide="package-check" class="w-7 h-7 opacity-80"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider">Mínimos bajos</span>
                     </div>
-                    <div class="p-6 text-center flex flex-col items-center">
-                        <i data-lucide="users" class="w-10 h-10 text-brand-blue mb-4"></i>
-                        <h3 class="text-lg font-extrabold uppercase tracking-widest mb-2">Asesoría B2B</h3>
-                        <p class="text-sm text-gray-400 font-medium">Levantamiento de tallas y atención experta para tu empresa.</p>
+                    <div class="flex flex-col items-center gap-2">
+                        <i data-lucide="truck" class="w-7 h-7 opacity-80"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider">Entrega en 10–15 días</span>
                     </div>
-                    <div class="p-6 text-center flex flex-col items-center">
-                        <i data-lucide="scissors" class="w-10 h-10 text-brand-blue mb-4"></i>
-                        <h3 class="text-lg font-extrabold uppercase tracking-widest mb-2">Diseño Especializado</h3>
-                        <p class="text-sm text-gray-400 font-medium">Ajustes a medida según los requerimientos de seguridad y operación.</p>
+                    <div class="flex flex-col items-center gap-2">
+                        <i data-lucide="percent" class="w-7 h-7 opacity-80"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider">Descuentos por mayoreo</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <i data-lucide="shield-check" class="w-7 h-7 opacity-80"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider">Garantía de calidad</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <i data-lucide="headphones" class="w-7 h-7 opacity-80"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider">Soporte humano real</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SERVICIOS DETALLADO -->
+        <section id="servicios" class="py-20 bg-gray-50 border-t border-gray-100">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 flex flex-col md:flex-row justify-between items-end gap-4 border-b border-gray-200 pb-4">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase">Servicios</h2>
+                        <p class="text-gray-500 font-medium mt-2">Decoración, manufactura y soluciones corporativas completas</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Decoración -->
+                    <div class="bg-white border border-gray-200 p-8 btn-square hover:border-brand-blue transition-colors">
+                        <i data-lucide="pen-tool" class="w-10 h-10 text-brand-blue mb-5"></i>
+                        <h3 class="text-xl font-extrabold text-brand-navy uppercase tracking-wider mb-4">Servicios de Decoración</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Bordado</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>DTF (Direct to Film)</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Serigrafía</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Terminado y presentación final</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Asesoramiento en aplicación de logotipos</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Configuración gratuita de logotipos</li>
+                        </ul>
+                    </div>
+                    <!-- Manufactura -->
+                    <div class="bg-white border border-gray-200 p-8 btn-square hover:border-brand-blue transition-colors">
+                        <i data-lucide="factory" class="w-10 h-10 text-brand-blue mb-5"></i>
+                        <h3 class="text-xl font-extrabold text-brand-navy uppercase tracking-wider mb-4">Manufactura</h3>
+                        <p class="text-sm text-gray-600 font-medium mb-4 leading-relaxed">Capacidad de crear cualquier producto mediante manufactura, incorporando detalles profesionales y técnicas que proveedores comunes no pueden ofrecer.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Industrial · Corporativo</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Seguridad · Médico</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Restaurantes</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Resistente al fuego (FR)</li>
+                        </ul>
+                    </div>
+                    <!-- Uniformes Corporativos -->
+                    <div class="bg-brand-navy text-white p-8 btn-square">
+                        <i data-lucide="briefcase" class="w-10 h-10 text-brand-blue mb-5"></i>
+                        <h3 class="text-xl font-extrabold uppercase tracking-wider mb-4">Uniformes Corporativos y Ropa de Marca</h3>
+                        <p class="text-sm text-gray-300 font-medium leading-relaxed mb-5">Uniformes corporativos y ropa de marca totalmente personalizados, diseñados para destacar. Nos ocupamos de todos los detalles.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Diseño y acabados</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Soluciones de terminación</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Logística y almacenamiento</li>
+                        </ul>
+                        <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="mt-8 w-full bg-brand-blue text-white font-bold text-sm uppercase tracking-widest py-3 hover:bg-blue-500 transition-colors btn-square">
+                            Solicitar Cotización
+                        </button>
                     </div>
                 </div>
             </div>
@@ -490,6 +640,125 @@
                         <i data-lucide="briefcase" class="w-8 h-8 text-brand-blue mb-6"></i>
                         <h3 class="text-lg font-extrabold text-brand-navy mb-3 uppercase tracking-wider">Imagen Impecable</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">Cortes modernos probados y retención de color superior que aseguran que su equipo transmita liderazgo y confianza en cada interacción.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIENDA CORPORATIVA -->
+        <section class="py-20 bg-white border-t border-gray-100">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="text-brand-blue font-extrabold tracking-widest uppercase text-xs mb-4 block">Solución Empresarial</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase mb-6">Tienda Corporativa</h2>
+                        <div class="w-16 h-1.5 bg-brand-blue mb-8"></div>
+                        <p class="text-gray-600 text-lg mb-8 font-medium leading-relaxed">Ofrecemos la experiencia de compra en línea para empleados y clientes de tu empresa, con tecnología de gestión y asignación de última generación.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 btn-square">
+                                <i data-lucide="monitor" class="w-6 h-6 text-brand-blue shrink-0 mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy text-sm mb-1">Tiendas fáciles de usar</h4>
+                                    <p class="text-xs text-gray-500">Interfaz intuitiva para tu equipo</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 btn-square">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-brand-blue shrink-0 mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy text-sm mb-1">Perfiles por ubicación</h4>
+                                    <p class="text-xs text-gray-500">Gestión centralizada multi-sede</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 btn-square">
+                                <i data-lucide="package-check" class="w-6 h-6 text-brand-blue shrink-0 mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy text-sm mb-1">Sin faltantes de stock</h4>
+                                    <p class="text-xs text-gray-500">Pedidos sin problemas garantizados</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 btn-square">
+                                <i data-lucide="cpu" class="w-6 h-6 text-brand-blue shrink-0 mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy text-sm mb-1">Tecnología avanzada</h4>
+                                    <p class="text-xs text-gray-500">Gestión y asignación de última gen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-brand-navy text-white p-12 btn-square flex flex-col justify-center min-h-[400px]">
+                        <i data-lucide="store" class="w-16 h-16 text-brand-blue mb-6"></i>
+                        <h3 class="text-2xl font-black uppercase tracking-tight mb-4">Tu marca, tu tienda</h3>
+                        <p class="text-gray-300 font-medium leading-relaxed mb-8">Configura una tienda en línea personalizada para que tus empleados ordenen sus uniformes directamente — sin llamadas, sin confusiones, sin retrasos.</p>
+                        <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="bg-brand-blue text-white font-extrabold text-sm uppercase tracking-widest py-4 px-8 hover:bg-blue-500 transition-colors btn-square w-fit">
+                            Quiero mi Tienda Corporativa
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALMACENAMIENTO Y LOGÍSTICA -->
+        <section class="py-20 bg-brand-navy text-white border-t border-slate-800">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+                    <div class="lg:col-span-2">
+                        <span class="text-brand-blue font-extrabold tracking-widest uppercase text-xs mb-4 block">Logística Eficiente</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight uppercase mb-6">Almacenamiento y Logística</h2>
+                        <div class="w-16 h-1.5 bg-brand-blue mb-8"></div>
+                        <p class="text-gray-300 text-lg font-medium leading-relaxed mb-8">Procesamos y enviamos tus pedidos en stock de <strong class="text-white">1 a 2 días hábiles</strong>. Tus artículos estarán siempre disponibles y llegarán en <strong class="text-white">2 a 5 días</strong>.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex items-center gap-4 bg-white/5 border border-white/10 p-4 btn-square">
+                                <i data-lucide="zap" class="w-6 h-6 text-brand-blue shrink-0"></i>
+                                <span class="text-sm font-semibold">Stock en 1–2 días hábiles</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 border border-white/10 p-4 btn-square">
+                                <i data-lucide="truck" class="w-6 h-6 text-brand-blue shrink-0"></i>
+                                <span class="text-sm font-semibold">Entrega en 2–5 días</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 border border-white/10 p-4 btn-square">
+                                <i data-lucide="calendar-clock" class="w-6 h-6 text-brand-blue shrink-0"></i>
+                                <span class="text-sm font-semibold">Pedidos personalizados en 10–15 días</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 border border-white/10 p-4 btn-square">
+                                <i data-lucide="map" class="w-6 h-6 text-brand-blue shrink-0"></i>
+                                <span class="text-sm font-semibold">Entrega nacional a todo México</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-brand-blue/10 border border-brand-blue/30 p-8 btn-square text-center">
+                        <p class="text-xs font-bold uppercase tracking-widest text-brand-blue mb-4">Aplica para</p>
+                        <ul class="space-y-3 text-left">
+                            <li class="flex items-center gap-3 text-sm font-semibold text-gray-200"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Uniformes</li>
+                            <li class="flex items-center gap-3 text-sm font-semibold text-gray-200"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Ropa corporativa</li>
+                            <li class="flex items-center gap-3 text-sm font-semibold text-gray-200"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Pedidos personalizados</li>
+                            <li class="flex items-center gap-3 text-sm font-semibold text-gray-200"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Mercancía al por menor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE NOSOTROS -->
+        <section id="nosotros" class="py-20 bg-white border-t border-gray-100">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <span class="text-brand-blue font-extrabold tracking-widest uppercase text-xs mb-4 block">Nuestra Empresa</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase mb-6">Sobre Nosotros</h2>
+                        <div class="w-16 h-1.5 bg-brand-blue mb-8"></div>
+                        <p class="text-gray-600 text-lg mb-6 font-medium leading-relaxed">Uniformes Profesionales es tu socio estratégico con un objetivo claro: garantizar el éxito de tu programa de uniformes. Nos especializamos en eliminar experiencias frustrantes, malas comunicaciones, tiempo perdido y programas de baja calidad.</p>
+                        <p class="text-gray-600 text-base mb-8 font-medium leading-relaxed">Estamos comprometidos en escuchar y comprender tus necesidades, ofreciendo uniformes profesionales que promueven tu marca, tu visión e inspiran trabajo en equipo.</p>
+                        <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="bg-brand-navy text-white px-8 py-4 font-extrabold text-sm tracking-widest uppercase hover:bg-brand-blue transition-colors btn-square">
+                            Conectar con un Especialista
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="tag" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Decoración gratuita</h4></div>
+                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="layers" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Cantidades mínimas bajas</h4></div>
+                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="settings" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Soluciones personalizadas</h4></div>
+                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="headphones" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Soporte humano y real</h4></div>
+                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="shield-check" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Garantía de calidad</h4></div>
+                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="trending-up" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Historial comprobado</h4></div>
                     </div>
                 </div>
             </div>
@@ -577,29 +846,28 @@
             </div>
         </section>
 
-        <!-- Formulario Contacto General (Footer) -->
-        <section id="contacto" class="py-24 bg-white border-t border-gray-200">
+        <!-- COTIZA TU PROYECTO -->
+        <section id="cotiza" class="py-24 bg-white border-t border-gray-200">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24">
                     <!-- Info de Contacto -->
                     <div class="flex flex-col justify-center">
-                        <span class="text-brand-blue font-extrabold tracking-widest uppercase text-xs mb-4 block">Atención Personalizada</span>
+                        <span class="text-brand-blue font-extrabold tracking-widest uppercase text-xs mb-4 block">Principal Punto de Conversión</span>
                         <h2 class="text-3xl md:text-5xl font-black text-brand-navy mb-6 tracking-tight uppercase">
-                            Equipa a tu <br/> Personal Hoy
+                            Cotiza tu <br/> Proyecto
                         </h2>
                         <div class="w-16 h-1.5 bg-brand-blue mb-8"></div>
                         <p class="text-gray-600 text-lg md:text-xl mb-10 font-medium leading-relaxed">
-                            Atendemos pedidos corporativos y de mayoreo. Contacta a un asesor especializado integral para cotizar la mejor opción para tu giro comercial.
+                            Atendemos pedidos corporativos y de mayoreo. Contacta a un asesor especializado para cotizar la mejor opción para tu giro comercial.
                         </p>
-                        
-                        <div class="space-y-8 mb-12">
+
+                        <div class="space-y-6 mb-10">
                             <div class="flex items-start gap-5">
                                 <div class="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center text-brand-blue shrink-0 btn-square">
                                     <i data-lucide="phone-call" class="w-5 h-5"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-gray-500 text-sm uppercase tracking-widest mb-1">Contacto Directo</h4>
-                                    <!-- ✏️ [EDITAR TELÉFONO AQUÍ] -->
                                     <p class="text-brand-navy text-xl font-extrabold">+52 55 1234 5678</p>
                                 </div>
                             </div>
@@ -609,15 +877,13 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-gray-500 text-sm uppercase tracking-widest mb-1">Correo Electrónico</h4>
-                                    <!-- ✏️ [EDITAR CORREO AQUÍ] -->
                                     <p class="text-brand-navy text-xl font-extrabold">ventas@uniformesprofesionales.mx</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- ✏️ [EDITAR ENLACE WHATSAPP BOTÓN VERDE AQUÍ] -->
                         <div>
-                            <a href="https://wa.me/525512345678?text=Hola,%20me%20gustaría%20información%20general%20sobre%20uniformes"
+                            <a href="https://wa.me/525512345678?text=Hola,%20me%20gustaría%20cotizar%20un%20programa%20de%20uniformes"
                                 target="_blank"
                                 class="inline-flex bg-[#25D366] text-white px-8 py-4 font-extrabold text-sm uppercase tracking-widest hover:bg-[#20b858] transition-colors items-center justify-center gap-3 btn-square w-full sm:w-auto">
                                 <i data-lucide="message-circle" class="w-5 h-5"></i>
@@ -626,43 +892,67 @@
                         </div>
                     </div>
 
-                    <!-- Formulario -->
+                    <!-- Formulario Cotización Completo -->
                     <div class="bg-gray-50 p-8 md:p-12 border border-gray-200 btn-square flex flex-col justify-center">
                         <h3 class="text-2xl font-black text-brand-navy mb-2 uppercase tracking-tight">Solicitud de Cotización</h3>
                         <p class="text-gray-500 text-sm mb-8 font-medium">Completa los datos y te contactaremos en breve.</p>
-                        
-                        <form
-                            onsubmit="event.preventDefault(); showToast('Cotización general enviada con éxito.', 'success'); this.reset();">
+
+                        <form onsubmit="event.preventDefault(); showToast('Cotización enviada con éxito. Te contactaremos pronto.', 'success'); this.reset();">
                             <div class="space-y-5">
-                                <div>
-                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Nombre Completo</label>
-                                    <input type="text"
-                                        class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold"
-                                        required>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Nombre Completo *</label>
+                                        <input type="text" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Teléfono *</label>
+                                        <input type="tel" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold" required>
+                                    </div>
                                 </div>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                     <div>
-                                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Empresa</label>
-                                        <input type="text"
-                                            class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold"
-                                            required>
+                                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Empresa *</label>
+                                        <input type="text" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold" required>
                                     </div>
                                     <div>
-                                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Teléfono</label>
-                                        <input type="tel"
-                                            class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold">
+                                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Correo Electrónico *</label>
+                                        <input type="email" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold" required>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Tipo de Proyecto</label>
+                                        <select class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold appearance-none">
+                                            <option value="">Seleccionar...</option>
+                                            <option>Corporativo</option>
+                                            <option>Industrial</option>
+                                            <option>Restaurante</option>
+                                            <option>Médico</option>
+                                            <option>Calzado</option>
+                                            <option>EPP</option>
+                                            <option>Accesorios</option>
+                                            <option>Tienda Corporativa</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Cantidades Requeridas</label>
+                                        <input type="number" min="1" placeholder="Ej: 150 piezas" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold">
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Requerimiento Especializado</label>
-                                    <textarea rows="4"
-                                        class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-medium resize-none"
-                                        placeholder="Indique prendas, cantidades, certificaciones requeridas..."
-                                        required></textarea>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Tipo de Prenda / Descripción</label>
+                                    <input type="text" placeholder="Ej: Camisas polo, pantalones industriales..." class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold">
                                 </div>
-                                <button type="submit"
-                                    class="w-full bg-brand-navy text-white font-extrabold text-sm uppercase tracking-widest py-4 hover:bg-brand-blue transition-colors btn-square mt-2">
-                                    Enviar Petición
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Observaciones o Notas Adicionales</label>
+                                    <textarea rows="3" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-medium resize-none" placeholder="Colores, logotipo, certificaciones, fechas de entrega..."></textarea>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Subir Archivo (logo, referencia, etc.)</label>
+                                    <input type="file" accept=".pdf,.png,.jpg,.jpeg,.ai,.svg" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold text-sm file:mr-4 file:py-1 file:px-3 file:btn-square file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-blue hover:file:bg-brand-blue hover:file:text-white">
+                                </div>
+                                <button type="submit" class="w-full bg-brand-blue text-white font-extrabold text-sm uppercase tracking-widest py-4 hover:bg-brand-navy transition-colors btn-square mt-2">
+                                    Enviar Cotización
                                 </button>
                             </div>
                         </form>
@@ -670,6 +960,9 @@
                 </div>
             </div>
         </section>
+
+        <!-- Sección ID contacto (alias para scroll) -->
+        <div id="contacto"></div>
     </div> <!-- FIN VISTA PRINCIPAL -->
 
     <!-- ========================================== -->
@@ -880,41 +1173,72 @@
         </div>
     </div>
 
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/525512345678?text=Hola,%20me%20gustaría%20cotizar%20un%20programa%20de%20uniformes"
+        target="_blank"
+        class="fixed bottom-6 right-6 z-[9998] bg-[#25D366] text-white w-14 h-14 flex items-center justify-center shadow-2xl hover:bg-[#20b858] transition-all hover:scale-110"
+        style="border-radius:50%;" title="Chatea por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
     <!-- Footer General -->
     <footer class="bg-[#0a1523] text-gray-400 py-16 border-t-[10px] border-brand-blue">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center md:items-start text-center md:text-left mb-12 border-b border-gray-800 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-gray-800 pb-12">
                 <!-- Logo Zone -->
-                <div class="flex flex-col items-center md:items-start cursor-pointer" onclick="mostrarVistaPrincipal()">
-                    <!-- ✏️ [EDITAR LOGO FOOTER] Sube tu logo blanco y asegúrate de que el nombre coincida (por ejemplo logo_blanco_upe.png) -->
-                    <img src="logo%20blanco%20upe.png" alt="Logo UPE Blanco"
-                        class="h-12 object-contain opacity-90 hover:opacity-100 transition-opacity mb-4">
-                    <p class="text-sm font-medium text-gray-500 max-w-xs">Soluciones de uniformidad profesional para las industrias más exigentes de México.</p>
+                <div class="flex flex-col cursor-pointer" onclick="mostrarVistaPrincipal()">
+                    <img src="logo%20blanco%20upe.png" alt="Logo UPE Blanco" class="h-12 object-contain opacity-90 hover:opacity-100 transition-opacity mb-4 w-fit">
+                    <p class="text-sm font-medium text-gray-500 max-w-xs mb-6">Soluciones de uniformidad profesional para las industrias más exigentes de México.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    </div>
                 </div>
 
-                <!-- Navigation Links -->
+                <!-- Categorías -->
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-2">Categorías</h4>
+                    <button onclick="window.location.href='catalogo.html?cat=corporativo'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Corporativo</button>
+                    <button onclick="window.location.href='catalogo.html?cat=industrial'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Industrial</button>
+                    <button onclick="window.location.href='catalogo.html?cat=restaurante'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Restaurante</button>
+                    <button onclick="window.location.href='catalogo.html?cat=medico'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Médico</button>
+                    <button onclick="window.location.href='catalogo.html?cat=calzado'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Calzado</button>
+                    <button onclick="window.location.href='catalogo.html?cat=epp'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">EPP</button>
+                    <button onclick="window.location.href='catalogo.html?cat=accesorios'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Accesorios</button>
+                </div>
+
+                <!-- Empresa -->
                 <div class="flex flex-col gap-3">
                     <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-2">Empresa</h4>
-                    <button onclick="mostrarVistaPrincipalYScroll('inicio')" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit mx-auto md:mx-0">Inicio</button>
-                    <button onclick="window.location.href='catalogo.html'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit mx-auto md:mx-0">Catálogo Completo</button>
-                    <a href="https://flowmx.github.io/upefr/" class="text-[#c1272d] hover:text-red-400 transition-colors text-sm font-bold w-fit mx-auto md:mx-0 border-b border-transparent hover:border-red-400">Línea FR Antiflama</a>
+                    <button onclick="mostrarVistaPrincipalYScroll('nosotros')" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Sobre Nosotros</button>
+                    <button onclick="mostrarVistaPrincipalYScroll('servicios')" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Servicios</button>
+                    <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Cotización</button>
+                    <button onclick="window.location.href='marcas.html'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Nuestras Marcas</button>
+                    <a href="https://flowmx.github.io/upefr/" class="text-[#c1272d] hover:text-red-400 transition-colors text-sm font-bold w-fit">Línea FR Antiflama</a>
                 </div>
 
-                <!-- Admin Access -->
-                <div class="flex flex-col items-center md:items-end">
-                    <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-4">Gestión</h4>
-                    <button onclick="abrirLoginAdmin(event)"
-                        class="bg-transparent border border-gray-700 text-gray-300 px-6 py-3 hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all font-bold flex items-center justify-center gap-2 btn-square text-xs tracking-widest uppercase">
-                        <i data-lucide="lock" class="w-4 h-4"></i> Acceso Admin
-                    </button>
+                <!-- Contacto y Admin -->
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-2">Contacto</h4>
+                    <a href="tel:+525512345678" class="text-gray-400 hover:text-white transition-colors text-sm font-medium flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> +52 55 1234 5678</a>
+                    <a href="mailto:ventas@uniformesprofesionales.mx" class="text-gray-400 hover:text-white transition-colors text-sm font-medium flex items-center gap-2 break-all"><i data-lucide="mail" class="w-4 h-4 shrink-0"></i> ventas@uniformesprofesionales.mx</a>
+                    <a href="https://wa.me/525512345678" target="_blank" class="text-[#25D366] hover:text-green-400 transition-colors text-sm font-bold flex items-center gap-2 mt-1"><i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp</a>
+                    <div class="mt-4">
+                        <button onclick="abrirLoginAdmin(event)" class="bg-transparent border border-gray-700 text-gray-300 px-4 py-2 hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all font-bold flex items-center gap-2 btn-square text-xs tracking-widest uppercase">
+                            <i data-lucide="lock" class="w-4 h-4"></i> Acceso Admin
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-            <div class="flex flex-col md:flex-row justify-between items-center text-xs font-medium text-gray-600">
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs font-medium text-gray-600 gap-4">
                 <p>&copy; 2026 Uniformes Profesionales. Todos los derechos reservados.</p>
-                <div class="flex gap-4 mt-4 md:mt-0">
+                <div class="flex gap-6">
                     <a href="#" class="hover:text-white transition-colors">Aviso de Privacidad</a>
-                    <a href="#" class="hover:text-white transition-colors">Términos y Condiciones</a>
+                    <a href="#" class="hover:text-white transition-colors">Términos del Servicio</a>
                 </div>
             </div>
         </div>
@@ -1423,43 +1747,37 @@
             </button>
 
             <div class="text-center p-12 pb-6 border-b border-gray-100 bg-gray-50">
-                <span class="text-brand-blue font-extrabold tracking-widest uppercase text-xs mb-4 block">Portal Corporativo</span>
-                <h2 class="text-3xl md:text-5xl font-black text-brand-navy tracking-tight uppercase mb-4">Seleccione su Línea</h2>
-                <p class="text-gray-500 font-medium text-lg max-w-lg mx-auto">Bienvenido al grupo UPE. Elija la división especializada que requiere para su cotización.</p>
+                <span class="text-brand-blue font-extrabold tracking-widest uppercase text-xs mb-4 block">Bienvenido a UPE</span>
+                <h2 class="text-3xl md:text-4xl font-black text-brand-navy tracking-tight uppercase mb-4">¿Qué tipo de uniformes estás buscando?</h2>
+                <p class="text-gray-500 font-medium text-base max-w-lg mx-auto">Selecciona la línea que mejor se adapta a tus necesidades.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 p-0 divide-y md:divide-y-0 md:divide-x divide-gray-200">
 
-                <!-- ====== AQUÍ PONES EL ENLACE DE UPE FR ====== -->
-                <!-- Cambia "https://tu-pagina-upefr.com" por tu link real -->
+                <!-- Opción 2: UPE FR -->
                 <a href="https://flowmx.github.io/upefr/"
                     class="group block p-10 md:p-14 text-center hover:bg-red-50 transition-colors flex flex-col items-center justify-center bg-white">
-                    <div
-                        class="h-24 md:h-28 w-full flex items-center justify-center mb-6">
-                        <!-- Cambia el src por el enlace de tu logo -->
+                    <div class="h-24 md:h-28 w-full flex items-center justify-center mb-6">
                         <img src="logo-fr.png" alt="Logotipo UPE FR"
                             class="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition duration-500">
                     </div>
-                    <div class="bg-red-100 text-[#c1272d] text-xs font-bold px-3 py-1 uppercase tracking-widest btn-square mb-4 group-hover:bg-[#c1272d] group-hover:text-white transition-colors">Normativa Especializada</div>
-                    <h3 class="text-2xl font-black text-brand-navy group-hover:text-[#c1272d] uppercase tracking-wider mb-2 transition-colors">UPE FR</h3>
-                    <p class="text-sm font-medium text-gray-500 leading-relaxed">Indumentaria ignífuga, protección arco eléctrico y fuego repentino. Cumplimiento NFPA 2112 y 70E.</p>
+                    <div class="bg-red-100 text-[#c1272d] text-xs font-bold px-3 py-1 uppercase tracking-widest btn-square mb-4 group-hover:bg-[#c1272d] group-hover:text-white transition-colors">Uniformes FR</div>
+                    <h3 class="text-2xl font-black text-brand-navy group-hover:text-[#c1272d] uppercase tracking-wider mb-2 transition-colors">Uniformes FR</h3>
+                    <p class="text-sm font-medium text-gray-500 leading-relaxed">Uniformes antiflama certificados, calzado de seguridad y EPP especializado para industria energética y trabajos de alto riesgo.</p>
                 </a>
 
-                <!-- ====== AQUÍ PONES EL ENLACE DE UNIFORMES ====== -->
-                <!-- Este botón cierra el modal para quedarse en la página actual (raíz) -->
+                <!-- Opción 1: Uniformes Profesionales -->
                 <a href="#"
                     onclick="document.getElementById('welcomeModal').classList.add('hidden'); event.preventDefault();"
                     class="group block p-10 md:p-14 text-center hover:bg-blue-50 transition-colors flex flex-col items-center justify-center bg-white cursor-pointer relative overflow-hidden">
                     <div class="absolute inset-0 bg-brand-blue/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-                    <div
-                        class="h-24 md:h-28 w-full flex items-center justify-center mb-6 relative z-10">
-                        <!-- Cambia el src por el enlace de tu logo -->
+                    <div class="h-24 md:h-28 w-full flex items-center justify-center mb-6 relative z-10">
                         <img src="logoheaderupe.png" alt="Logotipo UPE Uniformes Profesionales"
                             class="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition duration-500">
                     </div>
-                    <div class="bg-brand-light text-brand-blue text-xs font-bold px-3 py-1 uppercase tracking-widest btn-square mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors">General Corporativo</div>
-                    <h3 class="text-2xl font-black text-brand-navy group-hover:text-brand-blue uppercase tracking-wider mb-2 transition-colors">UPE Uniformes</h3>
-                    <p class="text-sm font-medium text-gray-500 leading-relaxed">Tiro rudo, industrial, ejecutivo y casual. Proyección impecable masiva para el sector comercial.</p>
+                    <div class="bg-brand-light text-brand-blue text-xs font-bold px-3 py-1 uppercase tracking-widest btn-square mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors">Uniformes Profesionales</div>
+                    <h3 class="text-2xl font-black text-brand-navy group-hover:text-brand-blue uppercase tracking-wider mb-2 transition-colors">Uniformes Profesionales</h3>
+                    <p class="text-sm font-medium text-gray-500 leading-relaxed">Uniformes corporativos, industriales, médicos, restaurante, EPP y calzado.</p>
                 </a>
 
             </div>
