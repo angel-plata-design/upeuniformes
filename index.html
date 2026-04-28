@@ -52,9 +52,12 @@
             z-index: -2;
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             transition: background-image 1.5s ease-in-out;
-            /* Transición suave de 1.5 segundos */
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #hero-slider { transition: none; }
+            .fade-in { animation: none; }
         }
 
         #hero-overlay {
@@ -130,6 +133,12 @@
             width: 100%;
         }
 
+        .nav-link:focus-visible {
+            outline: 2px solid #009aeb;
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
         .mega-menu {
             opacity: 0;
             visibility: hidden;
@@ -193,6 +202,10 @@
 </head>
 
 <body class="bg-white text-gray-800">
+    <!-- Accesibilidad: Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] bg-brand-navy text-white px-4 py-2 btn-square font-bold text-sm tracking-widest uppercase">
+        Saltar al contenido
+    </a>
 
     <!-- Top Utility Bar -->
     <div class="top-bar w-full py-2 z-50 relative hidden md:block">
@@ -367,6 +380,7 @@
 
         <!-- Sección Inicio (Hero con Slider eShop style) -->
         <section id="inicio" class="relative min-h-[85vh] flex items-center z-0 pt-0">
+            <span id="main-content" class="sr-only" aria-hidden="true"></span>
             <!-- Fondos -->
             <div id="hero-slider"></div>
             <div id="hero-overlay"></div>
@@ -1002,7 +1016,7 @@
                                     </div>
                                     <div>
                                         <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Teléfono *</label>
-                                        <input type="tel" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold" required>
+                                        <input type="tel" inputmode="tel" autocomplete="tel" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold" required>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -1032,7 +1046,7 @@
                                     </div>
                                     <div>
                                         <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Cantidades Requeridas</label>
-                                        <input type="number" min="1" placeholder="Ej: 150 piezas" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold">
+                                        <input type="number" min="1" inputmode="numeric" placeholder="Ej: 150 piezas" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold">
                                     </div>
                                 </div>
                                 <div>
@@ -1175,7 +1189,7 @@
     <div id="modal-login"
         class="hidden fixed inset-0 bg-brand-navy/80 backdrop-blur-sm z-[60] flex items-center justify-center p-4 fade-in">
         <div class="bg-white shadow-2xl p-8 max-w-sm w-full relative btn-square">
-            <button onclick="cerrarLoginAdmin()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700"><i
+            <button onclick="cerrarLoginAdmin()" aria-label="Cerrar" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700"><i
                     data-lucide="x" class="w-5 h-5"></i></button>
             <div class="text-center mb-6">
                 <div
@@ -1198,7 +1212,7 @@
         <div class="bg-white shadow-2xl max-w-2xl w-full relative my-8 btn-square">
             <div class="p-6 md:p-8 border-b border-gray-100 flex justify-between items-center bg-gray-50">
                 <h3 id="modal-producto-titulo" class="text-2xl font-bold text-brand-navy">Nuevo Producto</h3>
-                <button onclick="cerrarModalProducto()"
+                <button onclick="cerrarModalProducto()" aria-label="Cerrar"
                     class="text-gray-400 hover:text-gray-700 bg-white p-1.5 shadow-sm"><i data-lucide="x"
                         class="w-5 h-5"></i></button>
             </div>
@@ -1272,6 +1286,7 @@
     <!-- Botón Flotante WhatsApp -->
     <a href="https://wa.me/525512345678?text=Hola,%20me%20gustaría%20cotizar%20un%20programa%20de%20uniformes"
         target="_blank"
+        aria-label="Chatea con nosotros por WhatsApp"
         class="fixed bottom-6 right-6 z-[9998] bg-[#25D366] text-white w-14 h-14 flex items-center justify-center shadow-2xl hover:bg-[#20b858] transition-all hover:scale-110"
         style="border-radius:50%;" title="Chatea por WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
@@ -1288,9 +1303,9 @@
                     <img src="logo%20blanco%20upe.png" alt="Logo UPE Blanco" class="h-12 object-contain opacity-90 hover:opacity-100 transition-opacity mb-4 w-fit">
                     <p class="text-sm font-medium text-gray-500 max-w-xs mb-6">Soluciones de uniformidad profesional para las industrias más exigentes de México.</p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="#" aria-label="Síguenos en Facebook" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#" aria-label="Síguenos en Instagram" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" aria-label="Síguenos en LinkedIn" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
                     </div>
                 </div>
 
