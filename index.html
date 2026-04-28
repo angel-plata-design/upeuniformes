@@ -1257,10 +1257,13 @@
                             <label class="block text-sm font-semibold text-brand-navy mb-1">Categoría *</label>
                             <select id="prod-categoria" required
                                 class="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-blue outline-none transition-colors appearance-none btn-square"
-                                <option value="industrial">Industrial / Operativo</option>
-                                <option value="corporativo">Corporativo / Ejecutivo</option>
-                                <option value="seguridad">Alta Visibilidad / Seguridad</option>
-                                <option value="casual">Casual / Ventas</option>
+                                <option value="corporativo">Corporativo</option>
+                                <option value="industrial">Industrial</option>
+                                <option value="restaurante">Restaurante</option>
+                                <option value="medico">Médico</option>
+                                <option value="calzado">Calzado</option>
+                                <option value="epp">EPP</option>
+                                <option value="accesorios">Accesorios</option>
                             </select>
                         </div>
                         <div>
@@ -1489,13 +1492,16 @@
             { id: 3, nombre: "Overol Industrial Básico", categoria: "industrial", marca: "DICKIES", etiqueta: "Cuerpo Entero", img: "https://images.unsplash.com/photo-1584464457692-74d156828df9?auto=format&fit=crop&q=80&w=800", desc: "Protección de cuerpo completo. Overol con cierre metálico frontal de doble vía, resorte en cintura para mejor ajuste y espalda con pliegues para mayor movilidad. Incluye bolsas amplias frontales y traseras." },
             { id: 4, nombre: "Camisa Ejecutiva Oxford", categoria: "corporativo", marca: "YAZBEK", etiqueta: "Oficina", img: "https://images.unsplash.com/photo-1586952518485-11b180e92764?auto=format&fit=crop&q=80&w=800", desc: "La opción ideal para el entorno corporativo. Tela Oxford suave, fresca y de planchado fácil. Disponible en cortes específicos para hombre y mujer. Cuello abotonado y acabados de primera que aseguran una imagen ejecutiva impecable." },
             { id: 5, nombre: "Pantalón de Vestir Gabardina", categoria: "corporativo", marca: "YAZBEK", etiqueta: "Ejecutivo", img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=800", desc: "Pantalón de corte recto clásico, elegante y muy cómodo. Tela resistente a las arrugas, manteniendo la formalidad durante toda la jornada. Colores institucionales disponibles." },
-            { id: 6, nombre: "Playera Tipo Polo Piqué", categoria: "casual", marca: "OPTIMA", etiqueta: "Ventas", img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800", desc: "Playera polo clásica en tejido piqué 100% algodón peinado. Los colores están fijados para evitar decoloración rápida por lavadas. Excelente para uniformar personal de mostrador, ventas, o eventos promocionales." },
-            { id: 8, nombre: "Chaleco Brigadista con Cintas", categoria: "seguridad", marca: "3M", etiqueta: "Alta Visibilidad", img: "https://images.unsplash.com/photo-1584844308364-a144f21cd673?auto=format&fit=crop&q=80&w=800", desc: "Chaleco diseñado para la máxima visibilidad en áreas de riesgo. Incluye cintas reflejantes grises de 2 pulgadas. Múltiples bolsas para herramientas o radios. Cumple con las normativas internacionales ANSI." }
+            { id: 6, nombre: "Playera Tipo Polo Piqué", categoria: "corporativo", marca: "OPTIMA", etiqueta: "Ventas", img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800", desc: "Playera polo clásica en tejido piqué 100% algodón peinado. Los colores están fijados para evitar decoloración rápida por lavadas. Excelente para uniformar personal de mostrador, ventas, o eventos promocionales." },
+            { id: 8, nombre: "Chaleco Brigadista con Cintas", categoria: "epp", marca: "3M", etiqueta: "Alta Visibilidad", img: "https://images.unsplash.com/photo-1584844308364-a144f21cd673?auto=format&fit=crop&q=80&w=800", desc: "Chaleco diseñado para la máxima visibilidad en áreas de riesgo. Incluye cintas reflejantes grises de 2 pulgadas. Múltiples bolsas para herramientas o radios. Cumple con las normativas internacionales ANSI." }
         ];
 
         let productos = JSON.parse(localStorage.getItem('upe_productos')) || productosDefault;
-        // Limpiar cualquier producto residual de antiflama si existía en localStorage previo
-        productos = productos.filter(p => p.categoria !== 'antiflama');
+        // Migrar categorías antiguas a las nuevas
+        const catMigration = { 'casual': 'corporativo', 'seguridad': 'epp' };
+        productos = productos
+            .filter(p => p.categoria !== 'antiflama')
+            .map(p => ({ ...p, categoria: catMigration[p.categoria] || p.categoria }));
 
         let categoriaActual = 'todos';
 
@@ -1616,13 +1622,16 @@
 
             const titulo = document.getElementById('titulo-catalogo');
             const titulos = {
-                'todos': 'Catálogo Completo',
-                'industrial': 'Línea Industrial',
+                'todos':       'Catálogo Completo',
+                'industrial':  'Línea Industrial',
                 'corporativo': 'Línea Corporativa',
-                'casual': 'Línea Casual',
-                'seguridad': 'Alta Visibilidad'
+                'restaurante': 'Línea Restaurante',
+                'medico':      'Línea Médica',
+                'calzado':     'Calzado de Seguridad',
+                'epp':         'EPP y Alta Visibilidad',
+                'accesorios':  'Accesorios'
             };
-            titulo.innerText = titulos[categoria];
+            titulo.innerText = titulos[categoria] || 'Catálogo Completo';
 
             let filtrados = categoria === 'todos' ? productos : productos.filter(p => p.categoria === categoria);
             renderProductos(filtrados);
