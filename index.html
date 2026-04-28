@@ -423,14 +423,14 @@
 
             <div class="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center">
                 <!-- Text Box (Left Aligned on Desktop) -->
-                <div class="lg:w-1/2 bg-white/5 backdrop-blur-sm p-8 md:p-12 lg:p-16 border-l-4 border-brand-blue text-left mt-10 md:mt-0">
-                    <span class="text-[#009aeb] font-bold text-xs uppercase tracking-[0.25em] border-b border-[#009aeb] pb-1 mb-6 block w-fit">
+                <div id="hero-text-box" class="lg:w-1/2 bg-white/5 backdrop-blur-sm p-8 md:p-12 lg:p-16 border-l-4 border-brand-blue text-left mt-10 md:mt-0" style="transition: opacity 0.35s ease;">
+                    <span id="hero-tag" class="text-[#009aeb] font-bold text-xs uppercase tracking-[0.25em] border-b border-[#009aeb] pb-1 mb-6 block w-fit">
                         Uniformes Profesionales · México
                     </span>
-                    <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight uppercase">
+                    <h1 id="hero-title" class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight uppercase">
                         Programas de <br/> <span class="text-[#009aeb]">Uniformes</span><br/>a tu Medida
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-200 mb-4 font-medium leading-relaxed max-w-lg">
+                    <p id="hero-sub" class="text-lg md:text-xl text-gray-200 mb-4 font-medium leading-relaxed max-w-lg">
                         Ya sea que requieras uniforme para un equipo de 2 ó 500,000, estás en el lugar correcto.
                     </p>
                     <p class="text-base text-gray-300 mb-10 font-medium leading-relaxed max-w-lg">
@@ -1502,23 +1502,53 @@
         lucide.createIcons();
 
         // --- ✏️ [EDITAR IMÁGENES DEL SLIDER HERO AQUÍ] ---
-        // Puedes agregar o quitar enlaces separados por comas
-        const heroImages = [
-            'uniformes_hero_1.jpg',
-            'uniformes_hero_2.jpg',
-            'uniformes_hero_3.jpg'
+        // Slides: imagen + texto propio por slide
+        const heroSlides = [
+            {
+                img: 'uniformes_hero_1.jpg',
+                tag: 'Uniformes Profesionales · México',
+                title: 'Programas de <br/><span class="text-[#009aeb]">Uniformes</span><br/>a tu Medida',
+                sub: 'Ya sea que requieras uniforme para un equipo de 2 ó 500,000, estás en el lugar correcto.'
+            },
+            {
+                img: 'uniformes_hero_2.jpg',
+                tag: 'Línea Corporativa · B2B',
+                title: 'Imagen <br/><span class="text-[#009aeb]">Corporativa</span><br/>que Impacta',
+                sub: 'Diseñamos uniformes que refuerzan la identidad de tu empresa en cada punto de contacto.'
+            },
+            {
+                img: 'uniformes_hero_3.jpg',
+                tag: 'Protección Industrial · FR',
+                title: 'Seguridad <br/><span class="text-[#009aeb]">Industrial</span><br/>sin Compromisos',
+                sub: 'Equipos de protección personal certificados NFPA para entornos de alto riesgo.'
+            }
         ];
 
         let currentSlide = 0;
         const heroSlider = document.getElementById('hero-slider');
+        const heroTag   = document.getElementById('hero-tag');
+        const heroTitle = document.getElementById('hero-title');
+        const heroSub   = document.getElementById('hero-sub');
+        const heroText  = document.getElementById('hero-text-box');
+
+        function applySlide(idx) {
+            const s = heroSlides[idx];
+            heroSlider.style.backgroundImage = `url('${s.img}')`;
+            // fade out texto
+            if (heroText) heroText.style.opacity = '0';
+            setTimeout(() => {
+                if (heroTag)   heroTag.textContent  = s.tag;
+                if (heroTitle) heroTitle.innerHTML   = s.title;
+                if (heroSub)   heroSub.textContent   = s.sub;
+                if (heroText)  heroText.style.opacity = '1';
+            }, 350);
+        }
 
         if (heroSlider) {
-            // Ponemos la primera imagen inmediatamente
-            heroSlider.style.backgroundImage = `url('${heroImages[0]}')`;
-            // Cambiamos cada 5000 milisegundos (5 segundos)
+            applySlide(0);
             setInterval(() => {
-                currentSlide = (currentSlide + 1) % heroImages.length;
-                heroSlider.style.backgroundImage = `url('${heroImages[currentSlide]}')`;
+                currentSlide = (currentSlide + 1) % heroSlides.length;
+                applySlide(currentSlide);
             }, 5000);
         }
         // ----------------------------------------------------
