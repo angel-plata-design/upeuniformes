@@ -66,7 +66,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.9));
+            background: linear-gradient(to right, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.60) 55%, rgba(0,0,0,0.15) 100%);
             z-index: -1;
         }
 
@@ -198,6 +198,42 @@
         .card-square {
             border-radius: 4px !important;
         }
+
+        /* Brand Marquee */
+        @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 40s linear infinite;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-track { animation: none; }
+        }
+
+        /* Scroll fade-up */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up { opacity: 1; transform: none; transition: none; }
+        }
+
+        /* Glassmorphism card */
+        .glass-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.10);
+            backdrop-filter: blur(4px);
+        }
     </style>
 </head>
 
@@ -243,7 +279,7 @@
 
                     <!-- Categorías con mega menú 3 columnas -->
                     <div class="relative nav-item-group flex items-center h-full">
-                        <button onclick="window.location.href='catalogo.html?cat=todos'" class="nav-link flex items-center gap-1 cursor-pointer">
+                        <button onclick="mostrarCatalogo('todos')" class="nav-link flex items-center gap-1 cursor-pointer">
                             Categorías <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
                         <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full w-[860px] bg-white border-t-4 border-brand-blue text-left z-50">
@@ -252,27 +288,27 @@
                                 <div class="p-6 bg-gray-50">
                                     <h4 class="font-extrabold text-brand-navy mb-4 text-xs uppercase tracking-wider">Tipo de Prenda</h4>
                                     <ul class="space-y-2">
-                                        <li><button onclick="window.location.href='catalogo.html?prenda=camisas'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Camisas</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?prenda=polos'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Polos</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?prenda=playeras'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Playeras</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?prenda=chamarras'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Chamarras</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?prenda=pantalones'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Pantalones</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?prenda=chalecos'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Chalecos</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?prenda=filipinas'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Filipinas</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?prenda=scrubs'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Scrubs</button></li>
+                                        <li><button onclick="mostrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Camisas</button></li>
+                                        <li><button onclick="mostrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Polos</button></li>
+                                        <li><button onclick="mostrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Playeras</button></li>
+                                        <li><button onclick="mostrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Chamarras</button></li>
+                                        <li><button onclick="mostrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Pantalones</button></li>
+                                        <li><button onclick="mostrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Chalecos</button></li>
+                                        <li><button onclick="mostrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Filipinas</button></li>
+                                        <li><button onclick="mostrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Scrubs</button></li>
                                     </ul>
                                 </div>
                                 <!-- Col 2: Categorías -->
                                 <div class="p-6 bg-white">
                                     <h4 class="font-extrabold text-brand-navy mb-4 text-xs uppercase tracking-wider">Categorías</h4>
                                     <ul class="space-y-2">
-                                        <li><button onclick="window.location.href='catalogo.html?cat=corporativo'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="briefcase" class="w-3 h-3 text-brand-blue"></i>Corporativo</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?cat=industrial'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="hard-hat" class="w-3 h-3 text-brand-blue"></i>Industrial</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?cat=restaurante'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="utensils" class="w-3 h-3 text-brand-blue"></i>Restaurante</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?cat=medico'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="stethoscope" class="w-3 h-3 text-brand-blue"></i>Médico</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?cat=calzado'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="footprints" class="w-3 h-3 text-brand-blue"></i>Calzado</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?cat=epp'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="shield" class="w-3 h-3 text-brand-blue"></i>EPP</button></li>
-                                        <li><button onclick="window.location.href='catalogo.html?cat=accesorios'" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="tag" class="w-3 h-3 text-brand-blue"></i>Accesorios</button></li>
+                                        <li><button onclick="mostrarCatalogo('corporativo')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="briefcase" class="w-3 h-3 text-brand-blue"></i>Corporativo</button></li>
+                                        <li><button onclick="mostrarCatalogo('industrial')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="hard-hat" class="w-3 h-3 text-brand-blue"></i>Industrial</button></li>
+                                        <li><button onclick="mostrarCatalogo('restaurante')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="utensils" class="w-3 h-3 text-brand-blue"></i>Restaurante</button></li>
+                                        <li><button onclick="mostrarCatalogo('medico')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="stethoscope" class="w-3 h-3 text-brand-blue"></i>Médico</button></li>
+                                        <li><button onclick="mostrarCatalogo('calzado')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="footprints" class="w-3 h-3 text-brand-blue"></i>Calzado</button></li>
+                                        <li><button onclick="mostrarCatalogo('epp')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="shield" class="w-3 h-3 text-brand-blue"></i>EPP</button></li>
+                                        <li><button onclick="mostrarCatalogo('accesorios')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="tag" class="w-3 h-3 text-brand-blue"></i>Accesorios</button></li>
                                     </ul>
                                 </div>
                                 <!-- Col 3: Marcas Destacadas -->
@@ -293,7 +329,7 @@
                                 <button onclick="mostrarVistaPrincipalYScroll('marcas')" class="text-sm font-bold text-brand-blue hover:text-brand-navy transition-colors flex items-center gap-2">
                                     <i data-lucide="arrow-right" class="w-4 h-4"></i> Ver todas las marcas
                                 </button>
-                                <button onclick="window.location.href='catalogo.html?cat=todos'" class="text-xs font-bold uppercase tracking-widest text-white bg-brand-navy px-4 py-2 hover:bg-brand-blue transition-colors btn-square">
+                                <button onclick="mostrarCatalogo('todos')" class="text-xs font-bold uppercase tracking-widest text-white bg-brand-navy px-4 py-2 hover:bg-brand-blue transition-colors btn-square">
                                     Ver catálogo completo
                                 </button>
                             </div>
@@ -353,14 +389,14 @@
             <div class="px-6 py-4 space-y-1 flex flex-col">
                 <div class="py-4 border-b border-gray-100">
                     <span class="block text-sm font-extrabold text-gray-400 uppercase tracking-widest mb-3">Categorías</span>
-                    <button onclick="window.location.href='catalogo.html?cat=todos'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Ver Todo</button>
-                    <button onclick="window.location.href='catalogo.html?cat=corporativo'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Corporativo</button>
-                    <button onclick="window.location.href='catalogo.html?cat=industrial'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Industrial</button>
-                    <button onclick="window.location.href='catalogo.html?cat=restaurante'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Restaurante</button>
-                    <button onclick="window.location.href='catalogo.html?cat=medico'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Médico</button>
-                    <button onclick="window.location.href='catalogo.html?cat=calzado'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Calzado</button>
-                    <button onclick="window.location.href='catalogo.html?cat=epp'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> EPP</button>
-                    <button onclick="window.location.href='catalogo.html?cat=accesorios'" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Accesorios</button>
+                    <button onclick="mostrarCatalogo('todos')" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Ver Todo</button>
+                    <button onclick="mostrarCatalogo('corporativo')" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Corporativo</button>
+                    <button onclick="mostrarCatalogo('industrial')" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Industrial</button>
+                    <button onclick="mostrarCatalogo('restaurante')" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Restaurante</button>
+                    <button onclick="mostrarCatalogo('medico')" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Médico</button>
+                    <button onclick="mostrarCatalogo('calzado')" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Calzado</button>
+                    <button onclick="mostrarCatalogo('epp')" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> EPP</button>
+                    <button onclick="mostrarCatalogo('accesorios')" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Accesorios</button>
                 </div>
                 <button onclick="mostrarVistaPrincipalYScroll('marcas')" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Nuestras Marcas</button>
                 <button onclick="manejarMenuMovil('servicios')" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Servicios</button>
@@ -379,7 +415,7 @@
     <div id="view-main" class="fade-in">
 
         <!-- Sección Inicio (Hero con Slider eShop style) -->
-        <section id="inicio" class="relative min-h-[85vh] flex items-center z-0 pt-0">
+        <section id="inicio" class="relative min-h-screen flex items-center z-0 pt-0">
             <span id="main-content" class="sr-only" aria-hidden="true"></span>
             <!-- Fondos -->
             <div id="hero-slider"></div>
@@ -388,11 +424,11 @@
             <div class="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center">
                 <!-- Text Box (Left Aligned on Desktop) -->
                 <div class="lg:w-1/2 bg-white/5 backdrop-blur-sm p-8 md:p-12 lg:p-16 border-l-4 border-brand-blue text-left mt-10 md:mt-0">
-                    <span class="text-brand-blue font-extrabold tracking-widest uppercase text-xs mb-4 block inline-flex items-center gap-2 bg-brand-navy/80 px-4 py-1 btn-square text-white">
-                        <i data-lucide="check-circle-2" class="w-3 h-3"></i> Uniformes Profesionales
+                    <span class="text-[#009aeb] font-bold text-xs uppercase tracking-[0.25em] border-b border-[#009aeb] pb-1 mb-6 block w-fit">
+                        Uniformes Profesionales · México
                     </span>
-                    <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-[1.1] uppercase tracking-tight">
-                        Programas de <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-blue-200">Uniformes a tu Medida</span>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-[1.05] tracking-tight uppercase">
+                        Programas de <br/> <span class="text-[#009aeb]">Uniformes</span><br/>a tu Medida
                     </h1>
                     <p class="text-lg md:text-xl text-gray-200 mb-4 font-medium leading-relaxed max-w-lg">
                         Ya sea que requieras uniforme para un equipo de 2 ó 500,000, estás en el lugar correcto.
@@ -404,7 +440,7 @@
                         <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="bg-brand-blue text-white px-8 py-4 font-extrabold text-sm tracking-widest uppercase hover:bg-blue-600 transition-colors btn-square">
                             Cotiza tu Proyecto
                         </button>
-                        <button onclick="window.location.href='catalogo.html'" class="bg-transparent border-2 border-white text-white px-8 py-4 font-extrabold text-sm tracking-widest uppercase hover:bg-white hover:text-brand-navy transition-colors btn-square text-center">
+                        <button onclick="mostrarCatalogo('todos')" class="bg-transparent border-2 border-white text-white px-8 py-4 font-extrabold text-sm tracking-widest uppercase hover:bg-white hover:text-brand-navy transition-colors btn-square text-center">
                             Ver Catálogo
                         </button>
                     </div>
@@ -433,21 +469,21 @@
         </section>
 
         <!-- Categorías Principales -->
-        <section id="lineas" class="py-20 bg-white border-t border-gray-100">
+        <section id="lineas" class="py-20 bg-white border-t border-gray-100 fade-up">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 flex flex-col md:flex-row justify-between items-end gap-4 border-b border-gray-200 pb-4">
                     <div>
                         <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase">Categorías Principales</h2>
                         <p class="text-gray-500 font-medium mt-2">Encuentra el uniforme ideal para tu sector. Filtra por marca, tipo de prenda o sexo.</p>
                     </div>
-                    <button onclick="window.location.href='catalogo.html?cat=todos'" class="font-bold text-sm uppercase tracking-widest text-brand-blue hover:text-brand-navy transition-colors flex items-center gap-2">
+                    <button onclick="mostrarCatalogo('todos')" class="font-bold text-sm uppercase tracking-widest text-brand-blue hover:text-brand-navy transition-colors flex items-center gap-2">
                         Ver todas las categorías <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                     <!-- Corporativo -->
-                    <div onclick="window.location.href='catalogo.html?cat=corporativo'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                    <div onclick="mostrarCatalogo('corporativo')" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
                         <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
                             <img src="Coorporativo_img.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Corporativo">
                         </div>
@@ -457,7 +493,7 @@
                         </div>
                     </div>
                     <!-- Industrial -->
-                    <div onclick="window.location.href='catalogo.html?cat=industrial'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                    <div onclick="mostrarCatalogo('industrial')" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
                         <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
                             <img src="Industrial_img.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Industrial">
                         </div>
@@ -467,7 +503,7 @@
                         </div>
                     </div>
                     <!-- Restaurante -->
-                    <div onclick="window.location.href='catalogo.html?cat=restaurante'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                    <div onclick="mostrarCatalogo('restaurante')" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
                         <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
                             <div class="text-center p-6 flex flex-col items-center gap-3">
                                 <i data-lucide="utensils" class="w-16 h-16 text-gray-300 group-hover:text-brand-blue transition-colors"></i>
@@ -480,7 +516,7 @@
                         </div>
                     </div>
                     <!-- Médico -->
-                    <div onclick="window.location.href='catalogo.html?cat=medico'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                    <div onclick="mostrarCatalogo('medico')" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
                         <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
                             <div class="text-center p-6 flex flex-col items-center gap-3">
                                 <i data-lucide="stethoscope" class="w-16 h-16 text-gray-300 group-hover:text-brand-blue transition-colors"></i>
@@ -493,7 +529,7 @@
                         </div>
                     </div>
                     <!-- Calzado -->
-                    <div onclick="window.location.href='catalogo.html?cat=calzado'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                    <div onclick="mostrarCatalogo('calzado')" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
                         <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
                             <div class="text-center p-6 flex flex-col items-center gap-3">
                                 <i data-lucide="footprints" class="w-16 h-16 text-gray-300 group-hover:text-brand-blue transition-colors"></i>
@@ -506,7 +542,7 @@
                         </div>
                     </div>
                     <!-- EPP -->
-                    <div onclick="window.location.href='catalogo.html?cat=epp'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                    <div onclick="mostrarCatalogo('epp')" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
                         <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
                             <img src="Seguridad_img.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="EPP">
                         </div>
@@ -516,7 +552,7 @@
                         </div>
                     </div>
                     <!-- Accesorios -->
-                    <div onclick="window.location.href='catalogo.html?cat=accesorios'" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
+                    <div onclick="mostrarCatalogo('accesorios')" class="cursor-pointer group relative overflow-hidden bg-white border border-gray-200 aspect-[3/4] flex flex-col">
                         <div class="h-4/5 overflow-hidden w-full bg-gray-100 flex items-center justify-center">
                             <div class="text-center p-6 flex flex-col items-center gap-3">
                                 <i data-lucide="tag" class="w-16 h-16 text-gray-300 group-hover:text-brand-blue transition-colors"></i>
@@ -577,92 +613,92 @@
             </div>
         </section>
 
-        <!-- Sección Marcas -->
-        <section id="marcas" class="py-12 bg-white border-t border-gray-100">
-            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest text-center mb-8">Marcas con las que trabajamos</p>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-stretch">
+        <!-- Sección Marcas (Marquee) -->
+        <section id="marcas" class="py-12 bg-white border-t border-gray-100 overflow-hidden">
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest text-center mb-8">Marcas con las que trabajamos</p>
+            <div class="relative w-full overflow-hidden">
+                <!-- Fades laterales -->
+                <div class="pointer-events-none absolute left-0 top-0 h-full w-24 z-10" style="background:linear-gradient(to right,#fff,transparent)"></div>
+                <div class="pointer-events-none absolute right-0 top-0 h-full w-24 z-10" style="background:linear-gradient(to left,#fff,transparent)"></div>
 
-                    <!-- Dickies -->
-                    <div class="flex items-center justify-center border border-gray-200 hover:border-[#cc0000] transition-colors p-6 group btn-square h-20">
-                        <span class="font-black text-xl tracking-tighter text-gray-700 group-hover:text-[#cc0000] transition-colors leading-none select-none">DICKIES</span>
+                <div class="marquee-track">
+                    <!-- Set 1 -->
+                    <div class="flex items-center gap-10 px-5">
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#cc0000] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-black text-xl tracking-tighter text-gray-600 group-hover:text-[#cc0000] transition-colors leading-none select-none">DICKIES</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#c8102e] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-extrabold text-lg tracking-widest text-gray-600 group-hover:text-[#c8102e] transition-colors leading-none select-none">RED KAP</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#0a2540] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-extrabold text-xl text-gray-600 group-hover:text-[#0a2540] transition-colors leading-none select-none">Bulwark<sup class="text-xs">®</sup></span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#ff0000] transition-colors px-8 group btn-square h-16 min-w-[100px]"><span class="font-black text-4xl text-gray-600 group-hover:text-[#ff0000] transition-colors leading-none select-none tracking-tighter">3M</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#1a56a0] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-bold text-xl tracking-widest text-gray-600 group-hover:text-[#1a56a0] transition-colors leading-none select-none">YAZBEK</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-brand-blue transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-bold text-xl tracking-widest text-gray-600 group-hover:text-brand-blue transition-colors leading-none select-none">OPTIMA</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#e31837] transition-colors px-8 group btn-square h-16 min-w-[150px]"><span class="font-black text-lg tracking-widest text-gray-600 group-hover:text-[#e31837] transition-colors leading-none select-none">CARHARTT</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#0057B8] transition-colors px-8 group btn-square h-16 min-w-[150px]"><span class="font-extrabold text-lg tracking-widest text-gray-600 group-hover:text-[#0057B8] transition-colors leading-none select-none">HONEYWELL</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#004990] transition-colors px-8 group btn-square h-16 min-w-[120px]"><span class="font-black text-2xl tracking-tight text-gray-600 group-hover:text-[#004990] transition-colors leading-none select-none">ANSELL</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#006341] transition-colors px-8 group btn-square h-16 min-w-[120px]"><span class="font-black text-lg tracking-widest text-gray-600 group-hover:text-[#006341] transition-colors leading-none select-none">MSA</span></div>
                     </div>
-
-                    <!-- Red Kap -->
-                    <div class="flex items-center justify-center border border-gray-200 hover:border-[#c8102e] transition-colors p-6 group btn-square h-20">
-                        <span class="font-extrabold text-lg tracking-widest text-gray-700 group-hover:text-[#c8102e] transition-colors leading-none select-none">RED KAP</span>
+                    <!-- Set 2 (duplicate para loop continuo) -->
+                    <div class="flex items-center gap-10 px-5">
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#cc0000] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-black text-xl tracking-tighter text-gray-600 group-hover:text-[#cc0000] transition-colors leading-none select-none">DICKIES</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#c8102e] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-extrabold text-lg tracking-widest text-gray-600 group-hover:text-[#c8102e] transition-colors leading-none select-none">RED KAP</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#0a2540] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-extrabold text-xl text-gray-600 group-hover:text-[#0a2540] transition-colors leading-none select-none">Bulwark<sup class="text-xs">®</sup></span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#ff0000] transition-colors px-8 group btn-square h-16 min-w-[100px]"><span class="font-black text-4xl text-gray-600 group-hover:text-[#ff0000] transition-colors leading-none select-none tracking-tighter">3M</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#1a56a0] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-bold text-xl tracking-widest text-gray-600 group-hover:text-[#1a56a0] transition-colors leading-none select-none">YAZBEK</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-brand-blue transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-bold text-xl tracking-widest text-gray-600 group-hover:text-brand-blue transition-colors leading-none select-none">OPTIMA</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#e31837] transition-colors px-8 group btn-square h-16 min-w-[150px]"><span class="font-black text-lg tracking-widest text-gray-600 group-hover:text-[#e31837] transition-colors leading-none select-none">CARHARTT</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#0057B8] transition-colors px-8 group btn-square h-16 min-w-[150px]"><span class="font-extrabold text-lg tracking-widest text-gray-600 group-hover:text-[#0057B8] transition-colors leading-none select-none">HONEYWELL</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#004990] transition-colors px-8 group btn-square h-16 min-w-[120px]"><span class="font-black text-2xl tracking-tight text-gray-600 group-hover:text-[#004990] transition-colors leading-none select-none">ANSELL</span></div>
+                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#006341] transition-colors px-8 group btn-square h-16 min-w-[120px]"><span class="font-black text-lg tracking-widest text-gray-600 group-hover:text-[#006341] transition-colors leading-none select-none">MSA</span></div>
                     </div>
-
-                    <!-- Bulwark -->
-                    <div class="flex items-center justify-center border border-gray-200 hover:border-[#0a2540] transition-colors p-6 group btn-square h-20">
-                        <span class="font-extrabold text-xl text-gray-700 group-hover:text-[#0a2540] transition-colors leading-none select-none">Bulwark<sup class="text-xs font-bold">®</sup></span>
-                    </div>
-
-                    <!-- 3M -->
-                    <div class="flex items-center justify-center border border-gray-200 hover:border-[#ff0000] transition-colors p-6 group btn-square h-20">
-                        <span class="font-black text-4xl text-gray-700 group-hover:text-[#ff0000] transition-colors leading-none select-none tracking-tighter">3M</span>
-                    </div>
-
-                    <!-- Yazbek -->
-                    <div class="flex items-center justify-center border border-gray-200 hover:border-[#1a56a0] transition-colors p-6 group btn-square h-20">
-                        <span class="font-bold text-xl tracking-widest text-gray-700 group-hover:text-[#1a56a0] transition-colors leading-none select-none">YAZBEK</span>
-                    </div>
-
-                    <!-- Optima -->
-                    <div class="flex items-center justify-center border border-gray-200 hover:border-brand-blue transition-colors p-6 group btn-square h-20">
-                        <span class="font-bold text-xl tracking-widest text-gray-700 group-hover:text-brand-blue transition-colors leading-none select-none">OPTIMA</span>
-                    </div>
-
                 </div>
             </div>
         </section>
 
         <!-- SECCIÓN SERVICIOS DETALLADO -->
-        <section id="servicios" class="py-20 bg-gray-50 border-t border-gray-100">
+        <section id="servicios" class="py-20 bg-[#0A1628] border-t border-white/10">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-12 flex flex-col md:flex-row justify-between items-end gap-4 border-b border-gray-200 pb-4">
+                <div class="mb-12 flex flex-col md:flex-row justify-between items-end gap-4 border-b border-white/10 pb-4">
                     <div>
-                        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase">Servicios</h2>
-                        <p class="text-gray-500 font-medium mt-2">Decoración, manufactura y soluciones corporativas completas</p>
+                        <span class="text-[#009aeb] font-bold text-xs uppercase tracking-[0.25em] border-b border-[#009aeb] pb-1 mb-4 block w-fit">Lo que hacemos</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight uppercase">Servicios</h2>
+                        <p class="text-gray-400 font-medium mt-2">Decoración, manufactura y soluciones corporativas completas</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 fade-up">
                     <!-- Decoración -->
-                    <div class="bg-white border border-gray-200 p-8 btn-square hover:border-brand-blue transition-colors">
-                        <i data-lucide="pen-tool" class="w-10 h-10 text-brand-blue mb-5"></i>
-                        <h3 class="text-xl font-extrabold text-brand-navy uppercase tracking-wider mb-4">Servicios de Decoración</h3>
+                    <div class="glass-card p-8 btn-square hover:border-[#009aeb] transition-colors">
+                        <i data-lucide="pen-tool" class="w-10 h-10 text-[#009aeb] mb-5"></i>
+                        <h3 class="text-xl font-extrabold text-white uppercase tracking-wider mb-4">Servicios de Decoración</h3>
                         <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Bordado</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>DTF (Direct to Film)</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Serigrafía</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Terminado y presentación final</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Asesoramiento en aplicación de logotipos</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Configuración gratuita de logotipos</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Bordado</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>DTF (Direct to Film)</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Serigrafía</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Terminado y presentación final</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Asesoramiento en aplicación de logotipos</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Configuración gratuita de logotipos</li>
                         </ul>
                     </div>
                     <!-- Manufactura -->
-                    <div class="bg-white border border-gray-200 p-8 btn-square hover:border-brand-blue transition-colors">
-                        <i data-lucide="factory" class="w-10 h-10 text-brand-blue mb-5"></i>
-                        <h3 class="text-xl font-extrabold text-brand-navy uppercase tracking-wider mb-4">Manufactura</h3>
-                        <p class="text-sm text-gray-600 font-medium mb-4 leading-relaxed">Capacidad de crear cualquier producto mediante manufactura, incorporando detalles profesionales y técnicas que proveedores comunes no pueden ofrecer.</p>
+                    <div class="glass-card p-8 btn-square hover:border-[#009aeb] transition-colors">
+                        <i data-lucide="factory" class="w-10 h-10 text-[#009aeb] mb-5"></i>
+                        <h3 class="text-xl font-extrabold text-white uppercase tracking-wider mb-4">Manufactura</h3>
+                        <p class="text-sm text-gray-300 font-medium mb-4 leading-relaxed">Capacidad de crear cualquier producto mediante manufactura, incorporando detalles profesionales y técnicas que proveedores comunes no pueden ofrecer.</p>
                         <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Industrial · Corporativo</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Seguridad · Médico</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Restaurantes</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Resistente al fuego (FR)</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Industrial · Corporativo</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Seguridad · Médico</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Restaurantes</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Resistente al fuego (FR)</li>
                         </ul>
                     </div>
                     <!-- Uniformes Corporativos -->
-                    <div class="bg-brand-navy text-white p-8 btn-square">
-                        <i data-lucide="briefcase" class="w-10 h-10 text-brand-blue mb-5"></i>
-                        <h3 class="text-xl font-extrabold uppercase tracking-wider mb-4">Uniformes Corporativos y Ropa de Marca</h3>
+                    <div class="bg-[#009aeb]/10 border border-[#009aeb]/40 p-8 btn-square">
+                        <i data-lucide="briefcase" class="w-10 h-10 text-[#009aeb] mb-5"></i>
+                        <h3 class="text-xl font-extrabold text-white uppercase tracking-wider mb-4">Uniformes Corporativos y Ropa de Marca</h3>
                         <p class="text-sm text-gray-300 font-medium leading-relaxed mb-5">Uniformes corporativos y ropa de marca totalmente personalizados, diseñados para destacar. Nos ocupamos de todos los detalles.</p>
                         <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Diseño y acabados</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Soluciones de terminación</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-brand-blue shrink-0"></i>Logística y almacenamiento</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Diseño y acabados</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Soluciones de terminación</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check" class="w-4 h-4 text-[#009aeb] shrink-0"></i>Logística y almacenamiento</li>
                         </ul>
-                        <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="mt-8 w-full bg-brand-blue text-white font-bold text-sm uppercase tracking-widest py-3 hover:bg-blue-500 transition-colors btn-square">
+                        <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="mt-8 w-full bg-[#009aeb] text-white font-bold text-sm uppercase tracking-widest py-3 hover:bg-blue-500 transition-colors btn-square">
                             Solicitar Cotización
                         </button>
                     </div>
@@ -671,7 +707,7 @@
         </section>
 
         <!-- SECCIÓN 2: BENEFICIOS -->
-        <section id="beneficios" class="py-20 bg-gray-50 border-t border-b border-gray-200">
+        <section id="beneficios" class="py-20 bg-gray-50 border-t border-b border-gray-200 fade-up">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-200 pb-4">
                     <div>
@@ -907,7 +943,7 @@
         </section>
 
         <!-- SOBRE NOSOTROS -->
-        <section id="nosotros" class="py-20 bg-white border-t border-gray-100">
+        <section id="nosotros" class="py-20 bg-white border-t border-gray-100 fade-up">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     <div>
@@ -1100,6 +1136,192 @@
         <!-- Sección ID contacto (alias para scroll) -->
         <div id="contacto"></div>
     </div> <!-- FIN VISTA PRINCIPAL -->
+
+    <!-- ========================================== -->
+    <!-- VISTA CATÁLOGO (SPA inline)                -->
+    <!-- ========================================== -->
+    <div id="view-catalogo" class="hidden fade-in">
+        <!-- Breadcrumb header -->
+        <div class="bg-brand-navy py-4 border-b border-brand-navy/80">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-3">
+                <button onclick="mostrarVistaPrincipal()" class="text-gray-300 hover:text-white text-xs font-semibold uppercase tracking-wider flex items-center gap-1 transition-colors">
+                    <i data-lucide="home" class="w-3 h-3"></i> Inicio
+                </button>
+                <i data-lucide="chevron-right" class="w-3 h-3 text-gray-500"></i>
+                <span class="text-white text-xs font-bold uppercase tracking-wider" id="breadcrumb-cat">Catálogo</span>
+            </div>
+        </div>
+
+        <!-- Catálogo Grid -->
+        <section class="py-16 bg-white min-h-screen">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-10 flex flex-col md:flex-row justify-between items-end gap-4 border-b border-gray-200 pb-6">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase" id="titulo-catalogo">Catálogo Completo</h2>
+                        <div class="w-16 h-1 bg-brand-blue mt-3"></div>
+                    </div>
+                    <span class="text-gray-400 font-medium text-sm" id="resultados-contador">Mostrando catálogo</span>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <!-- Sidebar -->
+                    <aside class="w-full lg:w-64 shrink-0 space-y-4">
+                        <div class="bg-gray-50 p-4 border border-gray-200 btn-square">
+                            <div class="relative">
+                                <input type="text" id="buscador" onkeyup="buscarProductos()"
+                                    placeholder="Buscar prenda..."
+                                    class="w-full pl-9 pr-4 py-2.5 border border-gray-200 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-all font-medium text-sm btn-square bg-white">
+                                <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-3"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 p-5 border border-gray-200 btn-square">
+                            <h3 class="font-extrabold text-brand-navy mb-4 uppercase tracking-widest text-xs">Categorías</h3>
+                            <div class="space-y-1 flex flex-col" id="contenedor-filtros">
+                                <button onclick="filtrarCatalogo('todos')" class="filtro-btn text-left px-4 py-2.5 font-semibold text-brand-blue bg-brand-light transition-colors text-sm btn-square" data-cat="todos">Todos los productos</button>
+                                <button onclick="filtrarCatalogo('corporativo')" class="filtro-btn text-left px-4 py-2.5 font-medium text-gray-600 hover:bg-gray-100 transition-colors text-sm btn-square" data-cat="corporativo">Corporativo</button>
+                                <button onclick="filtrarCatalogo('industrial')" class="filtro-btn text-left px-4 py-2.5 font-medium text-gray-600 hover:bg-gray-100 transition-colors text-sm btn-square" data-cat="industrial">Industrial</button>
+                                <button onclick="filtrarCatalogo('restaurante')" class="filtro-btn text-left px-4 py-2.5 font-medium text-gray-600 hover:bg-gray-100 transition-colors text-sm btn-square" data-cat="restaurante">Restaurante</button>
+                                <button onclick="filtrarCatalogo('medico')" class="filtro-btn text-left px-4 py-2.5 font-medium text-gray-600 hover:bg-gray-100 transition-colors text-sm btn-square" data-cat="medico">Médico</button>
+                                <button onclick="filtrarCatalogo('calzado')" class="filtro-btn text-left px-4 py-2.5 font-medium text-gray-600 hover:bg-gray-100 transition-colors text-sm btn-square" data-cat="calzado">Calzado</button>
+                                <button onclick="filtrarCatalogo('epp')" class="filtro-btn text-left px-4 py-2.5 font-medium text-gray-600 hover:bg-gray-100 transition-colors text-sm btn-square" data-cat="epp">EPP</button>
+                                <button onclick="filtrarCatalogo('accesorios')" class="filtro-btn text-left px-4 py-2.5 font-medium text-gray-600 hover:bg-gray-100 transition-colors text-sm btn-square" data-cat="accesorios">Accesorios</button>
+                            </div>
+                        </div>
+
+                        <!-- CTA sidebar -->
+                        <div class="bg-brand-navy text-white p-5 btn-square">
+                            <p class="text-xs font-bold uppercase tracking-widest text-brand-blue mb-2">¿Necesitas ayuda?</p>
+                            <p class="text-sm text-gray-300 mb-4 leading-relaxed">Conecta con un especialista para cotizar tu programa.</p>
+                            <button onclick="mostrarVistaPrincipalYScroll('cotiza')" class="w-full bg-brand-blue text-white text-xs font-bold uppercase tracking-widest py-3 hover:bg-blue-500 transition-colors btn-square">
+                                Solicitar Cotización
+                            </button>
+                        </div>
+                    </aside>
+
+                    <!-- Productos Area -->
+                    <main class="flex-1">
+                        <div id="grid-productos" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <!-- Inyectado por JS -->
+                        </div>
+                        <div id="sin-resultados" class="hidden text-center py-20 bg-gray-50 border border-gray-100 btn-square">
+                            <i data-lucide="package-x" class="w-16 h-16 text-gray-300 mx-auto mb-4"></i>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">No encontramos prendas</h3>
+                            <button onclick="filtrarCatalogo('todos')" class="mt-2 text-brand-blue font-bold hover:underline text-sm">Ver todo el catálogo</button>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+    </div> <!-- FIN VISTA CATÁLOGO -->
+
+    <!-- ========================================== -->
+    <!-- VISTA DE PRODUCTO INDIVIDUAL               -->
+    <!-- ========================================== -->
+    <div id="view-product" class="hidden fade-in">
+        <!-- Breadcrumb -->
+        <div class="bg-brand-navy py-4 border-b border-brand-navy/80">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-3">
+                <button onclick="mostrarVistaPrincipal()" class="text-gray-300 hover:text-white text-xs font-semibold uppercase tracking-wider flex items-center gap-1 transition-colors">
+                    <i data-lucide="home" class="w-3 h-3"></i> Inicio
+                </button>
+                <i data-lucide="chevron-right" class="w-3 h-3 text-gray-500"></i>
+                <button onclick="regresarAlCatalogo()" class="text-gray-300 hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors">Catálogo</button>
+                <i data-lucide="chevron-right" class="w-3 h-3 text-gray-500"></i>
+                <span class="text-white text-xs font-bold uppercase tracking-wider">Producto</span>
+            </div>
+        </div>
+
+        <div class="py-12 pb-20 bg-gray-50 min-h-screen">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Botón regresar -->
+                <button onclick="regresarAlCatalogo()" class="flex items-center gap-2 text-brand-navy hover:text-brand-blue font-extrabold uppercase tracking-widest text-sm mb-8 transition-colors btn-square bg-white border border-gray-200 px-6 py-3 w-fit">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al catálogo
+                </button>
+
+                <!-- Contenedor Producto -->
+                <div class="bg-white border border-gray-200 mb-12 btn-square">
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Imagen Producto -->
+                        <div class="md:w-1/2 min-h-[400px] bg-white relative border-r border-gray-100 p-8 flex items-center justify-center">
+                            <img id="pd-img" src="" alt="Producto" class="max-h-[500px] object-contain w-full">
+                            <div id="pd-etiqueta" class="absolute top-4 left-4 text-xs font-bold px-3 py-1.5 shadow-sm uppercase tracking-widest"></div>
+                        </div>
+                        <!-- Info Producto -->
+                        <div class="md:w-1/2 p-8 md:p-14 flex flex-col justify-center bg-gray-50">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span id="pd-categoria" class="text-white bg-brand-navy px-3 py-1 font-bold uppercase text-[10px] tracking-widest btn-square"></span>
+                                <span class="w-1.5 h-1.5 bg-gray-300"></span>
+                                <span id="pd-marca" class="text-gray-500 font-extrabold uppercase text-xs tracking-widest"></span>
+                            </div>
+                            <h1 id="pd-title" class="text-3xl md:text-5xl font-black text-brand-navy mb-6 leading-tight uppercase tracking-tight"></h1>
+                            <div class="w-20 h-1.5 bg-brand-blue mb-8"></div>
+                            <p id="pd-desc" class="text-gray-600 mb-10 leading-relaxed text-lg font-medium"></p>
+                            <div class="grid grid-cols-2 gap-4 mb-10">
+                                <div class="bg-white p-5 border border-gray-200 btn-square">
+                                    <i data-lucide="scissors" class="w-6 h-6 text-brand-blue mb-3"></i>
+                                    <h4 class="font-extrabold text-xs uppercase tracking-widest text-brand-navy mb-1">Personalizable</h4>
+                                    <p class="text-sm font-medium text-gray-500">Bordado o Serigrafía</p>
+                                </div>
+                                <div class="bg-white p-5 border border-gray-200 btn-square">
+                                    <i data-lucide="ruler" class="w-6 h-6 text-brand-blue mb-3"></i>
+                                    <h4 class="font-extrabold text-xs uppercase tracking-widest text-brand-navy mb-1">Tallas</h4>
+                                    <p class="text-sm font-medium text-gray-500">CH, M, G, XG, XXG</p>
+                                </div>
+                            </div>
+                            <button id="btn-whatsapp-prod" class="w-full bg-brand-navy text-white font-extrabold py-5 hover:bg-brand-blue transition-colors flex items-center justify-center gap-3 text-sm uppercase tracking-widest btn-square">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                Cotización Rápida
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario del producto -->
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-14 border border-gray-200 btn-square">
+                    <div class="text-center mb-10">
+                        <h3 class="text-2xl font-black text-brand-navy uppercase tracking-tight">Solicitud Detallada</h3>
+                        <p class="text-gray-500 font-medium mt-2">Cotización por volumen específico para este modelo.</p>
+                    </div>
+                    <form onsubmit="event.preventDefault(); showToast('Cotización enviada. Te contactaremos pronto.', 'success'); this.reset();">
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Modelo Seleccionado</label>
+                                <input type="text" id="form-pd-nombre" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 text-brand-navy font-bold outline-none cursor-not-allowed btn-square" readonly>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Nombre Completo</label>
+                                    <input type="text" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold" required>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Empresa</label>
+                                    <input type="text" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold" required>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Correo Electrónico</label>
+                                    <input type="email" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold" required>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Teléfono</label>
+                                    <input type="tel" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Volumen y Requerimientos</label>
+                                <textarea rows="4" class="w-full px-4 py-3 bg-white border border-gray-300 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-medium resize-none" placeholder="Ej: Requiero 50 piezas, tallas variadas, bordado frontal..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-brand-navy text-white font-extrabold text-sm uppercase tracking-widest py-5 hover:bg-brand-blue transition-colors btn-square mt-2">
+                                Enviar Solicitud Formal
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> <!-- FIN VISTA PRODUCTO -->
 
     <!-- ========================================== -->
     <!-- VISTA DE ADMINISTRACIÓN Y MODALES          -->
@@ -1341,13 +1563,13 @@
                 <!-- Categorías -->
                 <div class="flex flex-col gap-3">
                     <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-2">Categorías</h4>
-                    <button onclick="window.location.href='catalogo.html?cat=corporativo'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Corporativo</button>
-                    <button onclick="window.location.href='catalogo.html?cat=industrial'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Industrial</button>
-                    <button onclick="window.location.href='catalogo.html?cat=restaurante'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Restaurante</button>
-                    <button onclick="window.location.href='catalogo.html?cat=medico'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Médico</button>
-                    <button onclick="window.location.href='catalogo.html?cat=calzado'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Calzado</button>
-                    <button onclick="window.location.href='catalogo.html?cat=epp'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">EPP</button>
-                    <button onclick="window.location.href='catalogo.html?cat=accesorios'" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Accesorios</button>
+                    <button onclick="mostrarCatalogo('corporativo')" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Corporativo</button>
+                    <button onclick="mostrarCatalogo('industrial')" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Industrial</button>
+                    <button onclick="mostrarCatalogo('restaurante')" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Restaurante</button>
+                    <button onclick="mostrarCatalogo('medico')" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Médico</button>
+                    <button onclick="mostrarCatalogo('calzado')" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Calzado</button>
+                    <button onclick="mostrarCatalogo('epp')" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">EPP</button>
+                    <button onclick="mostrarCatalogo('accesorios')" class="text-gray-400 hover:text-white transition-colors text-sm font-medium w-fit">Accesorios</button>
                 </div>
 
                 <!-- Empresa -->
@@ -1505,23 +1727,51 @@
 
         let categoriaActual = 'todos';
 
-        // --- SISTEMA DE VISTAS ---
-        function mostrarVistaPrincipal() {
-            const vp = document.getElementById('view-product');
-            if (vp) vp.classList.add('hidden');
+        // --- SISTEMA DE VISTAS (ONE-PAGE SPA) ---
+        function ocultarTodasLasVistas() {
+            document.getElementById('view-main').classList.add('hidden');
+            document.getElementById('view-catalogo').classList.add('hidden');
+            document.getElementById('view-product').classList.add('hidden');
             document.getElementById('view-admin').classList.add('hidden');
+        }
+
+        function mostrarVistaPrincipal() {
+            ocultarTodasLasVistas();
             document.getElementById('view-main').classList.remove('hidden');
             window.scrollTo(0, 0);
         }
 
         function mostrarVistaPrincipalYScroll(seccionId, categoria = null) {
-            mostrarVistaPrincipal();
-            if (categoria) {
-                filtrarCatalogo(categoria);
-            }
+            ocultarTodasLasVistas();
+            document.getElementById('view-main').classList.remove('hidden');
+            if (categoria) filtrarCatalogo(categoria);
             setTimeout(() => {
-                document.getElementById(seccionId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const el = document.getElementById(seccionId);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 100);
+        }
+
+        function mostrarCatalogo(cat) {
+            ocultarTodasLasVistas();
+            document.getElementById('view-catalogo').classList.remove('hidden');
+            document.getElementById('mobile-menu').classList.add('hidden');
+            filtrarCatalogo(cat || 'todos');
+            window.scrollTo(0, 0);
+        }
+
+        function mostrarCatalogoConBusqueda(query) {
+            if (!query || query.trim() === '') return;
+            mostrarCatalogo('todos');
+            setTimeout(() => {
+                document.getElementById('buscador').value = query;
+                buscarProductos();
+            }, 50);
+        }
+
+        function regresarAlCatalogo() {
+            ocultarTodasLasVistas();
+            document.getElementById('view-catalogo').classList.remove('hidden');
+            window.scrollTo(0, 0);
         }
 
         function verProductoDetalle(id) {
@@ -1536,11 +1786,9 @@
 
             const etiquetaEl = document.getElementById('pd-etiqueta');
             etiquetaEl.innerText = prod.etiqueta;
-            
             let labelClass = "bg-gray-100 text-brand-navy border border-gray-200";
-            if(prod.etiqueta.toLowerCase().includes('premium')) labelClass = "bg-brand-navy text-white";
-            if(prod.etiqueta.toLowerCase().includes('rudo')) labelClass = "bg-brand-blue text-white";
-            
+            if (prod.etiqueta.toLowerCase().includes('premium')) labelClass = "bg-brand-navy text-white";
+            if (prod.etiqueta.toLowerCase().includes('rudo')) labelClass = "bg-brand-blue text-white";
             etiquetaEl.className = `absolute top-4 left-4 text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 btn-square shadow-sm ${labelClass}`;
 
             document.getElementById('form-pd-nombre').value = prod.nombre;
@@ -1551,9 +1799,10 @@
             const linkWa = `https://wa.me/${telWhatsApp}?text=${encodeURIComponent(mensaje)}`;
             document.getElementById('btn-whatsapp-prod').onclick = () => window.open(linkWa, '_blank');
 
-            document.getElementById('view-main').classList.add('hidden');
+            ocultarTodasLasVistas();
             document.getElementById('view-product').classList.remove('hidden');
             window.scrollTo(0, 0);
+            lucide.createIcons();
         }
 
         // --- CATÁLOGO ---
@@ -1607,7 +1856,8 @@
 
         function filtrarCatalogo(categoria) {
             categoriaActual = categoria;
-            document.getElementById('buscador').value = '';
+            const buscador = document.getElementById('buscador');
+            if (buscador) buscador.value = '';
 
             const botones = document.querySelectorAll('.filtro-btn');
             botones.forEach(btn => {
@@ -1620,7 +1870,6 @@
                 }
             });
 
-            const titulo = document.getElementById('titulo-catalogo');
             const titulos = {
                 'todos':       'Catálogo Completo',
                 'industrial':  'Línea Industrial',
@@ -1631,7 +1880,14 @@
                 'epp':         'EPP y Alta Visibilidad',
                 'accesorios':  'Accesorios'
             };
-            titulo.innerText = titulos[categoria] || 'Catálogo Completo';
+            const tituloTexto = titulos[categoria] || 'Catálogo Completo';
+
+            const titulo = document.getElementById('titulo-catalogo');
+            if (titulo) titulo.innerText = tituloTexto;
+
+            // Actualizar breadcrumb
+            const breadcrumb = document.getElementById('breadcrumb-cat');
+            if (breadcrumb) breadcrumb.innerText = tituloTexto;
 
             let filtrados = categoria === 'todos' ? productos : productos.filter(p => p.categoria === categoria);
             renderProductos(filtrados);
@@ -1674,17 +1930,14 @@
         }
 
         function mostrarAdminPanel() {
-            document.getElementById('view-main').classList.add('hidden');
-            document.getElementById('view-product').classList.add('hidden');
+            ocultarTodasLasVistas();
             document.getElementById('view-admin').classList.remove('hidden');
             window.scrollTo(0, 0);
             renderAdminTable();
         }
 
         function cerrarAdmin() {
-            document.getElementById('view-admin').classList.add('hidden');
             mostrarVistaPrincipalYScroll('inicio');
-            renderProductos(productos);
         }
 
         function cambiarTabAdmin(tab) {
@@ -1870,16 +2123,27 @@
         }
 
         function realizarBusquedaGlobal(query) {
-            if(!query || query.trim() === '') return;
+            if (!query || query.trim() === '') return;
             document.getElementById('mobile-menu').classList.add('hidden');
-            window.location.href = 'catalogo.html?q=' + encodeURIComponent(query.trim());
+            mostrarCatalogoConBusqueda(query.trim());
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            renderProductos(productos);
             const btnMenu = document.getElementById('mobile-menu-btn');
             const menuMovil = document.getElementById('mobile-menu');
             btnMenu.addEventListener('click', () => menuMovil.classList.toggle('hidden'));
+
+            // Scroll fade-up animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
         });
     </script>
     <!-- Popup de Bienvenida (UPE FR vs Uniformes) -->
