@@ -1224,12 +1224,12 @@
                     <p class="text-gray-500 mb-6">Actualmente estás operando con el perfil maestro del sistema.</p>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                        <div class="bg-gray-50 p-4 border border-gray-200 btn-square"
+                        <div class="bg-gray-50 p-4 border border-gray-200 btn-square">
                             <label
                                 class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Usuario</label>
                             <p class="font-semibold text-brand-navy">Admin Principal</p>
                         </div>
-                        <div class="bg-gray-50 p-4 border border-gray-200 btn-square"
+                        <div class="bg-gray-50 p-4 border border-gray-200 btn-square">
                             <label
                                 class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Permisos</label>
                             <p class="font-semibold text-brand-navy text-green-600">Acceso Total (Catálogo)</p>
@@ -1593,107 +1593,9 @@
 
 
 
-        // --- CATÁLOGO ---
-        function renderProductos(lista) {
-            const grid = document.getElementById('grid-productos');
-            const sinResultados = document.getElementById('sin-resultados');
-            const contador = document.getElementById('resultados-contador');
-
-            grid.innerHTML = '';
-
-            if (lista.length === 0) {
-                grid.classList.add('hidden');
-                sinResultados.classList.remove('hidden');
-                contador.innerText = "0 productos encontrados";
-            } else {
-                grid.classList.remove('hidden');
-                sinResultados.classList.add('hidden');
-                contador.innerText = `Mostrando ${lista.length} productos`;
-
-                lista.forEach(prod => {
-                    let labelClass = "bg-gray-100 text-brand-navy";
-                    
-                    if(prod.etiqueta.toLowerCase().includes('premium')) labelClass = "bg-brand-navy text-white";
-                    if(prod.etiqueta.toLowerCase().includes('rudo')) labelClass = "bg-brand-blue text-white";
-
-                    const cardHTML = `
-                        <div class="bg-white border border-gray-200 hover:border-brand-blue transition-colors group flex flex-col h-full cursor-pointer relative" onclick="verProductoDetalle(${prod.id})">
-                            <div class="absolute top-4 left-4 ${labelClass} text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider z-20 btn-square shadow-sm">
-                                ${prod.etiqueta}
-                            </div>
-                            <div class="relative h-72 overflow-hidden bg-white p-4 flex items-center justify-center">
-                                <img src="${prod.img}" alt="${prod.nombre}" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500 blend-multiply pt-8">
-                            </div>
-                            <div class="p-6 flex flex-col flex-grow border-t border-gray-100 z-10 bg-white relative">
-                                <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1 block">${prod.marca || 'GENÉRICO'}</span>
-                                <h3 class="text-base font-bold text-brand-navy leading-snug group-hover:text-brand-blue transition-colors mt-2 mb-4">${prod.nombre}</h3>
-                                
-                                <div class="mt-auto pt-4 flex gap-2">
-                                    <span class="w-full text-center py-2 bg-gray-50 text-brand-navy text-xs font-bold uppercase tracking-widest border border-gray-200 group-hover:bg-brand-navy group-hover:text-white transition-colors">
-                                        Ver Detalles
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    grid.insertAdjacentHTML('beforeend', cardHTML);
-                });
-                lucide.createIcons();
-            }
-        }
-
-        function filtrarCatalogo(categoria) {
-            categoriaActual = categoria;
-            const buscador = document.getElementById('buscador');
-            if (buscador) buscador.value = '';
-
-            const botones = document.querySelectorAll('.filtro-btn');
-            botones.forEach(btn => {
-                if (btn.dataset.cat === categoria) {
-                    btn.classList.add('bg-brand-light', 'text-brand-blue');
-                    btn.classList.remove('text-gray-600', 'hover:bg-gray-100');
-                } else {
-                    btn.classList.remove('bg-brand-light', 'text-brand-blue');
-                    btn.classList.add('text-gray-600', 'hover:bg-gray-100');
-                }
-            });
-
-            const titulos = {
-                'todos':       'Catálogo Completo',
-                'industrial':  'Línea Industrial',
-                'corporativo': 'Línea Corporativa',
-                'restaurante': 'Línea Restaurante',
-                'medico':      'Línea Médica',
-                'calzado':     'Calzado de Seguridad',
-                'epp':         'EPP y Alta Visibilidad',
-                'accesorios':  'Accesorios'
-            };
-            const tituloTexto = titulos[categoria] || 'Catálogo Completo';
-
-            const titulo = document.getElementById('titulo-catalogo');
-            if (titulo) titulo.innerText = tituloTexto;
-
-            // Actualizar breadcrumb
-            const breadcrumb = document.getElementById('breadcrumb-cat');
-            if (breadcrumb) breadcrumb.innerText = tituloTexto;
-
-            let filtrados = categoria === 'todos' ? productos : productos.filter(p => p.categoria === categoria);
-            renderProductos(filtrados);
-        }
-
         function manejarMenuMovil(seccionId, categoria = null) {
             document.getElementById('mobile-menu').classList.add('hidden');
             mostrarVistaPrincipalYScroll(seccionId, categoria);
-        }
-
-        function buscarProductos() {
-            const query = document.getElementById('buscador').value.toLowerCase();
-            let filtrados = categoriaActual === 'todos' ? productos : productos.filter(p => p.categoria === categoriaActual);
-
-            if (query.trim() !== '') {
-                filtrados = filtrados.filter(p => p.nombre.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query));
-            }
-            renderProductos(filtrados);
         }
 
         // --- SISTEMA DE ADMINISTRACIÓN ---
