@@ -23,7 +23,8 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { font-family: 'Poppins', sans-serif; }
+        html { overflow-x: hidden; }
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; max-width: 100%; position: relative; }
 
         /* Marquee */
         @keyframes marquee {
@@ -40,7 +41,8 @@
 
         /* Nav */
         .top-bar { background-color: #0a2540; color: #fff; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
-        .header-main { border-bottom: 2px solid #f3f4f6; }
+        .header-main { border-bottom: 2px solid #f3f4f6; overflow-x: clip; }
+        .mega-menu { max-width: calc(100vw - 2rem); }
         .nav-link {
             position: relative; font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
             letter-spacing: 0.04em; color: #111827; padding: 1rem 0; transition: color 0.2s; white-space: nowrap;
@@ -223,8 +225,8 @@
     </section>
 
     <!-- Marcas Marquee -->
-    <div class="bg-white border-b border-gray-100 py-5 overflow-hidden">
-        <div class="relative w-full overflow-hidden">
+    <div class="bg-white border-b border-gray-100 py-5 overflow-hidden" style="max-width:100vw;">
+        <div class="relative w-full overflow-hidden" style="contain:strict;">
             <div class="pointer-events-none absolute left-0 top-0 h-full w-16 z-10" style="background:linear-gradient(to right,#fff,transparent)"></div>
             <div class="pointer-events-none absolute right-0 top-0 h-full w-16 z-10" style="background:linear-gradient(to left,#fff,transparent)"></div>
             <div class="marquee-track">

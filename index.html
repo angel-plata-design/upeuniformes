@@ -38,8 +38,14 @@
     <!-- Iconos Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        html {
+            overflow-x: hidden;
+        }
         body {
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
         }
 
         /* ✏️ Estilos base del Slider del Hero */
@@ -145,6 +151,7 @@
             transform: translateY(10px);
             transition: all 0.3s ease;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            max-width: calc(100vw - 2rem);
         }
 
         .nav-item-group:hover .mega-menu {
@@ -257,7 +264,7 @@
     </div>
 
     <!-- Navegación Principal -->
-    <nav class="header-main w-full z-40 bg-white sticky top-0 transition-all duration-300">
+    <nav class="header-main w-full z-40 bg-white sticky top-0 transition-all duration-300" style="overflow-x:clip;">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 md:h-[4.5rem]">
                 
@@ -569,9 +576,9 @@
         </section>
 
         <!-- Sección Marcas (Marquee) -->
-        <section id="marcas" class="py-12 bg-white border-t border-gray-100 overflow-hidden">
+        <section id="marcas" class="py-12 bg-white border-t border-gray-100 overflow-hidden" style="max-width:100vw;">
             <p class="text-xs font-bold text-gray-400 uppercase tracking-widest text-center mb-8">Marcas con las que trabajamos</p>
-            <div class="relative w-full overflow-hidden">
+            <div class="relative w-full overflow-hidden" style="contain:strict;">
                 <!-- Fades laterales -->
                 <div class="pointer-events-none absolute left-0 top-0 h-full w-24 z-10" style="background:linear-gradient(to right,#fff,transparent)"></div>
                 <div class="pointer-events-none absolute right-0 top-0 h-full w-24 z-10" style="background:linear-gradient(to left,#fff,transparent)"></div>
