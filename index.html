@@ -38,7 +38,11 @@
     <!-- Iconos Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        html, body {
+        html {
+            width: 100%;
+            max-width: 100vw;
+        }
+        body {
             overflow-x: hidden;
             width: 100%;
             max-width: 100vw;
@@ -1413,7 +1417,6 @@
                     <div class="flex gap-4">
                         <a href="#" aria-label="Síguenos en Facebook" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
                         <a href="#" aria-label="Síguenos en Instagram" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                        <a href="#" aria-label="Síguenos en LinkedIn" class="w-9 h-9 bg-white/5 hover:bg-brand-blue border border-white/10 flex items-center justify-center transition-colors btn-square" title="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
                     </div>
                 </div>
 
@@ -1906,9 +1909,9 @@
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY || document.documentElement.scrollTop;
 
-                // Back-to-top: show after 400px
+                // Back-to-top: show after 200px
                 if (btnTop) {
-                    if (scrollY > 400) {
+                    if (scrollY > 200) {
                         btnTop.style.opacity = '1';
                         btnTop.style.pointerEvents = 'auto';
                     } else {
