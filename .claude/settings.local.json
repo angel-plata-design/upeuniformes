@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/angel/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/0c81912c-5e31-4224-b389-f3e9ea9c8d81/7f8b5c58-33d8-4ea2-8eeb-37d609367c13/skills/docx/**)",
+      "Bash(pandoc --track-changes=all \"C:\\\\Users\\\\angel\\\\Downloads\\\\UPE_Uniformes_Profesionales_3.docx\" -o output.md)",
+      "Bash(python \"C:\\\\Users\\\\angel\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\0c81912c-5e31-4224-b389-f3e9ea9c8d81\\\\7f8b5c58-33d8-4ea2-8eeb-37d609367c13\\\\skills\\\\docx\\\\scripts\\\\office\\\\unpack.py\" \"C:\\\\Users\\\\angel\\\\Downloads\\\\UPE_Uniformes_Profesionales_3.docx\" \"C:\\\\Users\\\\angel\\\\Downloads\\\\UPE_unpacked\")",
+      "Bash(python3 -c ' *)",
+      "Bash(python -c ' *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "PowerShell(gh pr list --repo flowmx/upeuniformes --state open 2>&1)",
+      "Bash(git push *)",
+      "Bash(git remote *)",
+      "WebFetch(domain:angel-plata-design.github.io)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(gh api *)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Read(//c/Users/angel/**)",
+      "Bash(uipro init *)",
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"b2b uniforms workwear industrial corporate professional\" --design-system -p \"UPE Uniformes\")",
+      "Bash(where python *)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"b2b uniforms workwear industrial corporate professional\" --design-system -p \"UPE Uniformes\")",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"trust authority conversion b2b enterprise\" --domain ux)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"corporate industrial workwear\" --domain landing)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"accessibility keyboard navigation forms\" --domain ux)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"layout responsive html-tailwind\" --stack html-tailwind)",
+      "Bash(powershell -Command \"\\(Get-Content catalogo.html\\) -replace \\\\\"window\\\\.location\\\\.href='marcas\\\\.html'\\\\\", \\\\\"window.location.href='index.html#marcas'\\\\\" | Set-Content catalogo.html -Encoding UTF8\")",
+      "Bash(git checkout *)",
+      "Read(//tmp/**)",
+      "Bash(git clone *)",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "Bash(dir \"C:\\\\Users\\\\angel\" /b)",
+      "Bash(findstr -i \"upefr\\\\|upe-fr\\\\|upefr-clone\")",
+      "Bash(dir \"C:\\\\Users\\\\angel\\\\Downloads\" /b)",
+      "Bash(findstr -i \"upe\")",
+      "Bash(node -e ' *)",
+      "mcp__Claude_in_Chrome__javascript_tool"
+    ]
+  }
+}
