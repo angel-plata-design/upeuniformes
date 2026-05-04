@@ -23,8 +23,9 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        html, body { overflow-x: hidden; width: 100%; max-width: 100vw; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; position: relative; }
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { overflow-x: clip; width: 100%; max-width: 100vw; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; position: relative; margin: 0; }
 
         /* Marquee */
         @keyframes marquee {
@@ -45,7 +46,7 @@
 
         /* Nav */
         .top-bar { background-color: #0a2540; color: #fff; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
-        .header-main { border-bottom: 2px solid #f3f4f6; }
+        .header-main { border-bottom: 2px solid #f3f4f6; position: fixed!important; top: 0; left: 0; right: 0; z-index: 40; }
         .mega-menu { max-width: calc(100vw - 2rem); }
         .nav-link {
             position: relative; font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
@@ -104,7 +105,7 @@
 </div>
 
 <!-- Navegación -->
-<nav class="header-main w-full z-40 bg-white transition-all duration-300" style="position:-webkit-sticky;position:sticky;top:0;">
+<nav class="header-main w-full bg-white shadow-sm transition-all duration-300">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16 md:h-[4.5rem]">
             <!-- Logo -->
@@ -202,6 +203,8 @@
         </div>
     </div>
 </nav>
+<!-- Spacer for fixed header -->
+<div class="h-16 md:h-[4.5rem]"></div>
 
 <!-- ============================================ -->
 <!-- VISTA TIENDA                                 -->
@@ -1077,7 +1080,7 @@
         let labelClass = "bg-gray-100 text-brand-navy border border-gray-200";
         if (prod.etiqueta.toLowerCase().includes('premium')) labelClass = "bg-brand-navy text-white";
         if (prod.etiqueta.toLowerCase().includes('rudo') || prod.etiqueta.toLowerCase().includes('visibilidad')) labelClass = "bg-brand-blue text-white";
-        etiquetaEl.className = `absolute top-4 left-4 text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 btn-square shadow-sm ${labelClass}`;
+        etiquetaEl.className = `absolute top-4 left-4 text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm ${labelClass}`;
 
         document.getElementById('form-pd-nombre').value = prod.nombre;
 
@@ -1119,6 +1122,22 @@
                 history.replaceState({ pid: id }, '', '#p-' + id);
                 verProducto(id);
             }
+        }
+    })();
+
+    // Handle query params from index.html (?cat=X or ?q=X)
+    (function initQueryParams() {
+        const params = new URLSearchParams(location.search);
+        const cat = params.get('cat');
+        const q = params.get('q');
+        if (cat && cat !== 'todos') {
+            setTimeout(() => filtrarCatalogo(cat), 100);
+        } else if (q) {
+            setTimeout(() => {
+                const buscador = document.getElementById('buscador');
+                if (buscador) { buscador.value = q; buscarProductos(); }
+                document.getElementById('tienda').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
         }
     })();
 

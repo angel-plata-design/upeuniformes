@@ -44,7 +44,8 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        html{width:100%;max-width:100vw}body{overflow-x:hidden;width:100%;max-width:100vw;font-family:'Plus Jakarta Sans',sans-serif;position:relative}
+        *,*::before,*::after{box-sizing:border-box}
+        html{width:100%;max-width:100vw;overflow-x:clip}body{overflow-x:clip;width:100%;max-width:100vw;font-family:'Plus Jakarta Sans',sans-serif;position:relative;margin:0}
         #hero-slider{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-2;background-size:cover;background-position:center;transition:background-image 1.5s ease-in-out}
         #hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to right,rgba(0,0,0,.92) 0%,rgba(0,0,0,.60) 55%,rgba(0,0,0,.15) 100%);z-index:-1}
         @media(prefers-reduced-motion:reduce){#hero-slider{transition:none}.fade-in{animation:none}}
@@ -52,7 +53,7 @@
         @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.fade-in{animation:fadeIn .4s ease-in-out}
         @keyframes popIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.modal-animate{animation:popIn .3s ease-out forwards}
         .top-bar{background-color:#0a2540;color:#fff;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase}
-        .header-main{border-bottom:2px solid #f3f4f6}
+        .header-main{border-bottom:2px solid #f3f4f6;position:fixed!important;top:0;left:0;right:0;z-index:40}
         .nav-link{position:relative;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:#111827;padding:1rem 0;transition:color .2s;white-space:nowrap}
         .nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0%;height:3px;background-color:#009aeb;transition:width .3s}
         .nav-link:hover{color:#009aeb}.nav-link:hover::after{width:100%}
@@ -97,7 +98,7 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="header-main w-full z-40 bg-white transition-all duration-300" style="position:-webkit-sticky;position:sticky;top:0;">
+    <nav class="header-main w-full bg-white shadow-sm transition-all duration-300">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 md:h-[4.5rem]">
                 <div class="flex-shrink-0 cursor-pointer flex items-center" onclick="scrollToSection('inicio')">
@@ -175,16 +176,7 @@
         </div>
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl max-h-[85vh] overflow-y-auto z-50">
             <div class="px-6 py-4 space-y-1 flex flex-col">
-                <div class="py-4 border-b border-gray-100">
-                    <span class="block text-sm font-extrabold text-gray-400 uppercase tracking-widest mb-3">Categorías</span>
-                    <button onclick="filtrarCatalogo('todos');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Ver Todo</button>
-                    <button onclick="filtrarCatalogo('corporativo');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Corporativo</button>
-                    <button onclick="filtrarCatalogo('industrial');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Industrial</button>
-                    <button onclick="filtrarCatalogo('restaurante');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Restaurante</button>
-                    <button onclick="filtrarCatalogo('medico');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Médico</button>
-                    <button onclick="filtrarCatalogo('calzado');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Calzado</button>
-                    <button onclick="filtrarCatalogo('epp');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> EPP</button>
-                </div>
+                <a href="catalogo.html" class="w-full text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue block">Ver Catálogo Completo</a>
                 <button onclick="scrollToSection('marcas');closeMobile()" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Nuestras Marcas</button>
                 <button onclick="scrollToSection('servicios');closeMobile()" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Servicios</button>
                 <button onclick="scrollToSection('nosotros');closeMobile()" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Sobre Nosotros</button>
@@ -193,8 +185,8 @@
             </div>
         </div>
     </nav>
-
-    <!-- PLACEHOLDER: remaining sections added by build_page.py part 2 -->
+    <!-- Spacer for fixed header -->
+    <div class="h-16 md:h-[4.5rem]"></div>
     
     <!-- ==================== VISTA PRINCIPAL ==================== -->
     <div id="view-main" class="fade-in">
@@ -258,44 +250,15 @@
         </div>
     </section>
 
-    <!-- CATÁLOGO INLINE -->
-    <section id="catalogo" class="py-20 bg-gray-50 border-t border-gray-200 fade-up">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-10 flex flex-col md:flex-row justify-between items-end gap-4 border-b border-gray-200 pb-4">
-                <div>
-                    <span class="text-brand-blue font-bold text-xs uppercase tracking-[0.25em] border-b border-brand-blue pb-1 mb-4 block w-fit">Catálogo</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase">Nuestros Productos</h2>
-                </div>
-                <div class="flex items-center gap-2">
-                    <span class="text-xs text-gray-400 font-medium uppercase tracking-wider">Ordenar:</span>
-                    <select id="sort-select" onchange="ordenarProductos()" class="text-xs font-semibold border border-gray-200 px-3 py-2 btn-square outline-none text-gray-600 bg-white"><option value="default">Relevancia</option><option value="nombre">Nombre A–Z</option><option value="marca">Marca</option></select>
-                </div>
-            </div>
-            <!-- Category filter tabs -->
-            <div class="flex flex-wrap gap-2 mb-8" id="cat-tabs">
-                <button onclick="filtrarCatalogo('todos')" class="cat-tab bg-brand-navy text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 pill transition-colors" data-cat="todos">Todos</button>
-                <button onclick="filtrarCatalogo('corporativo')" class="cat-tab bg-white text-gray-600 border border-gray-200 text-xs font-bold uppercase tracking-widest px-5 py-2.5 pill hover:bg-brand-light hover:text-brand-blue hover:border-brand-blue transition-colors" data-cat="corporativo">Corporativo</button>
-                <button onclick="filtrarCatalogo('industrial')" class="cat-tab bg-white text-gray-600 border border-gray-200 text-xs font-bold uppercase tracking-widest px-5 py-2.5 pill hover:bg-brand-light hover:text-brand-blue hover:border-brand-blue transition-colors" data-cat="industrial">Industrial</button>
-                <button onclick="filtrarCatalogo('restaurante')" class="cat-tab bg-white text-gray-600 border border-gray-200 text-xs font-bold uppercase tracking-widest px-5 py-2.5 pill hover:bg-brand-light hover:text-brand-blue hover:border-brand-blue transition-colors" data-cat="restaurante">Restaurante</button>
-                <button onclick="filtrarCatalogo('medico')" class="cat-tab bg-white text-gray-600 border border-gray-200 text-xs font-bold uppercase tracking-widest px-5 py-2.5 pill hover:bg-brand-light hover:text-brand-blue hover:border-brand-blue transition-colors" data-cat="medico">Médico</button>
-                <button onclick="filtrarCatalogo('calzado')" class="cat-tab bg-white text-gray-600 border border-gray-200 text-xs font-bold uppercase tracking-widest px-5 py-2.5 pill hover:bg-brand-light hover:text-brand-blue hover:border-brand-blue transition-colors" data-cat="calzado">Calzado</button>
-                <button onclick="filtrarCatalogo('epp')" class="cat-tab bg-white text-gray-600 border border-gray-200 text-xs font-bold uppercase tracking-widest px-5 py-2.5 pill hover:bg-brand-light hover:text-brand-blue hover:border-brand-blue transition-colors" data-cat="epp">EPP</button>
-                <button onclick="filtrarCatalogo('accesorios')" class="cat-tab bg-white text-gray-600 border border-gray-200 text-xs font-bold uppercase tracking-widest px-5 py-2.5 pill hover:bg-brand-light hover:text-brand-blue hover:border-brand-blue transition-colors" data-cat="accesorios">Accesorios</button>
-            </div>
-            <!-- Search bar -->
-            <div class="mb-8 relative max-w-md">
-                <input type="text" id="buscador" onkeyup="buscarProductos()" placeholder="Buscar en catálogo..." class="w-full pl-10 pr-4 py-3 border border-gray-200 focus:border-brand-blue outline-none transition-all text-sm btn-square bg-white font-medium">
-                <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5"></i>
-            </div>
-            <p class="text-sm text-gray-400 mb-6" id="resultados-contador">Cargando...</p>
-            <!-- Products grid -->
-            <div id="grid-productos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
-            <div id="sin-resultados" class="hidden text-center py-24 bg-white border border-gray-100 btn-square">
-                <i data-lucide="package-x" class="w-16 h-16 text-gray-300 mx-auto mb-4"></i>
-                <h3 class="text-xl font-extrabold text-brand-navy mb-2">Sin resultados</h3>
-                <p class="text-gray-500 text-sm mb-4">No encontramos prendas con ese criterio.</p>
-                <button onclick="filtrarCatalogo('todos')" class="bg-brand-blue text-white text-xs font-bold uppercase tracking-widest px-6 py-3 btn-square hover:bg-brand-navy transition-colors">Ver todo</button>
-            </div>
+    <!-- CTA CATÁLOGO (reemplaza el catálogo inline) -->
+    <section id="catalogo" class="py-20 bg-[#0B1120] text-white fade-up">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-brand-blue font-bold text-xs uppercase tracking-[0.25em] mb-4 block">Catálogo Completo</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Explora Nuestros <span class="text-brand-blue">Productos</span></h2>
+            <p class="text-gray-400 text-lg font-medium max-w-xl mx-auto mb-10">Corporativo · Industrial · Restaurante · Médico · Calzado · EPP · +107 productos disponibles</p>
+            <a href="catalogo.html" class="inline-flex items-center gap-3 bg-brand-blue text-white px-10 py-4 font-extrabold text-sm uppercase tracking-widest hover:bg-blue-500 transition-colors pill">
+                <i data-lucide="grid-3x3" class="w-5 h-5"></i> Ver Catálogo Completo
+            </a>
         </div>
     </section>
 
@@ -771,7 +734,7 @@
     </div>
     <!-- Modal Confirm -->
     <div id="modal-confirm" class="hidden fixed inset-0 bg-brand-navy/60 backdrop-blur-sm z-[70] flex items-center justify-center p-4">
-        <div class="bg-white shadow-2xl max-w-sm w-full p-8 text-center transform scale-95 opacity-0 transition-all duration-300 btn-square" id="modal-confirm-content">
+        <div class="bg-white shadow-2xl max-w-sm w-full p-8 text-center transform scale-95 opacity-0 transition-all duration-300 rounded-2xl" id="modal-confirm-content">
             <div class="w-16 h-16 bg-red-50 text-red-500 flex items-center justify-center mx-auto mb-4"><i data-lucide="alert-triangle" class="w-8 h-8"></i></div>
             <h3 class="text-2xl font-bold text-brand-navy mb-2" id="confirm-title">¿Estás seguro?</h3>
             <p class="text-gray-500 mb-6" id="confirm-text">Esta acción no se puede deshacer.</p>
@@ -780,7 +743,7 @@
     </div>
     <!-- Newsletter Popup -->
     <div id="newsletter-popup" class="hidden fixed inset-0 bg-brand-navy/70 backdrop-blur-sm z-[65] flex items-center justify-center p-4">
-        <div class="bg-white shadow-2xl max-w-md w-full relative btn-square modal-animate overflow-hidden">
+        <div class="bg-white shadow-2xl max-w-md w-full relative rounded-2xl modal-animate overflow-hidden max-h-[90vh] overflow-y-auto">
             <button onclick="cerrarNewsletter()" class="absolute top-3 right-3 z-10 text-gray-400 hover:text-gray-700 p-2"><i data-lucide="x" class="w-5 h-5"></i></button>
             <div class="bg-brand-navy p-8 text-center"><div class="w-16 h-16 bg-brand-blue/20 text-brand-blue flex items-center justify-center mx-auto mb-4 btn-square"><i data-lucide="mail" class="w-8 h-8"></i></div><h3 class="text-2xl font-black text-white uppercase tracking-tight mb-2">¡No te pierdas nada!</h3><p class="text-gray-300 text-sm font-medium">Suscríbete y recibe ofertas exclusivas y novedades.</p></div>
             <div class="p-8">
@@ -797,8 +760,8 @@
         </div>
     </div>
     <!-- Welcome Modal -->
-    <div id="welcomeModal" class="fixed inset-0 z-[9999] hidden bg-[#0a1523]/90 backdrop-blur-sm flex items-center justify-center p-4 min-h-screen">
-        <div class="bg-white border-t-8 border-brand-blue shadow-2xl max-w-3xl w-full relative modal-animate rounded-2xl overflow-y-auto" style="max-height:92vh;">
+    <div id="welcomeModal" class="fixed inset-0 z-[9999] hidden bg-[#0a1523]/90 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white border-t-8 border-brand-blue shadow-2xl max-w-3xl w-full relative modal-animate rounded-2xl overflow-y-auto" style="max-height:90vh;">
             <button id="closeModalBtn" class="absolute top-3 right-3 z-10 text-gray-400 hover:text-brand-navy hover:bg-gray-100 p-2 transition btn-square group"><i data-lucide="x" class="w-5 h-5 group-hover:scale-110 transition-transform"></i></button>
             <div class="text-center p-5 md:p-10 pb-4 md:pb-6 border-b border-gray-100 bg-gray-50"><span class="text-brand-blue font-extrabold tracking-widest uppercase text-xs mb-2 block">Bienvenido a UPE</span><h2 class="text-xl md:text-3xl font-black text-brand-navy tracking-tight uppercase mb-2">¿Qué tipo de uniformes buscas?</h2><p class="text-gray-500 font-medium text-sm hidden md:block max-w-lg mx-auto">Selecciona la línea que mejor se adapta.</p></div>
             <div class="grid grid-cols-2 p-0 divide-x divide-gray-200">
@@ -868,49 +831,13 @@
     productos=productos.filter(p=>p.categoria!=='antiflama').map(p=>({...p,categoria:catMigration[p.categoria]||p.categoria}));
     let categoriaActual='todos';
 
-    // === CATÁLOGO: FILTROS Y RENDERIZADO ===
+    // === CATÁLOGO: redirigir a catalogo.html ===
     function filtrarCatalogo(cat){
-        categoriaActual=cat;
-        document.getElementById('buscador').value='';
-        // Update tab styles
-        document.querySelectorAll('.cat-tab').forEach(b=>{
-            if(b.dataset.cat===cat){b.className='cat-tab bg-brand-navy text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 pill transition-colors'}
-            else{b.className='cat-tab bg-white text-gray-600 border border-gray-200 text-xs font-bold uppercase tracking-widest px-5 py-2.5 pill hover:bg-brand-light hover:text-brand-blue hover:border-brand-blue transition-colors'}
-        });
-        renderProductos();
-        scrollToSection('catalogo');
+        window.location.href='catalogo.html'+(cat&&cat!=='todos'?'?cat='+cat:'');
     }
-    function buscarProductos(){renderProductos()}
-    function ordenarProductos(){renderProductos()}
-    function renderProductos(){
-        const grid=document.getElementById('grid-productos');const sinR=document.getElementById('sin-resultados');const counter=document.getElementById('resultados-contador');
-        const q=(document.getElementById('buscador').value||'').toLowerCase().trim();
-        let list=categoriaActual==='todos'?[...productos]:productos.filter(p=>p.categoria===categoriaActual);
-        if(q)list=list.filter(p=>(p.nombre+' '+p.desc+' '+p.marca+' '+p.etiqueta+' '+p.categoria).toLowerCase().includes(q));
-        const sort=document.getElementById('sort-select').value;
-        if(sort==='nombre')list.sort((a,b)=>a.nombre.localeCompare(b.nombre));
-        else if(sort==='marca')list.sort((a,b)=>(a.marca||'').localeCompare(b.marca||''));
-        counter.textContent=`${list.length} producto${list.length!==1?'s':''} encontrado${list.length!==1?'s':''}`;
-        if(!list.length){grid.innerHTML='';sinR.classList.remove('hidden');return}
-        sinR.classList.add('hidden');
-        grid.innerHTML=list.map(p=>`
-            <div class="prod-card bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer group" onclick="abrirDetalle(${p.id})">
-                <div class="relative overflow-hidden bg-gray-100 aspect-[4/3]">
-                    <img src="${p.img}" alt="${p.nombre}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                    <div class="absolute top-3 left-3 bg-brand-navy text-white text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-lg">${p.etiqueta}</div>
-                </div>
-                <div class="p-5">
-                    <p class="text-[10px] font-extrabold uppercase tracking-widest text-gray-400 mb-1">${p.marca||'GENÉRICO'}</p>
-                    <h3 class="text-base font-extrabold text-brand-navy uppercase tracking-wide mb-2 leading-snug group-hover:text-brand-blue transition-colors">${p.nombre}</h3>
-                    <p class="text-xs text-gray-500 leading-relaxed line-clamp-2 mb-4">${p.desc}</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-brand-blue bg-brand-light px-2.5 py-1 pill">${p.categoria}</span>
-                        <span class="text-xs font-bold text-brand-blue flex items-center gap-1 group-hover:gap-2 transition-all">Cotizar <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
-                    </div>
-                </div>
-            </div>`).join('');
-        lucide.createIcons();
-    }
+    function buscarProductos(){}
+    function ordenarProductos(){}
+    function renderProductos(){}
 
     // === DETALLE PRODUCTO (MODAL) ===
     function abrirDetalle(id){
@@ -928,7 +855,7 @@
     function cerrarDetalle(){document.getElementById('modal-detalle').classList.add('hidden');document.body.style.overflow=''}
 
     // === BUSCAR GLOBAL ===
-    function buscarGlobal(q){if(!q||!q.trim())return;closeMobile();categoriaActual='todos';document.getElementById('buscador').value=q.trim();scrollToSection('catalogo');setTimeout(()=>renderProductos(),300)}
+    function buscarGlobal(q){if(!q||!q.trim())return;window.location.href='catalogo.html?q='+encodeURIComponent(q.trim())}
 
     // === NAVEGACIÓN ===
     function scrollToSection(id){
