@@ -594,40 +594,6 @@
             </div>
         </section>
 
-        <!-- Galería Visual -->
-        <section class="border-t border-gray-100" style="overflow:hidden;">
-            <div class="grid grid-cols-2 lg:grid-cols-4" style="height:280px;">
-                <div class="relative overflow-hidden cursor-pointer" onclick="window.location.href='catalogo.html?cat=corporativo'">
-                    <img src="hero%20upe%201.jpg" alt="Uniformes Corporativos" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-                    <div class="absolute inset-0 bg-black/30 hover:bg-black/15 transition-colors"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4">
-                        <span class="text-white text-xs font-extrabold uppercase tracking-widest">Corporativo</span>
-                    </div>
-                </div>
-                <div class="relative overflow-hidden cursor-pointer" onclick="window.location.href='catalogo.html?cat=corporativo'">
-                    <img src="hero%20upe%201-1.jpg" alt="Imagen Corporativa" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-                    <div class="absolute inset-0 bg-black/30 hover:bg-black/15 transition-colors"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4">
-                        <span class="text-white text-xs font-extrabold uppercase tracking-widest">Imagen &amp; Marca</span>
-                    </div>
-                </div>
-                <div class="relative overflow-hidden cursor-pointer" onclick="window.location.href='catalogo.html?cat=industrial'">
-                    <img src="hero%20upe%203.jpg" alt="Seguridad Industrial FR" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-                    <div class="absolute inset-0 bg-black/30 hover:bg-black/15 transition-colors"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4">
-                        <span class="text-white text-xs font-extrabold uppercase tracking-widest">Industrial FR</span>
-                    </div>
-                </div>
-                <div class="relative overflow-hidden cursor-pointer" onclick="window.location.href='catalogo.html'">
-                    <img src="hero%20upe%203-1.jpg" alt="Decoración de Prendas" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-                    <div class="absolute inset-0 bg-black/30 hover:bg-black/15 transition-colors"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4">
-                        <span class="text-white text-xs font-extrabold uppercase tracking-widest">Decoración</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Sección Marcas (Marquee) -->
         <section id="marcas" class="py-14 bg-white border-t border-gray-100" style="overflow:hidden; contain:layout paint; max-width:100%;">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
@@ -874,6 +840,17 @@
                         </button>
                     </div>
                 </div>
+
+                <!-- Producción Interna Visual -->
+                <div class="relative mt-10 overflow-hidden btn-square" style="height:220px;">
+                    <img src="Servicios.jpg" alt="Producción interna UPE — bordado y decoración" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-[#0A1628]/70"></div>
+                    <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
+                        <p class="text-[#009aeb] text-xs font-extrabold uppercase tracking-widest mb-2">Producción 100% Interna</p>
+                        <p class="text-white font-black text-2xl md:text-3xl uppercase tracking-tight">Bordado · Decoración · Confección</p>
+                        <p class="text-gray-300 text-sm font-medium mt-2">Sin intermediarios — más control, mayor calidad, mejores tiempos de respuesta.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -967,19 +944,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-black text-white p-12 btn-square flex flex-col justify-center min-h-[400px]">
-                        <div class="text-4xl font-black tracking-tight mb-2 uppercase">upe<span class="text-gray-400">FR</span> 360°</div>
-                        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Plataforma de Gestión Integral B2B</p>
-                        <p class="text-gray-300 font-medium leading-relaxed mb-8">Uniendo control estratégico para la gestión integral de uniformes y EPP. Evoluciona la forma en que equipas a tu personal.</p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Portal B2B exclusivo y personalizado</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Asignación de tallas por empleado</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Logística optimizada con kitting</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Control automatizado y seguimiento</li>
-                        </ul>
-                        <a href="https://angel-plata-design.github.io/upefr/#/360" target="_blank" class="bg-white text-black font-extrabold text-sm uppercase tracking-widest py-4 px-8 hover:bg-gray-200 transition-colors btn-square w-fit flex items-center gap-2">
-                            Conocer upeFR 360° <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
+                    <div class="relative text-white btn-square overflow-hidden min-h-[400px]">
+                        <img src="upe360.jpg" alt="Control y Gestión UPE360" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/80"></div>
+                        <div class="relative p-12 flex flex-col justify-center h-full">
+                            <div class="text-4xl font-black tracking-tight mb-2 uppercase">upe<span class="text-gray-400">FR</span> 360°</div>
+                            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Plataforma de Gestión Integral B2B</p>
+                            <p class="text-gray-300 font-medium leading-relaxed mb-8">Uniendo control estratégico para la gestión integral de uniformes y EPP. Evoluciona la forma en que equipas a tu personal.</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Portal B2B exclusivo y personalizado</li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Asignación de tallas por empleado</li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Logística optimizada con kitting</li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Control automatizado y seguimiento</li>
+                            </ul>
+                            <a href="https://angel-plata-design.github.io/upefr/#/360" target="_blank" class="bg-white text-black font-extrabold text-sm uppercase tracking-widest py-4 px-8 hover:bg-gray-200 transition-colors btn-square w-fit flex items-center gap-2">
+                                Conocer upeFR 360° <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1013,14 +994,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-brand-blue/10 border border-brand-blue/30 p-8 btn-square text-center">
-                        <p class="text-xs font-bold uppercase tracking-widest text-brand-blue mb-4">Aplica para</p>
-                        <ul class="space-y-3 text-left">
-                            <li class="flex items-center gap-3 text-sm font-semibold text-gray-200"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Uniformes</li>
-                            <li class="flex items-center gap-3 text-sm font-semibold text-gray-200"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Ropa corporativa</li>
-                            <li class="flex items-center gap-3 text-sm font-semibold text-gray-200"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Pedidos personalizados</li>
-                            <li class="flex items-center gap-3 text-sm font-semibold text-gray-200"><i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>Mercancía al por menor</li>
-                        </ul>
+                    <div class="relative overflow-hidden btn-square min-h-[280px]">
+                        <img src="upe360-logistica.jpg" alt="Logística UPE" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-navy/65"></div>
+                        <div class="relative p-8 flex flex-col justify-end h-full min-h-[280px]">
+                            <p class="text-[#009aeb] text-xs font-extrabold uppercase tracking-widest mb-2">Entrega garantizada</p>
+                            <p class="text-white font-black text-xl uppercase leading-tight">Logística rápida,<br>sin fricciones</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1040,13 +1020,22 @@
                             Conectar con un Especialista
                         </button>
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="tag" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Decoración gratuita</h4></div>
-                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="layers" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Cantidades mínimas bajas</h4></div>
-                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="settings" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Soluciones personalizadas</h4></div>
-                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="headphones" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Soporte humano y real</h4></div>
-                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="shield-check" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Garantía de calidad</h4></div>
-                        <div class="bg-gray-50 border border-gray-200 p-6 btn-square"><i data-lucide="trending-up" class="w-8 h-8 text-brand-blue mb-3"></i><h4 class="font-bold text-brand-navy text-sm uppercase tracking-wide mb-1">Historial comprobado</h4></div>
+                    <div class="relative overflow-hidden btn-square" style="min-height:420px;">
+                        <img src="Sectores%20grupal.jpg" alt="Equipo UPE Uniformes Profesionales" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-[#0a2540]/85 px-6 py-5 grid grid-cols-3 text-center divide-x divide-white/20">
+                            <div class="px-2">
+                                <p class="text-white font-black text-2xl">+70</p>
+                                <p class="text-gray-300 text-xs uppercase tracking-wider font-bold">Marcas líderes</p>
+                            </div>
+                            <div class="px-2">
+                                <p class="text-white font-black text-2xl">2</p>
+                                <p class="text-gray-300 text-xs uppercase tracking-wider font-bold">Sucursales</p>
+                            </div>
+                            <div class="px-2">
+                                <p class="text-white font-black text-2xl">100%</p>
+                                <p class="text-gray-300 text-xs uppercase tracking-wider font-bold">Prod. interna</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
