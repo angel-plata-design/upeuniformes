@@ -54,12 +54,13 @@
         .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 3px; background-color: #009aeb; transition: width 0.3s; }
         .nav-link:hover { color: #009aeb; }
         .nav-link:hover::after { width: 100%; }
-        .mega-menu { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; box-shadow: 0 10px 25px -5px rgba(0,0,0,.1); }
+        .mega-menu { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; box-shadow: 0 10px 25px -5px rgba(0,0,0,.1); border-radius: 16px; }
         .nav-item-group:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 
-        /* Square design system */
-        .btn-square { border-radius: 2px !important; }
-        .card-square { border-radius: 4px !important; }
+        /* Rounded design system (FR style) */
+        .btn-square { border-radius: 12px !important; }
+        .card-square { border-radius: 16px !important; }
+        .pill { border-radius: 9999px !important; }
 
         /* Fade animations */
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -69,12 +70,13 @@
         @media (prefers-reduced-motion: reduce) { .fade-up { opacity:1; transform:none; transition:none; } }
 
         /* Product card hover */
-        .prod-card { transition: box-shadow 0.2s, border-color 0.2s; }
-        .prod-card:hover { box-shadow: 0 8px 32px rgba(0,154,235,0.10); border-color: #009aeb; }
+        .prod-card { transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s; border-radius: 16px; overflow: hidden; }
+        .prod-card:hover { box-shadow: 0 8px 32px rgba(0,154,235,0.12); border-color: #009aeb; transform: translateY(-2px); }
 
-        /* Filter sidebar active */
-        .filtro-btn.active { background: #f0f8ff; color: #009aeb; font-weight: 700; border-left: 3px solid #009aeb; }
-        .filtro-btn { border-left: 3px solid transparent; }
+        /* Radio filter styling (FR style) */
+        .radio-filter { cursor: pointer; display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; font-size: 0.875rem; color: #374151; transition: color 0.2s; }
+        .radio-filter:hover { color: #009aeb; }
+        .radio-filter input[type="radio"] { accent-color: #009aeb; width: 16px; height: 16px; cursor: pointer; }
 
         @keyframes popIn { from { opacity:0; transform:scale(0.95); } to { opacity:1; transform:scale(1); } }
         .modal-animate { animation: popIn 0.25s ease-out forwards; }
@@ -120,7 +122,7 @@
             <div class="hidden md:flex items-center space-x-5 h-full">
                 <div class="relative nav-item-group flex items-center h-full">
                     <button class="nav-link flex items-center gap-1">Categorías <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
-                    <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full w-[640px] bg-white border-t-4 border-brand-blue z-50">
+                    <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full w-[640px] bg-white border-t-4 border-brand-blue z-50 overflow-hidden">
                         <div class="grid grid-cols-2 divide-x divide-gray-100">
                             <div class="p-6 bg-gray-50">
                                 <h4 class="font-extrabold text-brand-navy mb-4 text-xs uppercase tracking-wider">Categorías</h4>
@@ -153,7 +155,7 @@
                 </div>
                 <a href="index.html#marcas" class="nav-link">Nuestras Marcas</a>
                 <a href="index.html#servicios" class="nav-link">Servicios</a>
-                <a href="index.html#cotiza" class="bg-brand-blue text-white px-4 py-2.5 font-extrabold text-xs tracking-widest uppercase hover:bg-blue-600 transition-colors btn-square flex items-center gap-2 whitespace-nowrap">
+                <a href="index.html#cotiza" class="bg-brand-blue text-white px-6 py-2.5 font-extrabold text-xs tracking-widest uppercase hover:bg-blue-600 transition-colors pill flex items-center gap-2 whitespace-nowrap">
                     <i data-lucide="file-text" class="w-4 h-4 shrink-0"></i> Cotiza tu Proyecto
                 </a>
             </div>
@@ -206,25 +208,15 @@
 <!-- ============================================ -->
 <div id="view-tienda" class="fade-in">
 
-    <!-- Hero Banner Tienda -->
-    <section class="relative bg-brand-navy text-white overflow-hidden" style="min-height:320px">
+    <!-- Hero Banner Tienda (FR style) -->
+    <section class="relative bg-[#0B1120] text-white overflow-hidden">
         <div class="absolute inset-0">
-            <img src="hero%20upe%201.jpg" alt="" class="w-full h-full object-cover opacity-25">
-            <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(10,37,64,0.97) 0%,rgba(10,37,64,0.75) 60%,rgba(10,37,64,0.3) 100%)"></div>
+            <img src="hero%20upe%201.jpg" alt="" class="w-full h-full object-cover opacity-15">
+            <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(11,17,32,0.98) 0%,rgba(11,17,32,0.85) 60%,rgba(11,17,32,0.7) 100%)"></div>
         </div>
-        <div class="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col justify-center" style="min-height:320px">
-            <span class="text-[#009aeb] font-bold text-xs uppercase tracking-[0.25em] border-b border-[#009aeb] pb-1 mb-5 block w-fit">Catálogo</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight uppercase mb-4">Uniformes<br><span class="text-[#009aeb]">Profesionales</span></h1>
-            <p class="text-gray-300 text-lg font-medium max-w-lg mb-8">Corporativo · Industrial · Restaurante · Médico · Calzado · EPP</p>
-            <!-- Filtros rápidos en hero -->
-            <div class="flex flex-wrap gap-2">
-                <button onclick="filtrarCatalogo('todos')" class="filtros-hero-btn bg-white text-brand-navy text-xs font-bold uppercase tracking-widest px-4 py-2 btn-square hover:bg-brand-blue hover:text-white transition-colors" data-cat="todos">Todos</button>
-                <button onclick="filtrarCatalogo('corporativo')" class="filtros-hero-btn bg-white/10 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 btn-square hover:bg-white hover:text-brand-navy transition-colors" data-cat="corporativo">Corporativo</button>
-                <button onclick="filtrarCatalogo('industrial')" class="filtros-hero-btn bg-white/10 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 btn-square hover:bg-white hover:text-brand-navy transition-colors" data-cat="industrial">Industrial</button>
-                <button onclick="filtrarCatalogo('restaurante')" class="filtros-hero-btn bg-white/10 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 btn-square hover:bg-white hover:text-brand-navy transition-colors" data-cat="restaurante">Restaurante</button>
-                <button onclick="filtrarCatalogo('medico')" class="filtros-hero-btn bg-white/10 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 btn-square hover:bg-white hover:text-brand-navy transition-colors" data-cat="medico">Médico</button>
-                <button onclick="filtrarCatalogo('epp')" class="filtros-hero-btn bg-white/10 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 btn-square hover:bg-white hover:text-brand-navy transition-colors" data-cat="epp">EPP</button>
-            </div>
+        <div class="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight mb-4">Catálogo</h1>
+            <p class="text-gray-400 text-lg font-medium max-w-lg">Explora nuestro portafolio completo. Selecciona los productos de tu interés y solicita cotización empresarial.</p>
         </div>
     </section>
 
@@ -280,55 +272,6 @@
         </div>
     </div>
 
-    <!-- Compra por Categoría (al estilo UPE FR) -->
-    <section id="categorias-grid" class="py-14 bg-gray-50 border-b border-gray-200">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-extrabold text-brand-navy uppercase tracking-tight mb-8">Explorar por Categoría</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
-                <button onclick="filtrarCatalogo('corporativo')" class="cat-card group flex flex-col items-center gap-3 bg-white border border-gray-200 p-5 btn-square hover:border-brand-blue hover:bg-brand-light transition-all">
-                    <div class="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:border-brand-blue transition-colors btn-square">
-                        <i data-lucide="briefcase" class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-gray-700 group-hover:text-brand-blue transition-colors text-center">Corporativo</span>
-                </button>
-                <button onclick="filtrarCatalogo('industrial')" class="cat-card group flex flex-col items-center gap-3 bg-white border border-gray-200 p-5 btn-square hover:border-brand-blue hover:bg-brand-light transition-all">
-                    <div class="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:border-brand-blue transition-colors btn-square">
-                        <i data-lucide="hard-hat" class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-gray-700 group-hover:text-brand-blue transition-colors text-center">Industrial</span>
-                </button>
-                <button onclick="filtrarCatalogo('restaurante')" class="cat-card group flex flex-col items-center gap-3 bg-white border border-gray-200 p-5 btn-square hover:border-brand-blue hover:bg-brand-light transition-all">
-                    <div class="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:border-brand-blue transition-colors btn-square">
-                        <i data-lucide="utensils" class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-gray-700 group-hover:text-brand-blue transition-colors text-center">Restaurante</span>
-                </button>
-                <button onclick="filtrarCatalogo('medico')" class="cat-card group flex flex-col items-center gap-3 bg-white border border-gray-200 p-5 btn-square hover:border-brand-blue hover:bg-brand-light transition-all">
-                    <div class="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:border-brand-blue transition-colors btn-square">
-                        <i data-lucide="stethoscope" class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-gray-700 group-hover:text-brand-blue transition-colors text-center">Médico</span>
-                </button>
-                <button onclick="filtrarCatalogo('calzado')" class="cat-card group flex flex-col items-center gap-3 bg-white border border-gray-200 p-5 btn-square hover:border-brand-blue hover:bg-brand-light transition-all">
-                    <div class="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:border-brand-blue transition-colors btn-square">
-                        <i data-lucide="footprints" class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-gray-700 group-hover:text-brand-blue transition-colors text-center">Calzado</span>
-                </button>
-                <button onclick="filtrarCatalogo('epp')" class="cat-card group flex flex-col items-center gap-3 bg-white border border-gray-200 p-5 btn-square hover:border-brand-blue hover:bg-brand-light transition-all">
-                    <div class="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:border-brand-blue transition-colors btn-square">
-                        <i data-lucide="shield" class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-gray-700 group-hover:text-brand-blue transition-colors text-center">EPP</span>
-                </button>
-                <button onclick="filtrarCatalogo('accesorios')" class="cat-card group flex flex-col items-center gap-3 bg-white border border-gray-200 p-5 btn-square hover:border-brand-blue hover:bg-brand-light transition-all">
-                    <div class="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:border-brand-blue transition-colors btn-square">
-                        <i data-lucide="tag" class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-gray-700 group-hover:text-brand-blue transition-colors text-center">Accesorios</span>
-                </button>
-            </div>
-        </div>
     </section>
 
     <!-- CATÁLOGO PRINCIPAL -->
@@ -336,52 +279,59 @@
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-10">
 
-                <!-- Sidebar -->
+                <!-- Sidebar (FR style radio buttons) -->
                 <aside class="w-full lg:w-60 shrink-0">
                     <!-- Buscador sidebar -->
-                    <div class="mb-4 relative">
-                        <input type="text" id="buscador" onkeyup="buscarProductos()" placeholder="Buscar prenda..."
-                            class="w-full pl-9 pr-4 py-2.5 border border-gray-200 focus:border-brand-blue outline-none transition-all text-sm btn-square bg-gray-50 font-medium">
-                        <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-3"></i>
+                    <div class="mb-6 relative">
+                        <input type="text" id="buscador" onkeyup="buscarProductos()" placeholder="Buscar productos o marcas..."
+                            class="w-full pl-10 pr-4 py-3 border border-gray-200 focus:border-brand-blue outline-none transition-all text-sm rounded-xl bg-white font-medium shadow-sm">
+                        <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5"></i>
                     </div>
-                    <!-- Filtros -->
-                    <div class="border border-gray-200 btn-square overflow-hidden">
-                        <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
-                            <h3 class="font-extrabold text-brand-navy text-xs uppercase tracking-widest">Categorías</h3>
-                        </div>
-                        <div class="flex flex-col" id="contenedor-filtros">
-                            <button onclick="filtrarCatalogo('todos')" class="filtro-btn active text-left px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100 flex items-center justify-between" data-cat="todos">
-                                <span>Todos los productos</span>
-                                <i data-lucide="chevron-right" class="w-3 h-3 text-gray-400"></i>
-                            </button>
-                            <button onclick="filtrarCatalogo('corporativo')" class="filtro-btn text-left px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100 flex items-center justify-between" data-cat="corporativo">
-                                <span>Corporativo</span><i data-lucide="chevron-right" class="w-3 h-3 text-gray-400"></i>
-                            </button>
-                            <button onclick="filtrarCatalogo('industrial')" class="filtro-btn text-left px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100 flex items-center justify-between" data-cat="industrial">
-                                <span>Industrial</span><i data-lucide="chevron-right" class="w-3 h-3 text-gray-400"></i>
-                            </button>
-                            <button onclick="filtrarCatalogo('restaurante')" class="filtro-btn text-left px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100 flex items-center justify-between" data-cat="restaurante">
-                                <span>Restaurante</span><i data-lucide="chevron-right" class="w-3 h-3 text-gray-400"></i>
-                            </button>
-                            <button onclick="filtrarCatalogo('medico')" class="filtro-btn text-left px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100 flex items-center justify-between" data-cat="medico">
-                                <span>Médico</span><i data-lucide="chevron-right" class="w-3 h-3 text-gray-400"></i>
-                            </button>
-                            <button onclick="filtrarCatalogo('calzado')" class="filtro-btn text-left px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100 flex items-center justify-between" data-cat="calzado">
-                                <span>Calzado</span><i data-lucide="chevron-right" class="w-3 h-3 text-gray-400"></i>
-                            </button>
-                            <button onclick="filtrarCatalogo('epp')" class="filtro-btn text-left px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100 flex items-center justify-between" data-cat="epp">
-                                <span>EPP</span><i data-lucide="chevron-right" class="w-3 h-3 text-gray-400"></i>
-                            </button>
-                            <button onclick="filtrarCatalogo('accesorios')" class="filtro-btn text-left px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-between" data-cat="accesorios">
-                                <span>Accesorios</span><i data-lucide="chevron-right" class="w-3 h-3 text-gray-400"></i>
-                            </button>
+
+                    <!-- Filtros por categoría -->
+                    <div class="mb-6">
+                        <h3 class="font-extrabold text-brand-navy text-xs uppercase tracking-widest mb-3">Categoría</h3>
+                        <div class="flex flex-col gap-0.5" id="contenedor-filtros">
+                            <label class="radio-filter" data-cat="todos">
+                                <input type="radio" name="cat-filter" value="todos" checked onchange="filtrarCatalogo('todos')">
+                                <span>Todos</span>
+                            </label>
+                            <label class="radio-filter" data-cat="corporativo">
+                                <input type="radio" name="cat-filter" value="corporativo" onchange="filtrarCatalogo('corporativo')">
+                                <span>Corporativo</span>
+                            </label>
+                            <label class="radio-filter" data-cat="industrial">
+                                <input type="radio" name="cat-filter" value="industrial" onchange="filtrarCatalogo('industrial')">
+                                <span>Industrial</span>
+                            </label>
+                            <label class="radio-filter" data-cat="restaurante">
+                                <input type="radio" name="cat-filter" value="restaurante" onchange="filtrarCatalogo('restaurante')">
+                                <span>Restaurante</span>
+                            </label>
+                            <label class="radio-filter" data-cat="medico">
+                                <input type="radio" name="cat-filter" value="medico" onchange="filtrarCatalogo('medico')">
+                                <span>Médico</span>
+                            </label>
+                            <label class="radio-filter" data-cat="calzado">
+                                <input type="radio" name="cat-filter" value="calzado" onchange="filtrarCatalogo('calzado')">
+                                <span>Calzado</span>
+                            </label>
+                            <label class="radio-filter" data-cat="epp">
+                                <input type="radio" name="cat-filter" value="epp" onchange="filtrarCatalogo('epp')">
+                                <span>EPP</span>
+                            </label>
+                            <label class="radio-filter" data-cat="accesorios">
+                                <input type="radio" name="cat-filter" value="accesorios" onchange="filtrarCatalogo('accesorios')">
+                                <span>Accesorios</span>
+                            </label>
                         </div>
                     </div>
+
                     <!-- CTA sidebar -->
-                    <div class="mt-4 bg-brand-navy text-white p-5 btn-square">
+                    <div class="bg-brand-navy text-white p-5 rounded-xl">
                         <p class="text-[10px] font-bold uppercase tracking-widest text-brand-blue mb-2">¿Necesitas asesoría?</p>
                         <p class="text-xs text-gray-300 mb-4 leading-relaxed">Un especialista te ayuda a elegir el uniforme ideal para tu equipo.</p>
-                        <a href="index.html#cotiza" class="block w-full text-center bg-brand-blue text-white text-xs font-bold uppercase tracking-widest py-3 hover:bg-blue-500 transition-colors btn-square">
+                        <a href="index.html#cotiza" class="block w-full text-center bg-brand-blue text-white text-xs font-bold uppercase tracking-widest py-3 hover:bg-blue-500 transition-colors rounded-lg">
                             Solicitar Cotización
                         </a>
                     </div>
@@ -406,16 +356,16 @@
                         </div>
                     </div>
 
-                    <!-- Grid productos -->
-                    <div id="grid-productos" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+                    <!-- Grid productos (4 cols like FR) -->
+                    <div id="grid-productos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                         <!-- Inyectado por JS -->
                     </div>
                     <!-- Sin resultados -->
-                    <div id="sin-resultados" class="hidden text-center py-24 bg-gray-50 border border-gray-100 btn-square">
+                    <div id="sin-resultados" class="hidden text-center py-24 bg-gray-50 border border-gray-100 rounded-xl">
                         <i data-lucide="package-x" class="w-16 h-16 text-gray-300 mx-auto mb-4"></i>
-                        <h3 class="text-xl font-extrabold text-brand-navy mb-2">Sin resultados</h3>
-                        <p class="text-gray-500 text-sm mb-4">No encontramos prendas con ese criterio.</p>
-                        <button onclick="filtrarCatalogo('todos')" class="bg-brand-blue text-white text-xs font-bold uppercase tracking-widest px-6 py-3 btn-square hover:bg-brand-navy transition-colors">Ver todo el catálogo</button>
+                        <h3 class="text-xl font-extrabold text-brand-navy mb-2">No hay productos con estos filtros.</h3>
+                        <p class="text-gray-500 text-sm mb-4">Intenta con otra categoría o limpia los filtros.</p>
+                        <button onclick="filtrarCatalogo('todos')" class="text-brand-blue text-sm font-bold underline hover:text-brand-navy transition-colors">Limpiar filtros</button>
                     </div>
                 </main>
             </div>
@@ -460,72 +410,78 @@
 <!-- VISTA DETALLE DE PRODUCTO                   -->
 <!-- ============================================ -->
 <div id="view-product" class="hidden fade-in">
-    <div class="bg-gray-50 min-h-screen py-10 pb-20">
+    <div class="bg-white min-h-screen py-8 pb-20">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Breadcrumb -->
-            <nav class="flex items-center gap-2 text-xs font-semibold text-gray-400 mb-8 uppercase tracking-wider">
+            <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
                 <a href="index.html" class="hover:text-brand-navy transition-colors">Inicio</a>
                 <i data-lucide="chevron-right" class="w-3 h-3"></i>
                 <button onclick="volverAlCatalogo()" class="hover:text-brand-navy transition-colors">Catálogo</button>
                 <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                <span class="text-brand-navy" id="pd-breadcrumb">Producto</span>
+                <span id="pd-breadcrumb-cat" class="hover:text-brand-navy transition-colors"></span>
+                <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                <span class="text-brand-navy font-medium" id="pd-breadcrumb">Producto</span>
             </nav>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
                 <!-- Imagen -->
-                <div class="bg-white border border-gray-200 btn-square flex items-center justify-center p-10 relative" style="min-height:420px">
+                <div class="bg-gray-50 rounded-2xl flex items-center justify-center p-10 relative" style="min-height:480px">
+                    <div id="pd-etiqueta" class="absolute top-4 left-4 text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm"></div>
                     <img id="pd-img" src="" alt="Producto" class="max-h-[440px] object-contain w-full">
-                    <div id="pd-etiqueta" class="absolute top-4 left-4 text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 btn-square shadow-sm"></div>
                 </div>
                 <!-- Info -->
                 <div class="flex flex-col justify-start pt-4">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span id="pd-categoria" class="text-white bg-brand-navy px-3 py-1 font-bold uppercase text-[10px] tracking-widest btn-square"></span>
-                        <span class="text-gray-400">·</span>
-                        <span id="pd-marca" class="text-gray-500 font-extrabold uppercase text-xs tracking-widest"></span>
+                    <div class="flex items-center justify-between mb-3">
+                        <span id="pd-marca" class="text-brand-blue font-bold uppercase text-sm tracking-wider"></span>
+                        <span id="pd-categoria" class="text-gray-500 border border-gray-200 px-3 py-1 font-semibold uppercase text-[10px] tracking-widest rounded-lg"></span>
                     </div>
-                    <h1 id="pd-title" class="text-3xl md:text-4xl font-black text-brand-navy uppercase tracking-tight leading-tight mb-4"></h1>
-                    <div class="w-16 h-1 bg-brand-blue mb-6"></div>
-                    <p id="pd-desc" class="text-gray-600 leading-relaxed text-base font-medium mb-8"></p>
+                    <h1 id="pd-title" class="text-2xl md:text-3xl font-bold text-brand-navy leading-tight mb-4"></h1>
+                    <p id="pd-desc" class="text-gray-500 leading-relaxed text-sm mb-8"></p>
 
-                    <!-- Características rápidas -->
-                    <div class="grid grid-cols-2 gap-3 mb-8">
-                        <div class="bg-gray-50 border border-gray-200 p-4 btn-square">
-                            <i data-lucide="scissors" class="w-5 h-5 text-brand-blue mb-2"></i>
-                            <p class="text-[10px] font-extrabold uppercase tracking-widest text-brand-navy mb-0.5">Personalizable</p>
-                            <p class="text-xs text-gray-500 font-medium">Bordado · DTF · Serigrafía</p>
-                        </div>
-                        <div class="bg-gray-50 border border-gray-200 p-4 btn-square">
-                            <i data-lucide="ruler" class="w-5 h-5 text-brand-blue mb-2"></i>
-                            <p class="text-[10px] font-extrabold uppercase tracking-widest text-brand-navy mb-0.5">Tallas</p>
-                            <p class="text-xs text-gray-500 font-medium">CH, M, G, XG, XXG</p>
-                        </div>
-                        <div class="bg-gray-50 border border-gray-200 p-4 btn-square">
-                            <i data-lucide="package-check" class="w-5 h-5 text-brand-blue mb-2"></i>
-                            <p class="text-[10px] font-extrabold uppercase tracking-widest text-brand-navy mb-0.5">Mínimo</p>
-                            <p class="text-xs text-gray-500 font-medium">Desde 1 pieza</p>
-                        </div>
-                        <div class="bg-gray-50 border border-gray-200 p-4 btn-square">
-                            <i data-lucide="truck" class="w-5 h-5 text-brand-blue mb-2"></i>
-                            <p class="text-[10px] font-extrabold uppercase tracking-widest text-brand-navy mb-0.5">Entrega</p>
-                            <p class="text-xs text-gray-500 font-medium">10–15 días hábiles</p>
+                    <!-- Tallas -->
+                    <div class="mb-8">
+                        <p class="text-sm font-bold text-brand-navy mb-3"><span class="uppercase">Talla:</span> <span class="font-normal text-gray-500">Selecciona</span></p>
+                        <div class="flex flex-wrap gap-2" id="pd-tallas">
+                            <button class="w-12 h-10 border border-gray-200 rounded-lg text-sm font-semibold text-gray-700 hover:border-brand-blue hover:text-brand-blue transition-colors">S</button>
+                            <button class="w-12 h-10 border border-gray-200 rounded-lg text-sm font-semibold text-gray-700 hover:border-brand-blue hover:text-brand-blue transition-colors">M</button>
+                            <button class="w-12 h-10 border border-gray-200 rounded-lg text-sm font-semibold text-gray-700 hover:border-brand-blue hover:text-brand-blue transition-colors">L</button>
+                            <button class="w-12 h-10 border border-gray-200 rounded-lg text-sm font-semibold text-gray-700 hover:border-brand-blue hover:text-brand-blue transition-colors">XL</button>
+                            <button class="w-12 h-10 border border-gray-200 rounded-lg text-sm font-semibold text-gray-700 hover:border-brand-blue hover:text-brand-blue transition-colors">2XL</button>
+                            <button class="w-12 h-10 border border-gray-200 rounded-lg text-sm font-semibold text-gray-700 hover:border-brand-blue hover:text-brand-blue transition-colors">3XL</button>
                         </div>
                     </div>
 
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <button id="btn-whatsapp-prod" class="flex-1 bg-[#25D366] text-white font-extrabold py-4 hover:bg-green-600 transition-colors flex items-center justify-center gap-3 text-sm uppercase tracking-widest btn-square">
+                    <!-- Botones de acción (FR style - stacked full-width) -->
+                    <div class="flex flex-col gap-3 mb-8">
+                        <button onclick="document.getElementById('form-cotizacion-pd').scrollIntoView({behavior:'smooth'})" class="w-full bg-brand-navy text-white font-extrabold py-4 hover:bg-brand-blue transition-colors flex items-center justify-center gap-3 text-sm uppercase tracking-widest rounded-xl">
+                            <i data-lucide="message-square" class="w-5 h-5"></i> Solicitar Cotización
+                        </button>
+                        <button id="btn-whatsapp-prod" class="w-full bg-[#25D366] text-white font-extrabold py-4 hover:bg-green-600 transition-colors flex items-center justify-center gap-3 text-sm uppercase tracking-widest rounded-xl">
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Cotización por WhatsApp
+                            Consultar por WhatsApp
                         </button>
-                        <button onclick="volverAlCatalogo()" class="border-2 border-brand-navy text-brand-navy font-bold py-4 px-6 hover:bg-brand-navy hover:text-white transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-widest btn-square">
-                            <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver
-                        </button>
+                    </div>
+
+                    <!-- Beneficios (FR style icons row) -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-gray-100">
+                        <div class="text-center">
+                            <i data-lucide="truck" class="w-6 h-6 text-gray-400 mx-auto mb-2"></i>
+                            <p class="text-xs text-gray-500 font-medium">Envío nacional</p>
+                        </div>
+                        <div class="text-center">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-gray-400 mx-auto mb-2"></i>
+                            <p class="text-xs text-gray-500 font-medium">Calidad garantizada</p>
+                        </div>
+                        <div class="text-center">
+                            <i data-lucide="refresh-cw" class="w-6 h-6 text-gray-400 mx-auto mb-2"></i>
+                            <p class="text-xs text-gray-500 font-medium">Cambios fáciles</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Formulario del producto -->
-            <div class="bg-white border border-gray-200 btn-square p-8 md:p-14 max-w-4xl mx-auto">
+            <div id="form-cotizacion-pd" class="bg-white border border-gray-200 rounded-2xl p-8 md:p-14 max-w-4xl mx-auto">
                 <div class="text-center mb-10">
                     <h3 class="text-2xl font-black text-brand-navy uppercase tracking-tight">Solicitud Detallada</h3>
                     <p class="text-gray-500 font-medium mt-2">Cotización por volumen para este modelo.</p>
@@ -533,33 +489,33 @@
                 <form onsubmit="event.preventDefault(); showToast('Cotización enviada. Te contactaremos pronto.', 'success'); this.reset();" class="space-y-5">
                     <div>
                         <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Modelo Seleccionado</label>
-                        <input type="text" id="form-pd-nombre" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-brand-navy font-bold outline-none cursor-not-allowed btn-square" readonly>
+                        <input type="text" id="form-pd-nombre" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-brand-navy font-bold outline-none cursor-not-allowed rounded-lg" readonly>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Nombre Completo *</label>
-                            <input type="text" required class="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold">
+                            <input type="text" required class="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-blue outline-none transition-all rounded-lg text-brand-navy font-semibold">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Empresa *</label>
-                            <input type="text" required class="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold">
+                            <input type="text" required class="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-blue outline-none transition-all rounded-lg text-brand-navy font-semibold">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Correo Electrónico *</label>
-                            <input type="email" required class="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold">
+                            <input type="email" required class="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-blue outline-none transition-all rounded-lg text-brand-navy font-semibold">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Teléfono</label>
-                            <input type="tel" class="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-semibold">
+                            <input type="tel" class="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-blue outline-none transition-all rounded-lg text-brand-navy font-semibold">
                         </div>
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Volumen y Requerimientos</label>
-                        <textarea rows="4" class="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-blue outline-none transition-all btn-square text-brand-navy font-medium resize-none" placeholder="Ej: 50 piezas, tallas variadas, bordado frontal..."></textarea>
+                        <textarea rows="4" class="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-blue outline-none transition-all rounded-lg text-brand-navy font-medium resize-none" placeholder="Ej: 50 piezas, tallas variadas, bordado frontal..."></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-brand-navy text-white font-extrabold text-sm uppercase tracking-widest py-5 hover:bg-brand-blue transition-colors btn-square">
+                    <button type="submit" class="w-full bg-brand-navy text-white font-extrabold text-sm uppercase tracking-widest py-5 hover:bg-brand-blue transition-colors rounded-xl">
                         Enviar Solicitud
                     </button>
                 </form>
@@ -1017,25 +973,17 @@
                 if (prod.etiqueta.toLowerCase().includes('rudo') || prod.etiqueta.toLowerCase().includes('visibilidad')) labelBg = "bg-brand-blue text-white";
 
                 const card = `
-                <div class="prod-card bg-white border border-gray-200 btn-square flex flex-col cursor-pointer group" onclick="verProducto(${prod.id})">
+                <div class="prod-card bg-white border border-gray-100 flex flex-col cursor-pointer group" onclick="verProducto(${prod.id})">
                     <!-- Imagen -->
-                    <div class="relative overflow-hidden bg-gray-50 flex items-center justify-center" style="height:240px;padding:1.5rem">
-                        <span class="absolute top-3 left-3 ${labelBg} text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 btn-square z-10">${prod.etiqueta}</span>
+                    <div class="relative overflow-hidden bg-gray-50 flex items-center justify-center" style="height:220px;padding:1rem">
+                        <span class="absolute top-3 left-3 ${labelBg} text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-lg z-10">${prod.etiqueta}</span>
                         <img src="${prod.img}" alt="${prod.nombre}" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <!-- Info -->
-                    <div class="p-5 flex flex-col flex-grow border-t border-gray-100">
-                        <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-1">${prod.marca || 'GENÉRICO'}</span>
-                        <h3 class="text-sm font-bold text-brand-navy leading-snug group-hover:text-brand-blue transition-colors mb-3">${prod.nombre}</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed line-clamp-2 mb-4 flex-grow">${prod.desc}</p>
-                        <div class="flex gap-2 mt-auto">
-                            <button class="flex-1 py-2.5 bg-brand-navy text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-blue transition-colors btn-square">
-                                Ver Detalles
-                            </button>
-                            <button onclick="event.stopPropagation(); cotizarWhatsapp(${prod.id})" class="py-2.5 px-3 bg-[#25D366] text-white hover:bg-green-600 transition-colors btn-square" title="Cotizar por WhatsApp">
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            </button>
-                        </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-brand-blue uppercase tracking-wider mb-1">${prod.marca || 'GENÉRICO'}</span>
+                        <h3 class="text-sm font-semibold text-brand-navy leading-snug group-hover:text-brand-blue transition-colors mb-3 line-clamp-2">${prod.nombre}</h3>
+                        <span class="text-xs font-bold text-brand-blue flex items-center gap-1 group-hover:gap-2 transition-all mt-auto uppercase tracking-wider">Cotizar <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
                     </div>
                 </div>`;
                 grid.insertAdjacentHTML('beforeend', card);
@@ -1049,27 +997,15 @@
         const buscador = document.getElementById('buscador');
         if (buscador) buscador.value = '';
 
-        // Update sidebar filters
-        document.querySelectorAll('.filtro-btn').forEach(btn => {
-            if (btn.dataset.cat === categoria) {
-                btn.classList.add('active', 'text-brand-blue', 'font-semibold', 'bg-brand-light');
-                btn.classList.remove('text-gray-700');
-            } else {
-                btn.classList.remove('active', 'text-brand-blue', 'font-semibold', 'bg-brand-light');
-                btn.classList.add('text-gray-700');
-            }
-        });
+        // Update radio buttons
+        const radio = document.querySelector(`input[name="cat-filter"][value="${categoria}"]`);
+        if (radio) radio.checked = true;
 
-        // Update hero quick filters
-        document.querySelectorAll('.filtros-hero-btn').forEach(btn => {
-            if (btn.dataset.cat === categoria) {
-                btn.classList.add('bg-white', 'text-brand-navy');
-                btn.classList.remove('bg-white/10', 'text-white');
-            } else {
-                btn.classList.remove('bg-white', 'text-brand-navy');
-                btn.classList.add('bg-white/10', 'text-white');
-            }
-        });
+        // Update counter text
+        const contadorEl = document.getElementById('resultados-contador');
+        if (contadorEl && categoria !== 'todos') {
+            contadorEl.innerHTML = `<span class="inline-flex items-center gap-1 bg-brand-navy text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">${categoria} <button onclick="filtrarCatalogo('todos')" class="ml-1 hover:text-brand-blue">&times;</button></span> <button onclick="filtrarCatalogo('todos')" class="text-brand-blue text-xs font-bold uppercase tracking-wider ml-2 hover:underline">Limpiar todo</button>`;
+        }
 
         const titulos = {
             'todos': 'Catálogo Completo', 'industrial': 'Línea Industrial',
