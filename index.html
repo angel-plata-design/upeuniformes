@@ -222,8 +222,22 @@
             backface-visibility: hidden;
         }
         .marquee-track:hover { animation-play-state: paused; }
+        @keyframes marquee-reverse {
+            0%   { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .marquee-track-reverse {
+            display: flex;
+            width: max-content;
+            animation: marquee-reverse 48s linear infinite;
+            will-change: transform;
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        .marquee-track-reverse:hover { animation-play-state: paused; }
         @media (prefers-reduced-motion: reduce) {
-            .marquee-track { animation: none; }
+            .marquee-track, .marquee-track-reverse { animation: none; }
         }
 
         /* Scroll fade-up */
@@ -580,40 +594,230 @@
             </div>
         </section>
 
-        <!-- Sección Marcas (Marquee) -->
-        <section id="marcas" class="py-12 bg-white border-t border-gray-100" style="overflow:hidden; contain:layout paint; max-width:100%;">
-            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest text-center mb-8">Marcas con las que trabajamos</p>
-            <div class="relative w-full" style="overflow:hidden; isolation:isolate;">
-                <!-- Fades laterales -->
-                <div class="pointer-events-none absolute left-0 top-0 h-full w-24 z-10" style="background:linear-gradient(to right,#fff,transparent)"></div>
-                <div class="pointer-events-none absolute right-0 top-0 h-full w-24 z-10" style="background:linear-gradient(to left,#fff,transparent)"></div>
-
-                <div class="marquee-track">
-                    <!-- Set 1 -->
-                    <div class="flex items-center gap-10 px-5">
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#cc0000] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-black text-xl tracking-tighter text-gray-600 group-hover:text-[#cc0000] transition-colors leading-none select-none">DICKIES</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#c8102e] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-extrabold text-lg tracking-widest text-gray-600 group-hover:text-[#c8102e] transition-colors leading-none select-none">RED KAP</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#0a2540] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-extrabold text-xl text-gray-600 group-hover:text-[#0a2540] transition-colors leading-none select-none">Bulwark<sup class="text-xs">®</sup></span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#ff0000] transition-colors px-8 group btn-square h-16 min-w-[100px]"><span class="font-black text-4xl text-gray-600 group-hover:text-[#ff0000] transition-colors leading-none select-none tracking-tighter">3M</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#1a56a0] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-bold text-xl tracking-widest text-gray-600 group-hover:text-[#1a56a0] transition-colors leading-none select-none">YAZBEK</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-brand-blue transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-bold text-xl tracking-widest text-gray-600 group-hover:text-brand-blue transition-colors leading-none select-none">OPTIMA</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#e31837] transition-colors px-8 group btn-square h-16 min-w-[150px]"><span class="font-black text-lg tracking-widest text-gray-600 group-hover:text-[#e31837] transition-colors leading-none select-none">CARHARTT</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#0057B8] transition-colors px-8 group btn-square h-16 min-w-[150px]"><span class="font-extrabold text-lg tracking-widest text-gray-600 group-hover:text-[#0057B8] transition-colors leading-none select-none">HONEYWELL</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#004990] transition-colors px-8 group btn-square h-16 min-w-[120px]"><span class="font-black text-2xl tracking-tight text-gray-600 group-hover:text-[#004990] transition-colors leading-none select-none">ANSELL</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#006341] transition-colors px-8 group btn-square h-16 min-w-[120px]"><span class="font-black text-lg tracking-widest text-gray-600 group-hover:text-[#006341] transition-colors leading-none select-none">MSA</span></div>
+        <!-- Galería Visual -->
+        <section class="border-t border-gray-100" style="overflow:hidden;">
+            <div class="grid grid-cols-2 lg:grid-cols-4" style="height:280px;">
+                <div class="relative overflow-hidden cursor-pointer" onclick="window.location.href='catalogo.html?cat=corporativo'">
+                    <img src="hero%20upe%201.jpg" alt="Uniformes Corporativos" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 hover:bg-black/15 transition-colors"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <span class="text-white text-xs font-extrabold uppercase tracking-widest">Corporativo</span>
                     </div>
-                    <!-- Set 2 (duplicate para loop continuo) -->
-                    <div class="flex items-center gap-10 px-5">
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#cc0000] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-black text-xl tracking-tighter text-gray-600 group-hover:text-[#cc0000] transition-colors leading-none select-none">DICKIES</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#c8102e] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-extrabold text-lg tracking-widest text-gray-600 group-hover:text-[#c8102e] transition-colors leading-none select-none">RED KAP</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#0a2540] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-extrabold text-xl text-gray-600 group-hover:text-[#0a2540] transition-colors leading-none select-none">Bulwark<sup class="text-xs">®</sup></span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#ff0000] transition-colors px-8 group btn-square h-16 min-w-[100px]"><span class="font-black text-4xl text-gray-600 group-hover:text-[#ff0000] transition-colors leading-none select-none tracking-tighter">3M</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#1a56a0] transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-bold text-xl tracking-widest text-gray-600 group-hover:text-[#1a56a0] transition-colors leading-none select-none">YAZBEK</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-brand-blue transition-colors px-8 group btn-square h-16 min-w-[140px]"><span class="font-bold text-xl tracking-widest text-gray-600 group-hover:text-brand-blue transition-colors leading-none select-none">OPTIMA</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#e31837] transition-colors px-8 group btn-square h-16 min-w-[150px]"><span class="font-black text-lg tracking-widest text-gray-600 group-hover:text-[#e31837] transition-colors leading-none select-none">CARHARTT</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#0057B8] transition-colors px-8 group btn-square h-16 min-w-[150px]"><span class="font-extrabold text-lg tracking-widest text-gray-600 group-hover:text-[#0057B8] transition-colors leading-none select-none">HONEYWELL</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#004990] transition-colors px-8 group btn-square h-16 min-w-[120px]"><span class="font-black text-2xl tracking-tight text-gray-600 group-hover:text-[#004990] transition-colors leading-none select-none">ANSELL</span></div>
-                        <div class="flex items-center justify-center border border-gray-200 hover:border-[#006341] transition-colors px-8 group btn-square h-16 min-w-[120px]"><span class="font-black text-lg tracking-widest text-gray-600 group-hover:text-[#006341] transition-colors leading-none select-none">MSA</span></div>
+                </div>
+                <div class="relative overflow-hidden cursor-pointer" onclick="window.location.href='catalogo.html?cat=corporativo'">
+                    <img src="hero%20upe%201-1.jpg" alt="Imagen Corporativa" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 hover:bg-black/15 transition-colors"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <span class="text-white text-xs font-extrabold uppercase tracking-widest">Imagen &amp; Marca</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden cursor-pointer" onclick="window.location.href='catalogo.html?cat=industrial'">
+                    <img src="hero%20upe%203.jpg" alt="Seguridad Industrial FR" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 hover:bg-black/15 transition-colors"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <span class="text-white text-xs font-extrabold uppercase tracking-widest">Industrial FR</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden cursor-pointer" onclick="window.location.href='catalogo.html'">
+                    <img src="hero%20upe%203-1.jpg" alt="Decoración de Prendas" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 hover:bg-black/15 transition-colors"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <span class="text-white text-xs font-extrabold uppercase tracking-widest">Decoración</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Marcas (Marquee) -->
+        <section id="marcas" class="py-14 bg-white border-t border-gray-100" style="overflow:hidden; contain:layout paint; max-width:100%;">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">+70 marcas líderes disponibles</p>
+            </div>
+
+            <!-- Fila 1: Uniformes & Ropa de Trabajo -->
+            <div class="mb-6">
+                <div class="flex items-center gap-3 px-6 mb-3">
+                    <span class="text-[10px] font-extrabold text-gray-300 uppercase tracking-widest whitespace-nowrap">Uniformes · Ropa de Trabajo</span>
+                    <div class="flex-1 h-px bg-gray-100"></div>
+                </div>
+                <div class="relative w-full" style="overflow:hidden; isolation:isolate;">
+                    <div class="pointer-events-none absolute left-0 top-0 h-full w-20 z-10" style="background:linear-gradient(to right,#fff,transparent)"></div>
+                    <div class="pointer-events-none absolute right-0 top-0 h-full w-20 z-10" style="background:linear-gradient(to left,#fff,transparent)"></div>
+                    <div class="marquee-track">
+                        <div class="flex items-center gap-4 px-2">
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/adidas.png" alt="Adidas" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/nike%20logo.png" alt="Nike" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/columbia.png" alt="Columbia" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/carhart.png" alt="Carhartt" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/patagonia.png" alt="Patagonia" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/bulwark.png" alt="Bulwark" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/dikies.png" alt="Dickies" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/redkap.png" alt="Red Kap" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/sport%20tek.png" alt="Sport-Tek" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/port%20authority.png" alt="Port Authority" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/uner%20armour.png" alt="Under Armour" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/ogio.png" alt="OGIO" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/ariat.png" alt="Ariat" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/portwest.png" alt="Portwest" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/kishigo.png" alt="Kishigo" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/mercer%20mettle.png" alt="Mercer+Mettle" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/edwards.png" alt="Edwards" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/chef%20designs.png" alt="Chef Designs" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/lane%20seven.png" alt="Lane Seven" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/corner%20stone.png" alt="CornerStone" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/wink.png" alt="Wink" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/5.11.png" alt="5.11 Tactical" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/distric.png" alt="District" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/the%20artisan%20collection%20reprime.png" alt="Artisan Collection" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                        </div>
+                        <div class="flex items-center gap-4 px-2" aria-hidden="true">
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/adidas.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/nike%20logo.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/columbia.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/carhart.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/patagonia.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/bulwark.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/dikies.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/redkap.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/sport%20tek.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/port%20authority.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/uner%20armour.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/ogio.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/ariat.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/portwest.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/kishigo.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/mercer%20mettle.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/edwards.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/chef%20designs.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/lane%20seven.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/corner%20stone.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/wink.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/5.11.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/distric.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20uniformes/the%20artisan%20collection%20reprime.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila 2: EPP & Seguridad Industrial (sentido inverso) -->
+            <div class="mb-6">
+                <div class="flex items-center gap-3 px-6 mb-3">
+                    <span class="text-[10px] font-extrabold text-gray-300 uppercase tracking-widest whitespace-nowrap">Seguridad Industrial · EPP</span>
+                    <div class="flex-1 h-px bg-gray-100"></div>
+                </div>
+                <div class="relative w-full" style="overflow:hidden; isolation:isolate;">
+                    <div class="pointer-events-none absolute left-0 top-0 h-full w-20 z-10" style="background:linear-gradient(to right,#fff,transparent)"></div>
+                    <div class="pointer-events-none absolute right-0 top-0 h-full w-20 z-10" style="background:linear-gradient(to left,#fff,transparent)"></div>
+                    <div class="marquee-track-reverse">
+                        <div class="flex items-center gap-4 px-2">
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/3m%20logo.png" alt="3M" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/honeywell.png" alt="Honeywell" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/dupont.png" alt="DuPont" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/MSA.png" alt="MSA Safety" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/dewalt.png" alt="DeWalt" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/lakeland.png" alt="Lakeland" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/lakeland%20eagle%20fr.png" alt="Lakeland Eagle FR" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/ergodyne.png" alt="Ergodyne" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/MOLDEX.png" alt="Moldex" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/milwakee.png" alt="Milwaukee" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/makita.png" alt="Makita" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/truper.png" alt="Truper" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/surtek.png" alt="Surtek" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/TINGLEY.png" alt="Tingley" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/mcr%20safety.png" alt="MCR Safety" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/pig%20global%20safety.png" alt="PIG Global Safety" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/REFRIGIWEAR.png" alt="RefrigiWear" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/portwest.png" alt="Portwest" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/austromx.png" alt="Austromex" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/lica.png" alt="Lica" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/jyrsa.png" alt="Jyrsa" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/barlem.png" alt="Barlem" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/dermcare.png" alt="DermCare" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                        </div>
+                        <div class="flex items-center gap-4 px-2" aria-hidden="true">
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/3m%20logo.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/honeywell.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/dupont.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/MSA.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/dewalt.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/lakeland.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/lakeland%20eagle%20fr.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/ergodyne.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/MOLDEX.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/milwakee.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/makita.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/truper.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/surtek.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/TINGLEY.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/mcr%20safety.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/pig%20global%20safety.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/REFRIGIWEAR.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/portwest.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/austromx.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/lica.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/jyrsa.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/barlem.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20epp/dermcare.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila 3: Calzado de Trabajo -->
+            <div>
+                <div class="flex items-center gap-3 px-6 mb-3">
+                    <span class="text-[10px] font-extrabold text-gray-300 uppercase tracking-widest whitespace-nowrap">Calzado de Trabajo</span>
+                    <div class="flex-1 h-px bg-gray-100"></div>
+                </div>
+                <div class="relative w-full" style="overflow:hidden; isolation:isolate;">
+                    <div class="pointer-events-none absolute left-0 top-0 h-full w-20 z-10" style="background:linear-gradient(to right,#fff,transparent)"></div>
+                    <div class="pointer-events-none absolute right-0 top-0 h-full w-20 z-10" style="background:linear-gradient(to left,#fff,transparent)"></div>
+                    <div class="marquee-track" style="animation-duration:35s;">
+                        <div class="flex items-center gap-4 px-2">
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/cat.png" alt="CAT" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/timberland%20pro.png" alt="Timberland PRO" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/wolverin.png" alt="Wolverine" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/keen.png" alt="KEEN" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/ariat%20work.png" alt="Ariat Work" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/goodyear.png" alt="Goodyear" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/georgia%20boot.png" alt="Georgia Boot" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/kodiak.png" alt="Kodiak" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/5.11.png" alt="5.11 Tactical" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/armada.png" alt="Armada" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/portwest.png" alt="Portwest" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/discovery.png" alt="Discovery" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/comando.png" alt="Comando" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/truper.png" alt="Truper" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/lica.png" alt="Lica" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/riverline.png" alt="Riverline" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/work%20armor.png" alt="Work Armor" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/triples%20pro.png" alt="Triples Pro" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/retryver.png" alt="Retryver" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/duty%20ear.png" alt="Duty Ear" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                        </div>
+                        <div class="flex items-center gap-4 px-2" aria-hidden="true">
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/cat.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/timberland%20pro.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/wolverin.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/keen.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/ariat%20work.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/goodyear.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/georgia%20boot.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/kodiak.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/5.11.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/armada.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/portwest.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/discovery.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/comando.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/truper.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/lica.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/riverline.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/work%20armor.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/triples%20pro.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/retryver.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                            <div class="h-14 min-w-[110px] flex items-center justify-center px-4 border border-gray-100 bg-white shrink-0"><img src="logotipo%20marcas/marcas%20calzado/duty%20ear.png" alt="" loading="lazy" class="h-8 w-auto max-w-[90px] object-contain"></div>
+                        </div>
                     </div>
                 </div>
             </div>
