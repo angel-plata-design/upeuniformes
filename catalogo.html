@@ -153,15 +153,13 @@
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl max-h-[85vh] overflow-y-auto z-50">
         <div class="px-6 py-4 space-y-1 flex flex-col">
             <div class="py-4 border-b border-gray-100">
-                <span class="block text-sm font-extrabold text-gray-400 uppercase tracking-widest mb-3">Categorías</span>
-                <button onclick="filtrarCatalogo('todos');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Ver Todo</button>
-                <button onclick="filtrarCatalogo('corporativo');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Corporativo</button>
-                <button onclick="filtrarCatalogo('industrial');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Industrial</button>
-                <button onclick="filtrarCatalogo('restaurante');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Restaurante</button>
-                <button onclick="filtrarCatalogo('medico');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Médico</button>
-                <button onclick="filtrarCatalogo('calzado');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Calzado</button>
-                <button onclick="filtrarCatalogo('epp');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> EPP</button>
-                <button onclick="filtrarCatalogo('accesorios');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Accesorios</button>
+                <span class="block text-sm font-extrabold text-gray-400 uppercase tracking-widest mb-3">Sector</span>
+                <button onclick="filtrarSector('todos');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Todos</button>
+                <button onclick="filtrarSector('corporativa');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Corporativa</button>
+                <button onclick="filtrarSector('industrial');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Industrial</button>
+                <button onclick="filtrarSector('restaurante');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Restaurante</button>
+                <button onclick="filtrarSector('medico');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Médico</button>
+                <button onclick="filtrarSector('calzado');closeMobile()" class="w-full text-left py-2 text-sm font-semibold text-gray-700 hover:text-brand-blue flex items-center gap-2"><i data-lucide="minus" class="w-3 h-3"></i> Calzado</button>
             </div>
             <a href="index.html" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Inicio</a>
             <a href="index.html#servicios" class="text-left py-4 text-sm font-bold uppercase tracking-wider text-brand-navy border-b border-gray-100 hover:text-brand-blue">Servicios</a>
@@ -275,6 +273,19 @@
                     <button onclick="limpiarFiltros()" class="w-full mb-5 text-xs font-bold uppercase tracking-widest text-brand-blue hover:text-brand-navy border border-brand-blue/30 hover:border-brand-blue px-4 py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
                         <i data-lucide="x" class="w-3 h-3"></i> Limpiar Filtros
                     </button>
+
+                    <!-- FILTRO: Sector -->
+                    <div class="mb-5 border-b border-gray-100 pb-5">
+                        <h3 class="font-extrabold text-brand-navy text-xs uppercase tracking-widest mb-3">Sector</h3>
+                        <div class="flex flex-col gap-0.5" id="filtro-sector">
+                            <label class="radio-filter"><input type="radio" name="f-sector" value="todos" checked onchange="aplicarFiltros()"><span>Todos</span></label>
+                            <label class="radio-filter"><input type="radio" name="f-sector" value="corporativa" onchange="aplicarFiltros()"><span>Corporativa</span></label>
+                            <label class="radio-filter"><input type="radio" name="f-sector" value="industrial" onchange="aplicarFiltros()"><span>Industrial</span></label>
+                            <label class="radio-filter"><input type="radio" name="f-sector" value="restaurante" onchange="aplicarFiltros()"><span>Restaurante</span></label>
+                            <label class="radio-filter"><input type="radio" name="f-sector" value="medico" onchange="aplicarFiltros()"><span>Médico</span></label>
+                            <label class="radio-filter"><input type="radio" name="f-sector" value="calzado" onchange="aplicarFiltros()"><span>Calzado</span></label>
+                        </div>
+                    </div>
 
                     <!-- FILTRO: Categoría -->
                     <div class="mb-5 border-b border-gray-100 pb-5">
@@ -979,20 +990,61 @@
         });
     }
 
+    // Mapeo sector -> categorías de prendas que corresponden
+    const sectorCategorias = {
+        'corporativa': ['Administración', 'Ventas', 'Imagen Corporativa'],
+        'industrial':  ['Producción', 'Mantenimiento', 'EPP'],
+        'restaurante': ['Mantenimiento'],
+        'medico':      ['Mantenimiento', 'EPP'],
+        'calzado':     ['EPP', 'Seguridad']
+    };
+    const sectorKeywords = {
+        'restaurante': ['filipina', 'delantal', 'mandil', 'cocina', 'chef'],
+        'medico':      ['filipina', 'médico', 'clinico', 'cargo', 'sanitario'],
+        'calzado':     ['bota', 'tenis', 'calzado', 'zapato', 'pvc']
+    };
+    let sectorActual = 'todos';
+
+
     // --- FUNCIÓN PRINCIPAL DE FILTRADO ---
     function aplicarFiltros() {
         const cat = document.querySelector('input[name="f-cat"]:checked')?.value || 'todos';
+        const sector = document.querySelector('input[name="f-sector"]:checked')?.value || 'todos';
         const sexo = document.querySelector('input[name="f-sexo"]:checked')?.value || 'todos';
         const tipo = document.querySelector('input[name="f-tipo"]:checked')?.value || 'todos';
         const marca = document.querySelector('input[name="f-marca"]:checked')?.value || 'todos';
         const query = (document.getElementById('buscador')?.value || '').toLowerCase().trim();
 
         categoriaActual = cat;
+        sectorActual = sector;
 
         let filtrados = [...productos];
 
-        // Filtro categoría
-        if (cat !== 'todos') filtrados = filtrados.filter(p => p.categoria === cat);
+        // Filtro SECTOR (agrupa múltiples categorías de prenda)
+        if (sector !== 'todos') {
+            const cats = sectorCategorias[sector] || [];
+            const keywords = sectorKeywords[sector] || [];
+            filtrados = filtrados.filter(p => {
+                const catMatch = cats.includes(p.categoria);
+                if (!keywords.length) return catMatch;
+                const nomLow = p.nombre.toLowerCase();
+                const kwMatch = keywords.some(kw => nomLow.includes(kw));
+                // For sectors with keywords: must match category AND keyword, OR just keyword
+                if (sector === 'restaurante' || sector === 'medico' || sector === 'calzado') {
+                    return kwMatch || (catMatch && keywords.some(kw => nomLow.includes(kw) || p.desc.toLowerCase().includes(kw)));
+                }
+                return catMatch;
+            });
+            // Update title
+            const titleMap = { corporativa: 'Corporativa', industrial: 'Industrial', restaurante: 'Restaurante', medico: 'Médico', calzado: 'Calzado' };
+            const titEl = document.getElementById('titulo-catalogo');
+            if (titEl) titEl.innerText = `Sector ${titleMap[sector] || sector}`;
+        } else {
+            // Filtro categoría granular solo si no hay sector
+            if (cat !== 'todos') filtrados = filtrados.filter(p => p.categoria === cat);
+            const titEl = document.getElementById('titulo-catalogo');
+            if (titEl) titEl.innerText = cat === 'todos' ? 'Catálogo Completo' : cat;
+        }
 
         // Filtro sexo
         if (sexo !== 'todos') filtrados = filtrados.filter(p => detectarSexo(p.nombre) === sexo);
@@ -1017,11 +1069,25 @@
     }
 
     function limpiarFiltros() {
-        document.querySelectorAll('input[name="f-cat"][value="todos"], input[name="f-sexo"][value="todos"], input[name="f-tipo"][value="todos"], input[name="f-marca"][value="todos"]').forEach(r => r.checked = true);
+        document.querySelectorAll('input[name="f-cat"][value="todos"], input[name="f-sexo"][value="todos"], input[name="f-tipo"][value="todos"], input[name="f-marca"][value="todos"], input[name="f-sector"][value="todos"]').forEach(r => r.checked = true);
         const buscador = document.getElementById('buscador');
         if (buscador) buscador.value = '';
         categoriaActual = 'todos';
+        sectorActual = 'todos';
         aplicarFiltros();
+    }
+
+    function filtrarSector(sector) {
+        const radio = document.querySelector(`input[name="f-sector"][value="${sector}"]`);
+        if (radio) radio.checked = true;
+        sectorActual = sector;
+        // Reset category filter when sector changes
+        const todosRad = document.querySelector('input[name="f-cat"][value="todos"]');
+        if (todosRad) todosRad.checked = true;
+        aplicarFiltros();
+        setTimeout(() => {
+            document.getElementById('tienda')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
     }
 
     function filtrarCatalogo(categoria) {
@@ -1032,6 +1098,10 @@
             const todosCat = document.querySelector('input[name="f-cat"][value="todos"]');
             if (todosCat) todosCat.checked = true;
         }
+        // Reset sector filter
+        const todosSector = document.querySelector('input[name="f-sector"][value="todos"]');
+        if (todosSector) todosSector.checked = true;
+        sectorActual = 'todos';
         aplicarFiltros();
         setTimeout(() => {
             document.getElementById('tienda')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1120,12 +1190,15 @@
         }
     })();
 
-    // Handle query params from index.html (?cat=X or ?q=X)
+    // Handle query params from index.html (?cat=X or ?sector=X or ?q=X)
     (function initQueryParams() {
         const params = new URLSearchParams(location.search);
+        const sector = params.get('sector');
         const cat = params.get('cat');
         const q = params.get('q');
-        if (cat && cat !== 'todos') {
+        if (sector && sector !== 'todos') {
+            setTimeout(() => filtrarSector(sector), 100);
+        } else if (cat && cat !== 'todos') {
             setTimeout(() => filtrarCatalogo(cat), 100);
         } else if (q) {
             setTimeout(() => {
@@ -1318,10 +1391,15 @@
 
         // Read URL params
         const params = new URLSearchParams(window.location.search);
+        const sectorParam = params.get('sector');
         const cat = params.get('cat') || 'todos';
         const query = params.get('q') || '';
 
-        filtrarCatalogo(cat);
+        if (sectorParam && sectorParam !== 'todos') {
+            filtrarSector(sectorParam);
+        } else {
+            filtrarCatalogo(cat);
+        }
 
         if (query) {
             setTimeout(() => {
