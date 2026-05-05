@@ -53,7 +53,7 @@
         @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.fade-in{animation:fadeIn .4s ease-in-out}
         @keyframes popIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.modal-animate{animation:popIn .3s ease-out forwards}
         .top-bar{background-color:#0a2540;color:#fff;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase}
-        .header-main{border-bottom:2px solid #f3f4f6;position:fixed!important;top:0;left:0;right:0;z-index:40}
+        .header-main{border-bottom:2px solid #f3f4f6;position:sticky;top:0;z-index:50}
         .nav-link{position:relative;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:#111827;padding:1rem 0;transition:color .2s;white-space:nowrap}
         .nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0%;height:3px;background-color:#009aeb;transition:width .3s}
         .nav-link:hover{color:#009aeb}.nav-link:hover::after{width:100%}
@@ -98,7 +98,7 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="header-main w-full bg-white shadow-sm transition-all duration-300">
+    <header class="header-main w-full bg-white shadow-sm transition-all duration-300">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 md:h-[4.5rem]">
                 <div class="flex-shrink-0 cursor-pointer flex items-center" onclick="scrollToSection('inicio')">
@@ -185,12 +185,11 @@
                 <a href="https://angel-plata-design.github.io/upefr/" class="block w-full text-left py-4 text-sm font-bold uppercase tracking-wider text-[#c1272d] flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4 fill-current"></i> FR Antiflama</a>
             </div>
         </div>
-    </nav>
-    <!-- Spacer for fixed header -->
-    <div class="h-16 md:h-[4.5rem]"></div>
+    </header>
+
     
     <!-- ==================== VISTA PRINCIPAL ==================== -->
-    <div id="view-main" class="fade-in">
+    <main id="view-main" class="fade-in">
 
     <!-- HERO -->
     <section id="inicio" class="relative min-h-screen flex items-center z-0 pt-0">
@@ -639,7 +638,7 @@
         </div>
     </section>
     <div id="contacto"></div>
-    </div><!-- FIN VISTA PRINCIPAL -->
+    </main><!-- FIN VISTA PRINCIPAL -->
 
     <!-- ADMIN PANEL -->
     <div id="view-admin" class="hidden pt-28 pb-20 bg-gray-50 min-h-screen fade-in">
@@ -819,24 +818,24 @@
 
     // === PRODUCTOS ===
     const productosDefault = [
-        { id: 1, nombre: "CHALECO HIBRIDO PARA CABALLERO", marca: "Sport-tek", categoria: "Administración", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/217", desc: "Chalecos marca Sport-Tek de alto rendimiento, confeccionados con dos tejidos diferentes. Deflectores 100% poliéster, tejido doble 90/10 poliéster/spandex. Acabado repelente al agua (DWR).", etiqueta: "Nuevo", precio: 736.56 },
-        { id: 2, nombre: "CHAMARRA TIPO NEOPRENO PARA DAMA", marca: "Port Authority", categoria: "Administración", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/244", desc: "Chamarra tipo neopreno 100% poliéster, ideal para climas frescos y uso corporativo.", etiqueta: "Corporativo", precio: 767.16 },
-        { id: 3, nombre: "CHAMARRA TIPO NEOPRENO PARA CABALLERO", marca: "Port Authority", categoria: "Administración", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/245", desc: "Chamarra tipo neopreno 100% poliéster para caballero, resistente y elegante.", etiqueta: "Corporativo", precio: 767.16 },
-        { id: 4, nombre: "Camisa manga larga caballero", marca: "UPE", categoria: "Administración", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/181", desc: "Camisa de vestir formal para caballero, ideal para oficina.", etiqueta: "Básico", precio: 522.72 },
-        { id: 5, nombre: "LENTES DE MICA CONTINUA", marca: "N/A", categoria: "EPP", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/215", desc: "Lentes de seguridad con mica continua para protección ocular completa.", etiqueta: "Seguridad", precio: 440.00 },
-        { id: 6, nombre: "CARETA FACIAL", marca: "N/A", categoria: "EPP", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/214", desc: "Careta de protección facial transparente contra salpicaduras e impactos.", etiqueta: "Protección", precio: 300.00 },
-        { id: 7, nombre: "Tapones Auditivos", marca: "N/A", categoria: "EPP", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/213", desc: "Tapones auditivos desechables de espuma suave.", etiqueta: "Seguridad", precio: 6.00 },
-        { id: 8, nombre: "CHALECO DE SEGURIDAD", marca: "N/A", categoria: "Imagen Corporativa", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/183", desc: "Chaleco de alta visibilidad con bandas reflectantes.", etiqueta: "Reflejante", precio: 450.00 },
-        { id: 9, nombre: "FILIPINA PARA DAMA", marca: "N/A", categoria: "Mantenimiento", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/242", desc: "Filipina médica o de servicio para dama, corte ergonómico.", etiqueta: "Salud", precio: 371.34 },
-        { id: 10, nombre: "FILIPINA PARA CABALLERO", marca: "N/A", categoria: "Mantenimiento", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/243", desc: "Filipina para caballero, resistente y cómoda para largas jornadas.", etiqueta: "Salud", precio: 371.34 },
-        { id: 11, nombre: "PANTALÓN TIPO JOGGER PARA CABALLERO", marca: "N/A", categoria: "Mantenimiento", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/240", desc: "Pantalón tipo jogger operativo, cómodo y con múltiples bolsillos.", etiqueta: "Operativo", precio: 411.00 },
-        { id: 12, nombre: "POLO DE ALTO RENDIMIENTO PARA CABALLERO", marca: "N/A", categoria: "Producción", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/236", desc: "Camisa tipo polo de tela transpirable para alto rendimiento.", etiqueta: "Industrial", precio: 261.36 },
-        { id: 13, nombre: "PANTALON DE MEZCLILLA", marca: "UPE Industrial", categoria: "Producción", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/184", desc: "Pantalón de mezclilla resistente para trabajo pesado.", etiqueta: "Resistente", precio: 348.00 },
-        { id: 14, nombre: "MOCHILA DE PECHO", marca: "N/A", categoria: "Seguridad", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/235", desc: "Mochila táctica de pecho para personal de seguridad.", etiqueta: "Táctico", precio: 1260.00 },
-        { id: 15, nombre: "CAMISA TACTICA", marca: "N/A", categoria: "Seguridad", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/234", desc: "Camisa táctica reforzada para uso rudo.", etiqueta: "Táctico", precio: 1044.00 },
-        { id: 16, nombre: "PANTALÓN OPERATIVO", marca: "UPE", categoria: "Ventas", img: "https://uniformesprofesionales.mx/semprainfraestructura/api/image/182", desc: "Pantalón operativo de cargo para personal de campo.", etiqueta: "Campo", precio: 552.00 }
+        { id: 1, nombre: "CHALECO HIBRIDO PARA CABALLERO", marca: "Sport-tek", categoria: "Administración", img: "img/catalogo/prod_217.jpg", desc: "Chalecos marca Sport-Tek de alto rendimiento, confeccionados con dos tejidos diferentes. Deflectores 100% poliéster, tejido doble 90/10 poliéster/spandex. Acabado repelente al agua (DWR).", etiqueta: "Nuevo", precio: 736.56 },
+        { id: 2, nombre: "CHAMARRA TIPO NEOPRENO PARA DAMA", marca: "Port Authority", categoria: "Administración", img: "img/catalogo/prod_244.jpg", desc: "Chamarra tipo neopreno 100% poliéster, ideal para climas frescos y uso corporativo.", etiqueta: "Corporativo", precio: 767.16 },
+        { id: 3, nombre: "CHAMARRA TIPO NEOPRENO PARA CABALLERO", marca: "Port Authority", categoria: "Administración", img: "img/catalogo/prod_245.jpg", desc: "Chamarra tipo neopreno 100% poliéster para caballero, resistente y elegante.", etiqueta: "Corporativo", precio: 767.16 },
+        { id: 4, nombre: "Camisa manga larga caballero", marca: "UPE", categoria: "Administración", img: "img/catalogo/prod_181.jpg", desc: "Camisa de vestir formal para caballero, ideal para oficina.", etiqueta: "Básico", precio: 522.72 },
+        { id: 5, nombre: "LENTES DE MICA CONTINUA", marca: "N/A", categoria: "EPP", img: "img/catalogo/prod_215.jpg", desc: "Lentes de seguridad con mica continua para protección ocular completa.", etiqueta: "Seguridad", precio: 440.00 },
+        { id: 6, nombre: "CARETA FACIAL", marca: "N/A", categoria: "EPP", img: "img/catalogo/prod_214.jpg", desc: "Careta de protección facial transparente contra salpicaduras e impactos.", etiqueta: "Protección", precio: 300.00 },
+        { id: 7, nombre: "Tapones Auditivos", marca: "N/A", categoria: "EPP", img: "img/catalogo/prod_213.jpg", desc: "Tapones auditivos desechables de espuma suave.", etiqueta: "Seguridad", precio: 6.00 },
+        { id: 8, nombre: "CHALECO DE SEGURIDAD", marca: "N/A", categoria: "Imagen Corporativa", img: "img/catalogo/prod_183.jpg", desc: "Chaleco de alta visibilidad con bandas reflectantes.", etiqueta: "Reflejante", precio: 450.00 },
+        { id: 9, nombre: "FILIPINA PARA DAMA", marca: "N/A", categoria: "Mantenimiento", img: "img/catalogo/prod_242.jpg", desc: "Filipina médica o de servicio para dama, corte ergonómico.", etiqueta: "Salud", precio: 371.34 },
+        { id: 10, nombre: "FILIPINA PARA CABALLERO", marca: "N/A", categoria: "Mantenimiento", img: "img/catalogo/prod_243.jpg", desc: "Filipina para caballero, resistente y cómoda para largas jornadas.", etiqueta: "Salud", precio: 371.34 },
+        { id: 11, nombre: "PANTALÓN TIPO JOGGER PARA CABALLERO", marca: "N/A", categoria: "Mantenimiento", img: "img/catalogo/prod_240.jpg", desc: "Pantalón tipo jogger operativo, cómodo y con múltiples bolsillos.", etiqueta: "Operativo", precio: 411.00 },
+        { id: 12, nombre: "POLO DE ALTO RENDIMIENTO PARA CABALLERO", marca: "N/A", categoria: "Producción", img: "img/catalogo/prod_236.jpg", desc: "Camisa tipo polo de tela transpirable para alto rendimiento.", etiqueta: "Industrial", precio: 261.36 },
+        { id: 13, nombre: "PANTALON DE MEZCLILLA", marca: "UPE Industrial", categoria: "Producción", img: "img/catalogo/prod_184.jpg", desc: "Pantalón de mezclilla resistente para trabajo pesado.", etiqueta: "Resistente", precio: 348.00 },
+        { id: 14, nombre: "MOCHILA DE PECHO", marca: "N/A", categoria: "Seguridad", img: "img/catalogo/prod_235.jpg", desc: "Mochila táctica de pecho para personal de seguridad.", etiqueta: "Táctico", precio: 1260.00 },
+        { id: 15, nombre: "CAMISA TACTICA", marca: "N/A", categoria: "Seguridad", img: "img/catalogo/prod_234.jpg", desc: "Camisa táctica reforzada para uso rudo.", etiqueta: "Táctico", precio: 1044.00 },
+        { id: 16, nombre: "PANTALÓN OPERATIVO", marca: "UPE", categoria: "Ventas", img: "img/catalogo/prod_182.jpg", desc: "Pantalón operativo de cargo para personal de campo.", etiqueta: "Campo", precio: 552.00 }
     ];
-    let productos = JSON.parse(localStorage.getItem('upe_productos_v2')) || productosDefault;
+    let productos = JSON.parse(localStorage.getItem('upe_productos_v3')) || productosDefault;
     let categoriaActual='todos';
 
     // === CATÁLOGO: redirigir a catalogo.html ===
@@ -884,7 +883,7 @@
     function cerrarModalProducto(){document.getElementById('modal-producto').classList.add('hidden')}
     function guardarProducto(e){e.preventDefault();const idV=document.getElementById('prod-id').value;const np={id:idV?parseInt(idV):Date.now(),nombre:document.getElementById('prod-nombre').value,categoria:document.getElementById('prod-categoria').value,marca:document.getElementById('prod-marca').value,etiqueta:document.getElementById('prod-etiqueta').value,img:document.getElementById('prod-img').value,desc:document.getElementById('prod-desc').value};if(idV){const i=productos.findIndex(p=>p.id===parseInt(idV));if(i!==-1)productos[i]=np;showToast('Producto actualizado.','success')}else{productos.unshift(np);showToast('Producto agregado al catálogo.','success')}guardarDatos();cerrarModalProducto();renderAdminTable()}
     function eliminarProducto(id){showConfirm('Eliminar Producto','¿Eliminar permanentemente este producto?',()=>{productos=productos.filter(p=>p.id!==id);guardarDatos();renderAdminTable();showToast('Producto eliminado.','success')})}
-    function guardarDatos(){localStorage.setItem('upe_productos_v2',JSON.stringify(productos))}
+    function guardarDatos(){localStorage.setItem('upe_productos_v3',JSON.stringify(productos))}
     function exportarJSON(){const d="data:text/json;charset=utf-8,"+encodeURIComponent(JSON.stringify(productos,null,2));const a=document.createElement('a');a.href=d;a.download='upe_inventario.json';document.body.appendChild(a);a.click();a.remove()}
     function importarJSON(ev){const f=ev.target.files[0];if(!f)return;const r=new FileReader();r.onload=e=>{try{const d=JSON.parse(e.target.result);if(Array.isArray(d)){showConfirm('Importar','Esto reemplazará tu catálogo. ¿Continuar?',()=>{productos=d;guardarDatos();renderAdminTable();showToast('Catálogo importado.','success')})}else{showToast('Formato JSON incorrecto.','error')}}catch(err){showToast('Error al leer archivo.','error')}};r.readAsText(f);ev.target.value=''}
 
