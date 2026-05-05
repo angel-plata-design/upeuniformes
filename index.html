@@ -47,7 +47,7 @@
         *,*::before,*::after{box-sizing:border-box}
         html{width:100%;max-width:100vw;overflow-x:clip}body{overflow-x:clip;width:100%;max-width:100vw;font-family:'Plus Jakarta Sans',sans-serif;position:relative;margin:0}
         #hero-slider{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-2;background-size:cover;background-position:center;transition:background-image 1.5s ease-in-out}
-        #hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to right,rgba(0,0,0,.92) 0%,rgba(0,0,0,.60) 55%,rgba(0,0,0,.15) 100%);z-index:-1}
+        #hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to right,rgba(0,0,0,.55) 0%,rgba(0,0,0,.35) 55%,rgba(0,0,0,.10) 100%);z-index:-1}
         @media(prefers-reduced-motion:reduce){#hero-slider{transition:none}.fade-in{animation:none}}
         .no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
         @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.fade-in{animation:fadeIn .4s ease-in-out}
@@ -111,19 +111,9 @@
                 <div class="hidden md:flex items-center space-x-4 h-full">
                     <div class="relative nav-item-group flex items-center h-full">
                         <button onclick="scrollToSection('catalogo')" class="nav-link flex items-center gap-1 cursor-pointer">Categorías <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
-                        <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full w-[860px] bg-white border-t-4 border-brand-blue text-left z-50 overflow-hidden">
-                            <div class="grid grid-cols-3 divide-x divide-gray-100">
+                        <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full w-[640px] bg-white border-t-4 border-brand-blue text-left z-50 overflow-hidden">
+                            <div class="grid grid-cols-2 divide-x divide-gray-100">
                                 <div class="p-6 bg-gray-50">
-                                    <h4 class="font-extrabold text-brand-navy mb-4 text-xs uppercase tracking-wider">Tipo de Prenda</h4>
-                                    <ul class="space-y-2">
-                                        <li><button onclick="filtrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Camisas</button></li>
-                                        <li><button onclick="filtrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Polos</button></li>
-                                        <li><button onclick="filtrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Playeras</button></li>
-                                        <li><button onclick="filtrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Pantalones</button></li>
-                                        <li><button onclick="filtrarCatalogo('todos')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-blue"></i>Chamarras</button></li>
-                                    </ul>
-                                </div>
-                                <div class="p-6 bg-white">
                                     <h4 class="font-extrabold text-brand-navy mb-4 text-xs uppercase tracking-wider">Categorías</h4>
                                     <ul class="space-y-2">
                                         <li><button onclick="filtrarCatalogo('Administración')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="briefcase" class="w-3 h-3 text-brand-blue"></i>Administración</button></li>
@@ -135,7 +125,7 @@
                                         <li><button onclick="filtrarCatalogo('Ventas')" class="text-sm font-semibold text-gray-600 hover:text-brand-blue transition-colors flex items-center gap-2"><i data-lucide="trending-up" class="w-3 h-3 text-brand-blue"></i>Ventas</button></li>
                                     </ul>
                                 </div>
-                                <div class="p-6 bg-gray-50">
+                                <div class="p-6 bg-white">
                                     <h4 class="font-extrabold text-brand-navy mb-3 text-xs uppercase tracking-wider">Marcas Destacadas</h4>
                                     <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Industrial</p>
                                     <p class="text-xs text-gray-600 mb-3">Red Kap · Dickies · Bulwark FR · Carhartt</p>
@@ -197,7 +187,7 @@
         <div id="hero-slider"></div>
         <div id="hero-overlay"></div>
         <div class="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center">
-            <div id="hero-text-box" class="lg:w-1/2 bg-white/5 backdrop-blur-sm p-8 md:p-12 lg:p-16 border-l-4 border-brand-blue text-left mt-10 md:mt-0 rounded-2xl" style="transition:opacity .35s ease;">
+            <div id="hero-text-box" class="lg:w-1/2 bg-black/30 backdrop-blur-[2px] p-8 md:p-12 lg:p-16 border-l-4 border-brand-blue text-left mt-10 md:mt-0 rounded-2xl" style="transition:opacity .35s ease;">
                 <span id="hero-tag" class="text-[#009aeb] font-bold text-xs uppercase tracking-[0.25em] border-b border-[#009aeb] pb-1 mb-6 block w-fit">Uniformes Profesionales · México</span>
                 <h1 id="hero-title" class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">Programas de <br/> <span class="text-[#009aeb]">Uniformes</span><br/>a tu Medida</h1>
                 <p id="hero-sub" class="text-lg md:text-xl text-gray-200 mb-4 font-medium leading-relaxed max-w-lg">Ya sea que requieras uniforme para un equipo de 2 ó 500,000, estás en el lugar correcto.</p>
