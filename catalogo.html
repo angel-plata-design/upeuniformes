@@ -249,8 +249,21 @@
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-10">
 
+                <!-- Botón filtros mobile -->
+                <button onclick="abrirFiltrosMobile()" class="lg:hidden flex items-center justify-center gap-2 w-full bg-brand-navy text-white font-bold text-xs uppercase tracking-widest py-3.5 rounded-xl mb-2">
+                    <i data-lucide="sliders-horizontal" class="w-4 h-4"></i> Filtros
+                </button>
+
+                <!-- Overlay mobile -->
+                <div id="filtros-overlay" class="fixed inset-0 bg-black/50 z-[9999] hidden lg:hidden" onclick="cerrarFiltrosMobile()"></div>
+
                 <!-- Sidebar con filtros estilo UPEFR -->
-                <aside class="w-full lg:w-64 shrink-0">
+                <aside id="sidebar-filtros" class="fixed top-0 left-0 h-full w-80 bg-white z-[10000] overflow-y-auto transform -translate-x-full transition-transform duration-300 lg:relative lg:translate-x-0 lg:w-64 lg:h-auto lg:z-auto shrink-0 p-6 lg:p-0 shadow-2xl lg:shadow-none">
+                    <!-- Cerrar mobile -->
+                    <div class="flex items-center justify-between mb-5 lg:hidden">
+                        <h3 class="text-lg font-extrabold text-brand-navy uppercase tracking-wider">Filtros</h3>
+                        <button onclick="cerrarFiltrosMobile()" class="text-gray-400 hover:text-brand-navy"><i data-lucide="x" class="w-5 h-5"></i></button>
+                    </div>
                     <!-- Buscador sidebar -->
                     <div class="mb-6 relative">
                         <input type="text" id="buscador" onkeyup="aplicarFiltros()" placeholder="Buscar productos o marcas..."
@@ -323,6 +336,11 @@
                             Solicitar Cotización
                         </a>
                     </div>
+
+                    <!-- Botón aplicar filtros mobile -->
+                    <button onclick="cerrarFiltrosMobile()" class="lg:hidden w-full mt-4 bg-brand-blue text-white font-bold text-xs uppercase tracking-widest py-3.5 rounded-xl">
+                        Aplicar Filtros
+                    </button>
                 </aside>
 
                 <!-- Área de productos -->
@@ -1266,6 +1284,19 @@
     }
 
     function closeMobile() { document.getElementById('mobile-menu').classList.add('hidden'); }
+
+    // --- FILTROS MOBILE DRAWER ---
+    function abrirFiltrosMobile() {
+        document.getElementById('sidebar-filtros').classList.remove('-translate-x-full');
+        document.getElementById('filtros-overlay').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        lucide.createIcons();
+    }
+    function cerrarFiltrosMobile() {
+        document.getElementById('sidebar-filtros').classList.add('-translate-x-full');
+        document.getElementById('filtros-overlay').classList.add('hidden');
+        document.body.style.overflow = '';
+    }
 
     // --- INIT ---
     lucide.createIcons();
