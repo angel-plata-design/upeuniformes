@@ -53,11 +53,34 @@
 
 <!-- Navbar -->
 <header class="w-full bg-white border-b-2 border-gray-100 sticky top-0 z-50 shadow-sm">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 md:h-[4.5rem]">
-        <a href="index.html"><img src="logoheaderupe.png" alt="UPE Uniformes" class="h-8 md:h-10 object-contain"></a>
-        <div class="flex items-center gap-4">
-            <a href="index.html" class="hidden md:flex items-center gap-1 text-sm font-bold text-gray-500 hover:text-[#009aeb] transition-colors"><i data-lucide="arrow-left" class="w-4 h-4"></i> Inicio</a>
-            <a href="index.html#cotiza" class="bg-[#009aeb] text-white px-6 py-2.5 font-extrabold text-xs tracking-widest uppercase hover:bg-blue-600 transition-colors pill flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Cotiza</a>
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16 md:h-[4.5rem]">
+            <a href="index.html"><img src="logoheaderupe.png" alt="UPE Uniformes" class="h-8 md:h-10 object-contain"></a>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6 h-full">
+                <a href="index.html" class="text-sm font-bold text-gray-700 hover:text-[#009aeb] transition-colors flex items-center gap-1"><i data-lucide="arrow-left" class="w-4 h-4"></i> Inicio</a>
+                <a href="index.html#catalogo" class="text-sm font-bold text-gray-700 hover:text-[#009aeb] transition-colors">Catálogo</a>
+                <a href="index.html#marcas" class="text-sm font-bold text-gray-700 hover:text-[#009aeb] transition-colors">Marcas</a>
+                <a href="index.html#servicios" class="text-sm font-bold text-gray-700 hover:text-[#009aeb] transition-colors">Servicios</a>
+                <a href="#como-funciona" class="text-sm font-bold text-[#009aeb]">Cómo Funciona</a>
+                <a href="index.html#cotiza" class="bg-[#009aeb] text-white px-6 py-2.5 font-extrabold text-xs tracking-widest uppercase hover:bg-blue-600 transition-colors" style="border-radius:9999px" class="flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4 inline mr-1"></i>Cotiza tu Proyecto</a>
+            </nav>
+            <!-- Mobile buttons -->
+            <div class="flex items-center gap-3 md:hidden">
+                <a href="index.html#cotiza" class="bg-[#009aeb] text-white px-4 py-2 font-extrabold text-xs tracking-widest uppercase hover:bg-blue-600 transition-colors" style="border-radius:9999px">Cotiza</a>
+                <button id="menu360-btn" class="text-gray-700 hover:text-[#009aeb] focus:outline-none"><i data-lucide="menu" class="w-7 h-7"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="menu360" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full z-50">
+        <div class="px-6 py-4 flex flex-col space-y-1">
+            <a href="index.html" class="py-3 text-sm font-bold uppercase tracking-wider text-gray-700 border-b border-gray-100 flex items-center gap-2 hover:text-[#009aeb]"><i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al Inicio</a>
+            <a href="index.html#catalogo" class="py-3 text-sm font-bold uppercase tracking-wider text-gray-700 border-b border-gray-100 hover:text-[#009aeb]">Catálogo</a>
+            <a href="index.html#marcas" class="py-3 text-sm font-bold uppercase tracking-wider text-gray-700 border-b border-gray-100 hover:text-[#009aeb]">Marcas</a>
+            <a href="index.html#servicios" class="py-3 text-sm font-bold uppercase tracking-wider text-gray-700 border-b border-gray-100 hover:text-[#009aeb]">Servicios</a>
+            <a href="#como-funciona" class="py-3 text-sm font-bold uppercase tracking-wider text-[#009aeb] border-b border-gray-100" onclick="document.getElementById('menu360').classList.add('hidden')">Cómo Funciona UPE 360</a>
+            <a href="index.html#cotiza" class="py-3 text-sm font-bold uppercase tracking-wider text-[#009aeb]">Cotiza tu Proyecto</a>
         </div>
     </div>
 </header>
@@ -254,6 +277,10 @@ window.addEventListener('DOMContentLoaded',()=>{
     if(window.lucide)lucide.createIcons();
     const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.1});
     document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+    // Hamburger toggle
+    const btn=document.getElementById('menu360-btn');
+    const menu=document.getElementById('menu360');
+    if(btn&&menu){btn.addEventListener('click',()=>menu.classList.toggle('hidden'));}
 });
 </script>
 </body>
