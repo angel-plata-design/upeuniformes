@@ -2125,88 +2125,116 @@
     </div>
     <!-- Newsletter Popup -->
     <div id="newsletter-popup"
-        class="hidden fixed inset-0 bg-brand-navy/70 backdrop-blur-sm z-[65] flex items-center justify-center p-4">
-        <div
-            class="bg-white shadow-2xl max-w-md w-full relative rounded-2xl modal-animate overflow-hidden max-h-[90vh] overflow-y-auto">
-            <button onclick="cerrarNewsletter()"
-                class="absolute top-3 right-3 z-10 text-gray-400 hover:text-gray-700 p-2"><i data-lucide="x"
-                    class="w-5 h-5"></i></button>
-            <div class="bg-brand-navy p-8 text-center">
-                <div
-                    class="w-16 h-16 bg-brand-blue/20 text-brand-blue flex items-center justify-center mx-auto mb-4 btn-square">
-                    <i data-lucide="mail" class="w-8 h-8"></i>
+        class="hidden fixed inset-0 z-[65] flex items-end sm:items-center justify-center p-0 sm:p-4"
+        style="background:rgba(10,21,35,0.85);backdrop-filter:blur(6px);">
+        <div class="w-full sm:max-w-lg relative overflow-hidden shadow-2xl" style="border-radius:0 0 0 0;" >
+            <div class="sm:hidden w-full" style="border-radius:24px 24px 0 0;overflow:hidden;">
+                <!-- Mobile: stack -->
+                <div class="relative h-40 w-full overflow-hidden">
+                    <img src="Servicios.jpg" alt="" class="w-full h-full object-cover">
+                    <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(10,21,35,0.5),rgba(10,21,35,0.92));"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+                        <span class="text-[#009aeb] text-xs font-bold uppercase tracking-[0.25em] mb-2">UPE Uniformes</span>
+                        <h3 class="text-2xl font-black text-white uppercase tracking-tight">Ofertas &amp; Novedades</h3>
+                        <p class="text-gray-300 text-sm mt-1">Sé el primero en conocer lanzamientos y descuentos exclusivos.</p>
+                    </div>
+                    <button onclick="cerrarNewsletter()" class="absolute top-3 right-3 text-white/70 hover:text-white p-1"><i data-lucide="x" class="w-5 h-5"></i></button>
                 </div>
-                <h3 class="text-2xl font-black text-white uppercase tracking-tight mb-2">¡No te pierdas nada!</h3>
-                <p class="text-gray-300 text-sm font-medium">Suscríbete y recibe ofertas exclusivas y novedades.</p>
+                <div class="bg-white p-6">
+                    <form action="https://formsubmit.co/contacto@uniformesprofesionales.mx" method="POST" id="newsletter-form">
+                        <input type="hidden" name="_subject" value="Newsletter - UPE Uniformes">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://uniformesprofesionales.mx/">
+                        <input type="text" name="nombre" placeholder="Tu nombre" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:border-[#009aeb] outline-none mb-3 text-sm font-medium" style="border-radius:8px;">
+                        <input type="email" name="email" placeholder="Correo electrónico" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:border-[#009aeb] outline-none mb-4 text-sm font-medium" style="border-radius:8px;">
+                        <button type="submit" class="w-full bg-[#009aeb] text-white font-extrabold text-sm uppercase tracking-widest py-4 hover:bg-[#0a2540] transition-colors" style="border-radius:8px;">Suscribirme</button>
+                    </form>
+                    <p class="text-xs text-gray-400 text-center mt-3">Sin spam. Puedes darte de baja en cualquier momento.</p>
+                </div>
             </div>
-            <div class="p-8">
-                <form action="https://formsubmit.co/contacto@uniformesprofesionales.mx" method="POST"
-                    id="newsletter-form">
-                    <input type="hidden" name="_subject" value="Nueva Suscripción Newsletter - UPE">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://uniformesprofesionales.mx/">
-                    <input type="text" name="nombre" placeholder="Tu nombre" required
-                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:border-brand-blue outline-none mb-3 btn-square text-sm font-medium">
-                    <input type="email" name="email" placeholder="Tu correo electrónico" required
-                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:border-brand-blue outline-none mb-4 btn-square text-sm font-medium">
-                    <button type="submit"
-                        class="w-full bg-brand-blue text-white font-extrabold text-sm uppercase tracking-widest py-4 hover:bg-brand-navy transition-colors btn-square">Suscribirme</button>
-                </form>
-                <p class="text-xs text-gray-400 text-center mt-4">Respetamos tu privacidad. Sin spam.</p>
+            <!-- Desktop: side by side -->
+            <div class="hidden sm:grid grid-cols-2" style="border-radius:16px;overflow:hidden;max-height:480px;">
+                <div class="relative col-span-1 overflow-hidden">
+                    <img src="Servicios.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(10,21,35,0.88) 0%,rgba(0,154,235,0.55) 100%);"></div>
+                    <div class="relative h-full flex flex-col justify-between p-8">
+                        <img src="logo blanco upe.png" alt="UPE" class="h-8 object-contain w-fit opacity-90">
+                        <div>
+                            <span class="text-[#009aeb] text-xs font-bold uppercase tracking-[0.25em] mb-3 block">Newsletter exclusivo</span>
+                            <h3 class="text-3xl font-black text-white uppercase tracking-tight leading-none mb-3">Ofertas &amp;<br>Novedades</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Lanzamientos, descuentos y contenido exclusivo directo a tu correo.</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-gray-400">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-[#009aeb] shrink-0"></i> Sin spam. Privacidad garantizada.
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white flex flex-col justify-center p-8 relative">
+                    <button onclick="cerrarNewsletter()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 p-1"><i data-lucide="x" class="w-5 h-5"></i></button>
+                    <h4 class="text-lg font-black text-[#0a2540] uppercase tracking-tight mb-1">Únete ahora</h4>
+                    <p class="text-gray-500 text-xs mb-6">Sé el primero en recibir promociones.</p>
+                    <form action="https://formsubmit.co/contacto@uniformesprofesionales.mx" method="POST">
+                        <input type="hidden" name="_subject" value="Newsletter - UPE Uniformes">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://uniformesprofesionales.mx/">
+                        <input type="text" name="nombre" placeholder="Tu nombre" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:border-[#009aeb] outline-none mb-3 text-sm" style="border-radius:8px;">
+                        <input type="email" name="email" placeholder="Correo electrónico" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:border-[#009aeb] outline-none mb-5 text-sm" style="border-radius:8px;">
+                        <button type="submit" class="w-full bg-[#009aeb] text-white font-extrabold text-sm uppercase tracking-widest py-4 hover:bg-[#0a2540] transition-colors" style="border-radius:8px;">Suscribirme →</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Welcome Modal -->
+    <!-- Welcome Modal - Selector UPE -->
     <div id="welcomeModal"
-        class="fixed inset-0 z-[9999] hidden bg-[#0a1523]/90 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-white border-t-8 border-brand-blue shadow-2xl max-w-3xl w-full relative modal-animate rounded-2xl overflow-y-auto"
-            style="max-height:90vh;">
-            <button id="closeModalBtn"
-                class="absolute top-3 right-3 z-10 text-gray-400 hover:text-brand-navy hover:bg-gray-100 p-2 transition btn-square group"><i
-                    data-lucide="x" class="w-5 h-5 group-hover:scale-110 transition-transform"></i></button>
-            <div class="text-center p-5 md:p-10 pb-4 md:pb-6 border-b border-gray-100 bg-gray-50"><span
-                    class="text-brand-blue font-extrabold tracking-widest uppercase text-xs mb-2 block">Bienvenido a
-                    UPE</span>
-                <h2 class="text-xl md:text-3xl font-black text-brand-navy tracking-tight uppercase mb-2">¿Qué tipo de
-                    uniformes buscas?</h2>
-                <p class="text-gray-500 font-medium text-sm hidden md:block max-w-lg mx-auto">Selecciona la línea que
-                    mejor se adapta.</p>
+        class="fixed inset-0 z-[9999] hidden flex items-center justify-center p-4"
+        style="background:rgba(5,12,25,0.92);backdrop-filter:blur(8px);">
+        <div class="w-full max-w-2xl relative" style="border-radius:20px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.7);">
+            <!-- Header -->
+            <div class="bg-[#0a2540] px-8 py-5 flex justify-between items-center border-b border-white/10">
+                <div>
+                    <p class="text-[#009aeb] text-xs font-bold uppercase tracking-[0.3em] mb-0.5">Grupo UPE</p>
+                    <h2 class="text-white font-black text-lg uppercase tracking-tight">¿Qué tipo de uniformes necesitas?</h2>
+                </div>
+                <button id="closeModalBtn" class="text-gray-400 hover:text-white p-2 transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
-            <div class="grid grid-cols-2 p-0 divide-x divide-gray-200">
-                <a href="https://angel-plata-design.github.io/upefr/"
-                    class="group block p-5 md:p-10 text-center hover:bg-red-50 transition-colors flex flex-col items-center justify-center bg-white">
-                    <div class="h-14 md:h-24 w-full flex items-center justify-center mb-3 md:mb-5"><img
-                            src="logo-fr.png" alt="UPE FR"
-                            class="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition duration-500">
+            <!-- Cards split -->
+            <div class="grid grid-cols-2 divide-x divide-white/10">
+                <!-- UPE FR -->
+                <a href="https://angel-plata-design.github.io/upefr/" class="group relative block overflow-hidden" style="min-height:320px;">
+                    <img src="Antiflama_img.jpg" alt="UPE FR" class="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 transition-all duration-500" style="background:linear-gradient(to top,rgba(180,30,30,0.92) 0%,rgba(10,10,20,0.65) 100%);"></div>
+                    <div class="absolute inset-0 flex flex-col justify-end p-7">
+                        <div class="mb-4">
+                            <span class="inline-block bg-red-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 mb-3" style="border-radius:4px;">Certificado FR</span>
+                            <h3 class="text-white font-black text-xl uppercase tracking-tight mb-1 group-hover:text-red-200 transition-colors">UPE FR</h3>
+                            <p class="text-red-200 text-sm leading-relaxed">Ropa antiflama certificada, calzado de seguridad y EPP industrial.</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-white/80 text-xs font-bold uppercase tracking-widest">
+                            Ir a UPE FR <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
                     </div>
-                    <div
-                        class="bg-red-100 text-[#c1272d] text-[10px] md:text-xs font-bold px-2 md:px-3 py-1 uppercase tracking-widest btn-square mb-2 md:mb-3 group-hover:bg-[#c1272d] group-hover:text-white transition-colors">
-                        FR</div>
-                    <h3
-                        class="text-sm md:text-xl font-black text-brand-navy group-hover:text-[#c1272d] uppercase tracking-wider mb-1 transition-colors">
-                        Uniformes FR</h3>
-                    <p class="text-xs font-medium text-gray-500 leading-relaxed hidden md:block">Antiflama certificados,
-                        calzado y EPP.</p>
                 </a>
-                <a href="#"
-                    onclick="document.getElementById('welcomeModal').classList.add('hidden');event.preventDefault();"
-                    class="group block p-5 md:p-10 text-center hover:bg-blue-50 transition-colors flex flex-col items-center justify-center bg-white cursor-pointer relative overflow-hidden">
-                    <div class="h-14 md:h-24 w-full flex items-center justify-center mb-3 md:mb-5 relative z-10"><img
-                            src="logoheaderupe.png" alt="UPE Uniformes"
-                            class="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition duration-500">
+                <!-- UPE Uniformes -->
+                <a href="#" onclick="document.getElementById('welcomeModal').classList.add('hidden');event.preventDefault();" class="group relative block overflow-hidden" style="min-height:320px;">
+                    <img src="Cooporativo.jpg" alt="UPE Uniformes" class="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 transition-all duration-500" style="background:linear-gradient(to top,rgba(0,80,160,0.92) 0%,rgba(10,10,20,0.65) 100%);"></div>
+                    <div class="absolute inset-0 flex flex-col justify-end p-7">
+                        <div class="mb-4">
+                            <span class="inline-block bg-[#009aeb] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 mb-3" style="border-radius:4px;">Uniformes Pro</span>
+                            <h3 class="text-white font-black text-xl uppercase tracking-tight mb-1 group-hover:text-blue-200 transition-colors">UPE Uniformes</h3>
+                            <p class="text-blue-200 text-sm leading-relaxed">Corporativos, industriales, médicos, restaurante y calzado.</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-white/80 text-xs font-bold uppercase tracking-widest">
+                            Continuar aquí <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
                     </div>
-                    <div
-                        class="bg-brand-light text-brand-blue text-[10px] md:text-xs font-bold px-2 md:px-3 py-1 uppercase tracking-widest btn-square mb-2 md:mb-3 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                        Profesionales</div>
-                    <h3
-                        class="text-sm md:text-xl font-black text-brand-navy group-hover:text-brand-blue uppercase tracking-wider mb-1 transition-colors">
-                        Uniformes Pro</h3>
-                    <p class="text-xs font-medium text-gray-500 leading-relaxed hidden md:block">Corporativos,
-                        industriales, médicos, restaurante.</p>
                 </a>
             </div>
-            <div class="p-4 bg-gray-50 text-center text-xs font-medium text-gray-400 border-t border-gray-100">&copy;
-                2026 Grupo UPE Uniformes Profesionales</div>
+            <!-- Footer -->
+            <div class="bg-[#060e1a] px-8 py-3 text-center text-xs text-gray-500 border-t border-white/5">
+                &copy; 2026 Grupo UPE &nbsp;&middot;&nbsp; <span class="text-gray-600">uniformesprofesionales.mx</span>
+            </div>
         </div>
     </div>
     <!-- WhatsApp FAB -->
