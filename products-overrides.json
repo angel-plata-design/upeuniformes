@@ -699,6 +699,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo JST56, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/hde/he4/30371348283422/1200W_11084_Black-0-JST56BlackModelFront2/1200W-11084-Black-0-JST56BlackModelFront2.jpg",
       "popular": false
+    },
+    "21186": {
+      "title": "Sport-Tek Fleece Letterman Jacket",
+      "sku": "SANMAR-ST270",
+      "style": "ST270",
+      "mainCategory": "corporativo",
+      "brand": "Sport-Tek",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo ST270, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h5c/h3a/28961739931678/1200W_6004_BlkVtgHtr-0-ST270BlkVtgHtrModelFront2/1200W-6004-BlkVtgHtr-0-ST270BlkVtgHtrModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
