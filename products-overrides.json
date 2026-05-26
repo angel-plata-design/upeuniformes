@@ -685,6 +685,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo JST70, color GREY. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/hae/hc9/29025692155934/1200W_3807_Graphite-0-JST70GraphiteModelFront2/1200W-3807-Graphite-0-JST70GraphiteModelFront2.jpg",
       "popular": false
+    },
+    "21184": {
+      "title": "Sport-Tek Waterproof Insulated Jacket",
+      "sku": "SANMAR-JST56",
+      "style": "JST56",
+      "mainCategory": "corporativo",
+      "brand": "Sport-Tek",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo JST56, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hde/he4/30371348283422/1200W_11084_Black-0-JST56BlackModelFront2/1200W-11084-Black-0-JST56BlackModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
