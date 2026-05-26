@@ -224,6 +224,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h15/h92/15639951376414/1200W_23284_ShadowGrey-0-CT105532ShadowGreyModelFront5/1200W-23284-ShadowGrey-0-CT105532ShadowGreyModelFront5.jpg",
       "popular": false
     },
+    "21049": {
+      "title": "Port & Co - Camisa LSP11",
+      "sku": "SANMAR-LSP11",
+      "style": "LSP11",
+      "mainCategory": "corporativo",
+      "brand": "Port & Co",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo LSP11, color FATHER BLUE. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h60/h95/31588848369694/1200W_752_FadedBlue-0-LSP11FadedBlueModelFront3/1200W-752-FadedBlue-0-LSP11FadedBlueModelFront3.jpg",
+      "popular": false
+    },
     "21135": {
       "title": "AUTHORITY - Camisa LW100",
       "sku": "SANMAR-LW100",
