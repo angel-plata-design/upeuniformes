@@ -769,6 +769,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM4001, color STORM GREY. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h71/h98/30951527120926/1200W_67794_StormGrey-0-MM4001StormGreyModelFront/1200W-67794-StormGrey-0-MM4001StormGreyModelFront.jpg",
       "popular": false
+    },
+    "21203": {
+      "title": "Mercer+Mettle Capital Tech Pant",
+      "sku": "SANMAR-MM4000",
+      "style": "MM4000",
+      "mainCategory": "corporativo",
+      "brand": "MERCER+METTLE",
+      "tipoprenda": "Pantalon",
+      "tallas": [
+        "38 X 32"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM4000, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h91/h2e/30951516176414/1200W_67793_DeepBlack-0-MM4000DeepBlackModelFront/1200W-67793-DeepBlack-0-MM4000DeepBlackModelFront.jpg",
+      "popular": false
     }
   },
   "extras": []
