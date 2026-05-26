@@ -895,6 +895,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo WW5058, color GREY. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/images/h06/hbc/11237205049374/11159-Royal-1-WW5058RoyalModelFront-1200W.jpg",
       "popular": false
+    },
+    "21232": {
+      "title": "Wink Men's Consultation Lab Coat",
+      "sku": "SANMAR-WW5072",
+      "style": "WW5072",
+      "mainCategory": "medico",
+      "brand": "Wink",
+      "tipoprenda": "Bata",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo WW5072, color WHITE. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h38/hd2/16094035804190/1200W_11161_White-0-WW5072WhiteModelFront2/1200W-11161-White-0-WW5072WhiteModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
