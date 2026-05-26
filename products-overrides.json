@@ -1203,6 +1203,20 @@
       "description": "Muestra disponible. Modelo RP656, color BLACK, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://reprimeusc.blob.core.windows.net/reprime/thumbs/435-550/RP656/RP656_Black_1.jpg",
       "popular": false
+    },
+    "30028": {
+      "title": "Artisan Collection by Reprime RP660 Unisex Denim Chef Jacket",
+      "sku": "S&S-RP660",
+      "style": "RP660",
+      "mainCategory": "restaurante",
+      "brand": "Reprime",
+      "tipoprenda": "Filipina",
+      "tallas": [
+        "M"
+      ],
+      "description": "Muestra disponible. Modelo RP660, color DENIM, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://joesusa.com/cdn/shop/files/artisan-collection-by-reprime-unisex-denim-chefs-jacket-artisan-collection-by-reprime-rp660-black-denim-xs-jackets-1756334.jpg?v=1770758604&width=1500",
+      "popular": false
     }
   },
   "extras": []
