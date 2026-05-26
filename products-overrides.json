@@ -657,6 +657,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo LST76, color MAROON. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/hb9/hf8/28997675057182/1200W_4713_TRedWhite-0-LST76TRedWhiteModelFront2/1200W-4713-TRedWhite-0-LST76TRedWhiteModelFront2.jpg",
       "popular": false
+    },
+    "21182": {
+      "title": "Sport-Tek Packable Anorak",
+      "sku": "SANMAR-JST66",
+      "style": "JST66",
+      "mainCategory": "corporativo",
+      "brand": "Sport-Tek",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo JST66, color WHITE. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h5f/h39/28962263400478/1200W_10123_White-0-JST66WhiteModelFront2/1200W-10123-White-0-JST66WhiteModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
