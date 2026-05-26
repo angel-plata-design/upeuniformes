@@ -867,6 +867,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo LOG706, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h69/h71/27673181421598/1200W_18382_Blacktop-0-LOG706BlacktopModelFront2/1200W-18382-Blacktop-0-LOG706BlacktopModelFront2.jpg",
       "popular": false
+    },
+    "21218": {
+      "title": "OGIO Women's Modern Performance Full-Zip",
+      "sku": "SANMAR-LOG703",
+      "style": "LOG703",
+      "mainCategory": "corporativo",
+      "brand": "OGIO",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo LOG703, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h1f/h98/15629495959582/1200W_10130_Blacktop-0-LOE703BlacktopModelFront2/1200W-10130-Blacktop-0-LOE703BlacktopModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
