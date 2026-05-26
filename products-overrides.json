@@ -951,6 +951,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo A902, color OLIVE DRAB GREEN. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h38/h55/30952037122078/1200W_67883_RoseQuartz-0-A902RoseQuartzModelFront/1200W-67883-RoseQuartz-0-A902RoseQuartzModelFront.jpg",
       "popular": false
+    },
+    "21247": {
+      "title": "Port Authority - Camisa K700",
+      "sku": "SANMAR-K700",
+      "style": "K700",
+      "mainCategory": "corporativo",
+      "brand": "Port Authority",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo K700, color Cloud Blue Check. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h86/h99/30952211513374/1200W_67789_BkCarBlCk-0-K700BkCarBlCkModelFront/1200W-67789-BkCarBlCk-0-K700BkCarBlCkModelFront.jpg",
+      "popular": false
     }
   },
   "extras": []
