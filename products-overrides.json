@@ -1147,6 +1147,20 @@
       "description": "Muestra disponible. Modelo RP904, color WHITE, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://joesusa.com/cdn/shop/files/artisan-collection-by-reprime-mens-chef-recycled-shirt-artisan-collection-by-reprime-rp904-black-s-6678902.jpg?v=1770758777&width=1500",
       "popular": false
+    },
+    "30024": {
+      "title": "Artisan Collection by Reprime RP664 Unisex Studded Chef Coat",
+      "sku": "S&S-RP664",
+      "style": "RP664",
+      "mainCategory": "restaurante",
+      "brand": "Reprime",
+      "tipoprenda": "Filipina",
+      "tallas": [
+        "M"
+      ],
+      "description": "Muestra disponible. Modelo RP664, color BLACK, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdn.shopify.com/s/files/1/0558/0265/8899/files/117878_b_fm.jpg",
+      "popular": false
     }
   },
   "extras": []
