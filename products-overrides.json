@@ -98,6 +98,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/images/h9d/hb7/14562772811806/1200W-null.jpg",
       "popular": false
     },
+    "21147": {
+      "title": "Port Authority Untucked Fit SuperPro Oxford Shirt",
+      "sku": "SANMAR-S651",
+      "style": "S651",
+      "mainCategory": "corporativo",
+      "brand": "Port Authority",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo S651, color OXFORD BLUE. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h91/hef/27021829996574/1200W_9742_OxfordBlue-0-S651OxfordBlueModelFront1/1200W-9742-OxfordBlue-0-S651OxfordBlueModelFront1.jpg",
+      "popular": false
+    },
     "21164": {
       "title": "AUTHORITY - Chamarra J754",
       "sku": "SANMAR-J754",
