@@ -1161,6 +1161,20 @@
       "description": "Muestra disponible. Modelo RP664, color BLACK, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdn.shopify.com/s/files/1/0558/0265/8899/files/117878_b_fm.jpg",
       "popular": false
+    },
+    "30025": {
+      "title": "Artisan Collection by Reprime RP665 Unisex Chef Coat",
+      "sku": "S&S-RP665",
+      "style": "RP665",
+      "mainCategory": "restaurante",
+      "brand": "Reprime",
+      "tipoprenda": "Filipina",
+      "tallas": [
+        "XL"
+      ],
+      "description": "Muestra disponible. Modelo RP665, color BLACK, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdn.shopify.com/s/files/1/0558/0265/8899/files/117847_b_fm.jpg",
+      "popular": false
     }
   },
   "extras": []
