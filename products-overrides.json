@@ -1133,6 +1133,20 @@
       "description": "Muestra disponible. Modelo BB18003, color COBALT BLUE, marca Brooks Brothers. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/hc6/h8b/31454422007838/1200W_29476_CobaltBl-0-BB18003CobaltBlModelFront1/1200W-29476-CobaltBl-0-BB18003CobaltBlModelFront1.jpg",
       "popular": false
+    },
+    "30023": {
+      "title": "Artisan Collection by Reprime RP904 Chef Recycled Shirt",
+      "sku": "S&S-RP904",
+      "style": "RP904",
+      "mainCategory": "restaurante",
+      "brand": "Reprime",
+      "tipoprenda": "Filipina",
+      "tallas": [
+        "L"
+      ],
+      "description": "Muestra disponible. Modelo RP904, color WHITE, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://joesusa.com/cdn/shop/files/artisan-collection-by-reprime-mens-chef-recycled-shirt-artisan-collection-by-reprime-rp904-black-s-6678902.jpg?v=1770758777&width=1500",
+      "popular": false
     }
   },
   "extras": []
