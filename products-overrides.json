@@ -1175,6 +1175,20 @@
       "description": "Muestra disponible. Modelo RP665, color BLACK, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdn.shopify.com/s/files/1/0558/0265/8899/files/117847_b_fm.jpg",
       "popular": false
+    },
+    "30026": {
+      "title": "Artisan Collection by Reprime RP906 Chef Zip-Close Coat",
+      "sku": "S&S-RP906",
+      "style": "RP906",
+      "mainCategory": "restaurante",
+      "brand": "Reprime",
+      "tipoprenda": "Filipina",
+      "tallas": [
+        "XS"
+      ],
+      "description": "Muestra disponible. Modelo RP906, color WHITER, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://reprimeusc.blob.core.windows.net/reprime/thumbs/435-550/RP906/RP906_Black_Denim_1.jpg",
+      "popular": false
     }
   },
   "extras": []
