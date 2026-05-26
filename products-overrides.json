@@ -238,6 +238,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h60/h95/31588848369694/1200W_752_FadedBlue-0-LSP11FadedBlueModelFront3/1200W-752-FadedBlue-0-LSP11FadedBlueModelFront3.jpg",
       "popular": false
     },
+    "21050": {
+      "title": "Port & Co - Camisa SP10",
+      "sku": "SANMAR-SP10",
+      "style": "SP10",
+      "mainCategory": "corporativo",
+      "brand": "Port & Co",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "XL"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo SP10, color INK BLUE. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h7e/hec/29153180024862/1200W_2934_Ink-0-SP10InkModelFront3/1200W-2934-Ink-0-SP10InkModelFront3.jpg",
+      "popular": false
+    },
     "21135": {
       "title": "AUTHORITY - Camisa LW100",
       "sku": "SANMAR-LW100",
