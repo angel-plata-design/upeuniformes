@@ -643,6 +643,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo J754, color STEEL GREY. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/hc1/hdd/28386563555358/1200W_1890_TrBlkGray-0-J754TrBlkGrayModelFront/1200W-1890-TrBlkGray-0-J754TrBlkGrayModelFront.jpg",
       "popular": false
+    },
+    "21181": {
+      "title": "Sport-Tek - Chamarra LST76",
+      "sku": "SANMAR-LST76",
+      "style": "LST76",
+      "mainCategory": "corporativo",
+      "brand": "Sport-Tek",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo LST76, color MAROON. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hb9/hf8/28997675057182/1200W_4713_TRedWhite-0-LST76TRedWhiteModelFront2/1200W-4713-TRedWhite-0-LST76TRedWhiteModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
