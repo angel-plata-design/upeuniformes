@@ -350,6 +350,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/hd7/h2c/26576062054430/1200W_8358_TrueRoyal-0-W100TrueRoyalModelFront2/1200W-8358-TrueRoyal-0-W100TrueRoyalModelFront2.jpg",
       "popular": false
     },
+    "21111": {
+      "title": "Port Authority Short Sleeve Easy Care Shirt",
+      "sku": "SANMAR-S508",
+      "style": "S508",
+      "mainCategory": "corporativo",
+      "brand": "Port Authority",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "XS"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo S508, color BLAK. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hbf/h34/26792265121822/1200W_2383_TealGreen-0-S508TealGreenModelFront2/1200W-2383-TealGreen-0-S508TealGreenModelFront2.jpg",
+      "popular": false
+    },
     "21135": {
       "title": "AUTHORITY - Camisa LW100",
       "sku": "SANMAR-LW100",
