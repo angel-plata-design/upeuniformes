@@ -853,6 +853,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM3030, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/images/h2b/hd1/14538504372254/1200W-null.jpg",
       "popular": false
+    },
+    "21217": {
+      "title": "OGIO Women's Connection Anorak",
+      "sku": "SANMAR-LOG706",
+      "style": "LOG706",
+      "mainCategory": "corporativo",
+      "brand": "OGIO",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo LOG706, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h69/h71/27673181421598/1200W_18382_Blacktop-0-LOG706BlacktopModelFront2/1200W-18382-Blacktop-0-LOG706BlacktopModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
