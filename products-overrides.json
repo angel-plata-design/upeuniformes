@@ -797,6 +797,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM201, color GUSTY GREY. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h5c/h54/30248798715934/1200W_22295_AnchorGrey-0-MM2011AnchorGreyModelFront2/1200W-22295-AnchorGrey-0-MM2011AnchorGreyModelFront2.jpg",
       "popular": false
+    },
+    "21208": {
+      "title": "Mercer+Mettle Women’s Long Sleeve Modern Oxford Shirt",
+      "sku": "SANMAR-MM2003",
+      "style": "MM2003",
+      "mainCategory": "corporativo",
+      "brand": "MERCER+METTLE",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM2003, color LIGHT BLUE. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h7e/h1b/17155462234142/1200W_54379_LightBlue-0-MM2003LightBlueModelFront/1200W-54379-LightBlue-0-MM2003LightBlueModelFront.jpg",
+      "popular": false
     }
   },
   "extras": []
