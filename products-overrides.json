@@ -965,6 +965,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo K700, color Cloud Blue Check. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h86/h99/30952211513374/1200W_67789_BkCarBlCk-0-K700BkCarBlCkModelFront/1200W-67789-BkCarBlCk-0-K700BkCarBlCkModelFront.jpg",
       "popular": false
+    },
+    "30001": {
+      "title": "Lica - Pantalon PANT-PREMIUM-32",
+      "sku": "VARIOS-PANT-PREMIUM-32",
+      "style": "PANT-PREMIUM-32",
+      "mainCategory": "industrial",
+      "brand": "Lica",
+      "tipoprenda": "Pantalon",
+      "tallas": [
+        "32"
+      ],
+      "description": "Muestra disponible. Modelo PANT-PREMIUM-32, color Black, marca Lica. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://lica.mx/producto/pantalon-tipo-cargo/",
+      "popular": false
     }
   },
   "extras": []
