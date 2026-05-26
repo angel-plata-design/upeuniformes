@@ -1119,6 +1119,20 @@
       "description": "Muestra disponible. Modelo BB1800, color DEEP BLACK, marca Brooks Brothers. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h17/hc4/31518147477534/1200W_29473_NewportBlu-0-BB18000NewportBluModelFront2/1200W-29473-NewportBlu-0-BB18000NewportBluModelFront2.jpg",
       "popular": false
+    },
+    "30021": {
+      "title": "Brooks Brothers - Camisa BB18003",
+      "sku": "S&S-BB18003",
+      "style": "BB18003",
+      "mainCategory": "corporativo",
+      "brand": "Brooks Brothers",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "M"
+      ],
+      "description": "Muestra disponible. Modelo BB18003, color COBALT BLUE, marca Brooks Brothers. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hc6/h8b/31454422007838/1200W_29476_CobaltBl-0-BB18003CobaltBlModelFront1/1200W-29476-CobaltBl-0-BB18003CobaltBlModelFront1.jpg",
+      "popular": false
     }
   },
   "extras": []
