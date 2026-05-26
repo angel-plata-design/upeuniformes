@@ -1091,6 +1091,20 @@
       "description": "Muestra disponible. Modelo DG540W, color BLANCO/AZUL, marca Devon Jones. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdn.ssactivewear.com/cdn-cgi/image/quality=80,w=1560,f=auto/images/sns/home/2026/04-apr/wb_ss_us_unknown-hero.3fd64975.jpeg",
       "popular": false
+    },
+    "30016": {
+      "title": "Core 365 - Camisa 78193",
+      "sku": "S&S-78193",
+      "style": "78193",
+      "mainCategory": "corporativo",
+      "brand": "Core 365",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "S"
+      ],
+      "description": "Muestra disponible. Modelo 78193, color GRIS, marca Core 365. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hd5/hca/17170662227998/1200W_54382_RichRed-0-LK240RichRedModelFront/1200W-54382-RichRed-0-LK240RichRedModelFront.jpg",
+      "popular": false
     }
   },
   "extras": []
