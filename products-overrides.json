@@ -154,6 +154,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h1d/h5a/15760253255710/1200W_47883_Navy-0-CT106688NavyModelFront2/1200W-47883-Navy-0-CT106688NavyModelFront2.jpg",
       "popular": false
     },
+    "21028": {
+      "title": "Carhartt - Chamarra CT105534",
+      "sku": "SANMAR-CT105534",
+      "style": "CT105534",
+      "mainCategory": "corporativo",
+      "brand": "Carhartt",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "XL"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo CT105534, color Grey. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h51/h9e/31518406705182/1200W_23282_Gravel-0-CT105534GravelModelFront2/1200W-23282-Gravel-0-CT105534GravelModelFront2.jpg",
+      "popular": false
+    },
     "21135": {
       "title": "AUTHORITY - Camisa LW100",
       "sku": "SANMAR-LW100",
