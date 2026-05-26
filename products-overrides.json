@@ -923,6 +923,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo WW5072, color WHITE. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h38/hd2/16094035804190/1200W_11161_White-0-WW5072WhiteModelFront2/1200W-11161-White-0-WW5072WhiteModelFront2.jpg",
       "popular": false
+    },
+    "21236": {
+      "title": "Red Kap - Camisa SP14LONG",
+      "sku": "SANMAR-SP14LONG",
+      "style": "SP14LONG",
+      "mainCategory": "industrial",
+      "brand": "Red Kap",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo SP14LONG, color Kakhi. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h99/he9/15640273485854/1200W_5745_LightGrey-0-SP14LONGLightGreyModelFront2/1200W-5745-LightGrey-0-SP14LONGLightGreyModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
