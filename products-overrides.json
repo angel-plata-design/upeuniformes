@@ -1,5 +1,19 @@
 {
   "overrides": {
+    "21135": {
+      "title": "AUTHORITY - Camisa LW100",
+      "sku": "SANMAR-LW100",
+      "style": "LW100",
+      "mainCategory": "corporativo",
+      "brand": "AUTHORITY",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "2XL"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo LW100, color BLUE NAVY. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h9b/hcb/26464355876894/1200W_8355_GustyGrey-0-LW100GustyGreyModelFront2/1200W-8355-GustyGrey-0-LW100GustyGreyModelFront2.jpg",
+      "popular": false
+    },
     "21164": {
       "title": "AUTHORITY - Chamarra J754",
       "sku": "SANMAR-J754",
