@@ -1217,6 +1217,20 @@
       "description": "Muestra disponible. Modelo RP660, color DENIM, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://joesusa.com/cdn/shop/files/artisan-collection-by-reprime-unisex-denim-chefs-jacket-artisan-collection-by-reprime-rp660-black-denim-xs-jackets-1756334.jpg?v=1770758604&width=1500",
       "popular": false
+    },
+    "30029": {
+      "title": "Artisan Collection by Reprime RP553 Essential Chef Pants",
+      "sku": "S&S-RP5513",
+      "style": "RP5513",
+      "mainCategory": "restaurante",
+      "brand": "Reprime",
+      "tipoprenda": "Pantalon",
+      "tallas": [
+        "M"
+      ],
+      "description": "Muestra disponible. Modelo RP5513, color BLACK, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://joesusa.com/cdn/shop/files/artisan-collection-by-reprime-unisex-essential-chef-pants-artisan-collection-by-reprime-rp553-black-xs-6900021.jpg?v=1770758774&width=1500",
+      "popular": false
     }
   },
   "extras": []
