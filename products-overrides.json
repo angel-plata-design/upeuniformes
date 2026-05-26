@@ -825,6 +825,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM2002, color LIGHT BLUE. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h5b/h1b/17158789791774/1200W_54378_LightBlue-0-MM2002LightBlueModelFront/1200W-54378-LightBlue-0-MM2002LightBlueModelFront.jpg",
       "popular": false
+    },
+    "21210": {
+      "title": "Mercer+Mettle Women's Stretch Crepe Long Sleeve Camp Blouse",
+      "sku": "SANMAR-MM2013",
+      "style": "MM2013",
+      "mainCategory": "corporativo",
+      "brand": "MERCER+METTLE",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM2013, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hf2/h5c/30237064429598/1200W_22296_DeepBlack-0-MM2013DeepBlackModelFront2/1200W-22296-DeepBlack-0-MM2013DeepBlackModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
