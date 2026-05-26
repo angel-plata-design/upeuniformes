@@ -937,6 +937,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo SP14LONG, color Kakhi. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h99/he9/15640273485854/1200W_5745_LightGrey-0-SP14LONGLightGreyModelFront2/1200W-5745-LightGrey-0-SP14LONGLightGreyModelFront2.jpg",
       "popular": false
+    },
+    "21246": {
+      "title": "Port Authority - Mandil A902",
+      "sku": "SANMAR-A902",
+      "style": "A902",
+      "mainCategory": "restaurante",
+      "brand": "Port Authority",
+      "tipoprenda": "Mandil",
+      "tallas": [
+        "Talla por confirmar"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo A902, color OLIVE DRAB GREEN. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h38/h55/30952037122078/1200W_67883_RoseQuartz-0-A902RoseQuartzModelFront/1200W-67883-RoseQuartz-0-A902RoseQuartzModelFront.jpg",
+      "popular": false
     }
   },
   "extras": []
