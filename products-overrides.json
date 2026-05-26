@@ -741,6 +741,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo LST853, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/hcc/h07/29013821161502/1200W_6876_BlkChrGy-0-LST853BlkChrGyModelFront2/1200W-6876-BlkChrGy-0-LST853BlkChrGyModelFront2.jpg",
       "popular": false
+    },
+    "21189": {
+      "title": "Sport-Tek Women’s Teknical Hybrid Jacket",
+      "sku": "SANMAR-LST940",
+      "style": "LST940",
+      "mainCategory": "corporativo",
+      "brand": "Sport-Tek",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "2XL"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo LST940, color NAVY. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h96/h27/28276344815646/1200W_60286_TrueNavy-0-LST940TrueNavyModelFront/1200W-60286-TrueNavy-0-LST940TrueNavyModelFront.jpg",
+      "popular": false
     }
   },
   "extras": []
