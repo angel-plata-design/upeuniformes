@@ -671,6 +671,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo JST66, color WHITE. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h5f/h39/28962263400478/1200W_10123_White-0-JST66WhiteModelFront2/1200W-10123-White-0-JST66WhiteModelFront2.jpg",
       "popular": false
+    },
+    "21183": {
+      "title": "Sport-Tek - Chamarra JST70",
+      "sku": "SANMAR-JST70",
+      "style": "JST70",
+      "mainCategory": "corporativo",
+      "brand": "Sport-Tek",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "XS"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo JST70, color GREY. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hae/hc9/29025692155934/1200W_3807_Graphite-0-JST70GraphiteModelFront2/1200W-3807-Graphite-0-JST70GraphiteModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
