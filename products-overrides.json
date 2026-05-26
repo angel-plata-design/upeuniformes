@@ -140,6 +140,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/images/h27/h0f/14567027867678/1200W-null.jpg",
       "popular": false
     },
+    "21152": {
+      "title": "AUTHORITY - Chamarra J902",
+      "sku": "SANMAR-J902",
+      "style": "J902",
+      "mainCategory": "corporativo",
+      "brand": "AUTHORITY",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo J902, color RIVER BLUE. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h18/h5f/26659437641758/1200W_9012_RiverBlNv-0-J902RiverBlNvModelFront2/1200W-9012-RiverBlNv-0-J902RiverBlNvModelFront2.jpg",
+      "popular": false
+    },
     "21164": {
       "title": "AUTHORITY - Chamarra J754",
       "sku": "SANMAR-J754",
