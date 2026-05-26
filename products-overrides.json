@@ -56,6 +56,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h48/hfa/26784192757790/1200W_10519_Black-0-CSJ60BlackModelFront2/1200W-10519-Black-0-CSJ60BlackModelFront2.jpg",
       "popular": false
     },
+    "21005": {
+      "title": "CornerStone Soft Shell Shirt Jacket",
+      "sku": "SANMAR-CSJ73",
+      "style": "CSJ73",
+      "mainCategory": "corporativo",
+      "brand": "CornerStone",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "XL"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo CSJ73, color Navy. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hfc/h35/28198322831390/1200W_60576_Navy-0-CSJ73NavyModelFront/1200W-60576-Navy-0-CSJ73NavyModelFront.jpg",
+      "popular": false
+    },
     "21135": {
       "title": "AUTHORITY - Camisa LW100",
       "sku": "SANMAR-LW100",
