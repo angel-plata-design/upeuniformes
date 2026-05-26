@@ -210,6 +210,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h85/h93/30212541448222/1200W_18686_TrueNavy-0-K865TrueNavyModelFront2/1200W-18686-TrueNavy-0-K865TrueNavyModelFront2.jpg",
       "popular": false
     },
+    "21163": {
+      "title": "AUTHORITY - Chamarra L721",
+      "sku": "SANMAR-L721",
+      "style": "L721",
+      "mainCategory": "corporativo",
+      "brand": "AUTHORITY",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "XL"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo L721, color GREY/BLACK. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hf6/h5d/28386421506078/1200W_60590_TRyDpBlk-0-L721TRyDpBlkModelFront/1200W-60590-TRyDpBlk-0-L721TRyDpBlkModelFront.jpg",
+      "popular": false
+    },
     "21164": {
       "title": "AUTHORITY - Chamarra J754",
       "sku": "SANMAR-J754",
