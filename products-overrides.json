@@ -336,6 +336,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h42/h55/27011676438558/1200W_1694_TealGreen-0-L608TealGreenModelFront2/1200W-1694-TealGreen-0-L608TealGreenModelFront2.jpg",
       "popular": false
     },
+    "21110": {
+      "title": "Port Authority Long Sleeve Carefree Poplin Shirt",
+      "sku": "SANMAR-W100",
+      "style": "W100",
+      "mainCategory": "corporativo",
+      "brand": "Port Authority",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo W100, color ROYAL. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hd7/h2c/26576062054430/1200W_8358_TrueRoyal-0-W100TrueRoyalModelFront2/1200W-8358-TrueRoyal-0-W100TrueRoyalModelFront2.jpg",
+      "popular": false
+    },
     "21135": {
       "title": "AUTHORITY - Camisa LW100",
       "sku": "SANMAR-LW100",
