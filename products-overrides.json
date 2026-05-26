@@ -713,6 +713,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo ST270, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h5c/h3a/28961739931678/1200W_6004_BlkVtgHtr-0-ST270BlkVtgHtrModelFront2/1200W-6004-BlkVtgHtr-0-ST270BlkVtgHtrModelFront2.jpg",
       "popular": false
+    },
+    "21187": {
+      "title": "Sport-Tek - Chamarra LST854",
+      "sku": "SANMAR-LST854",
+      "style": "LST854",
+      "mainCategory": "corporativo",
+      "brand": "Sport-Tek",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo LST854, color NAVY. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h7f/h15/29014354886686/1200W_8338_PRshPRshH-0-LST854PRshPRshHModelFront2/1200W-8338-PRshPRshH-0-LST854PRshPRshHModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
