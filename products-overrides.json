@@ -1231,6 +1231,20 @@
       "description": "Muestra disponible. Modelo RP5513, color BLACK, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://joesusa.com/cdn/shop/files/artisan-collection-by-reprime-unisex-essential-chef-pants-artisan-collection-by-reprime-rp553-black-xs-6900021.jpg?v=1770758774&width=1500",
       "popular": false
+    },
+    "30030": {
+      "title": "255 Pinch Front Structured Snapback",
+      "sku": "S&S-255",
+      "style": "255",
+      "mainCategory": "corporativo",
+      "brand": "Richardson",
+      "tipoprenda": "Gorra",
+      "tallas": [
+        "AJUSTABLE"
+      ],
+      "description": "Muestra disponible. Modelo 255, color Green, marca Richardson. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://m2.richardsonsports.com/pub/media/catalog/product/cache/867e5ec943e9b9f98ce2364bf52d960c/2/5/255_biscuit_final.jpg",
+      "popular": false
     }
   },
   "extras": []
