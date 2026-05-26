@@ -28,6 +28,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h3d/h39/26921769599006/1200W_4161_Burgundy-0-SP18BurgundyModelFront3/1200W-4161-Burgundy-0-SP18BurgundyModelFront3.jpg",
       "popular": false
     },
+    "21003": {
+      "title": "CornerStone Insulated Workwear Soft Shell",
+      "sku": "SANMAR-CSJ75",
+      "style": "CSJ75",
+      "mainCategory": "corporativo",
+      "brand": "CornerStone",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "XL"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo CSJ75, color Black. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h37/h1e/15251355566110/1200W_46876_Black-0-CSJ75BlackModelFront/1200W-46876-Black-0-CSJ75BlackModelFront.jpg",
+      "popular": false
+    },
     "21135": {
       "title": "AUTHORITY - Camisa LW100",
       "sku": "SANMAR-LW100",
