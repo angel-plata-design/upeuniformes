@@ -182,6 +182,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h37/hda/30347169759262/1200W_23285_ShadowGrey-0-CT104670ShadowGreyModelFront1/1200W-23285-ShadowGrey-0-CT104670ShadowGreyModelFront1.jpg",
       "popular": false
     },
+    "21030": {
+      "title": "CornerStone Workwear Soft Shell",
+      "sku": "SANMAR-CSJ70",
+      "style": "CSJ70",
+      "mainCategory": "corporativo",
+      "brand": "CornerStone",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo CSJ70, color Navy. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hcd/h34/15251981107230/1200W_46877_Navy-0-CSJ70NavyModelFront/1200W-46877-Navy-0-CSJ70NavyModelFront.jpg",
+      "popular": false
+    },
     "21135": {
       "title": "AUTHORITY - Camisa LW100",
       "sku": "SANMAR-LW100",
