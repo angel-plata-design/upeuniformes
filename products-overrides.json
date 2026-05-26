@@ -1,5 +1,19 @@
 {
   "overrides": {
+    "21001": {
+      "title": "CornerStone Long Sleeve Select Tactical Shirt",
+      "sku": "SANMAR-CSW176",
+      "style": "CSW176",
+      "mainCategory": "corporativo",
+      "brand": "CornerStone",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "XL"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo CSW176, color Navy. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h7b/hc9/15352413880350/1200W_47080_NavyBlue-0-CSW176NavyBlueModelFront/1200W-47080-NavyBlue-0-CSW176NavyBlueModelFront.jpg",
+      "popular": false
+    },
     "21002": {
       "title": "CornerStone - Short Sleeve SuperPro Twill Shirt",
       "sku": "SANMAR-SP18",
