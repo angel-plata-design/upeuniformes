@@ -168,6 +168,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h51/h9e/31518406705182/1200W_23282_Gravel-0-CT105534GravelModelFront2/1200W-23282-Gravel-0-CT105534GravelModelFront2.jpg",
       "popular": false
     },
+    "21029": {
+      "title": "Carhartt - Chamarra CT104670",
+      "sku": "SANMAR-CT104670",
+      "style": "CT104670",
+      "mainCategory": "corporativo",
+      "brand": "Carhartt",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo CT104670, color Green. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h37/hda/30347169759262/1200W_23285_ShadowGrey-0-CT104670ShadowGreyModelFront1/1200W-23285-ShadowGrey-0-CT104670ShadowGreyModelFront1.jpg",
+      "popular": false
+    },
     "21135": {
       "title": "AUTHORITY - Camisa LW100",
       "sku": "SANMAR-LW100",
