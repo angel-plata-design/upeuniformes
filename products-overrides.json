@@ -1105,6 +1105,20 @@
       "description": "Muestra disponible. Modelo 78193, color GRIS, marca Core 365. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/hd5/hca/17170662227998/1200W_54382_RichRed-0-LK240RichRedModelFront/1200W-54382-RichRed-0-LK240RichRedModelFront.jpg",
       "popular": false
+    },
+    "30017": {
+      "title": "Brooks Brothers - Camisa BB1800",
+      "sku": "S&S-BB1800",
+      "style": "BB1800",
+      "mainCategory": "corporativo",
+      "brand": "Brooks Brothers",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "L"
+      ],
+      "description": "Muestra disponible. Modelo BB1800, color DEEP BLACK, marca Brooks Brothers. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h17/hc4/31518147477534/1200W_29473_NewportBlu-0-BB18000NewportBluModelFront2/1200W-29473-NewportBlu-0-BB18000NewportBluModelFront2.jpg",
+      "popular": false
     }
   },
   "extras": []
