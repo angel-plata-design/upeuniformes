@@ -1189,6 +1189,20 @@
       "description": "Muestra disponible. Modelo RP906, color WHITER, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://reprimeusc.blob.core.windows.net/reprime/thumbs/435-550/RP906/RP906_Black_Denim_1.jpg",
       "popular": false
+    },
+    "30027": {
+      "title": "Artisan Collection by Reprime RP656 Recycled Short Sleeve Chef Coat",
+      "sku": "S&S-RP656",
+      "style": "RP656",
+      "mainCategory": "restaurante",
+      "brand": "Reprime",
+      "tipoprenda": "Filipina",
+      "tallas": [
+        "L"
+      ],
+      "description": "Muestra disponible. Modelo RP656, color BLACK, marca Reprime. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://reprimeusc.blob.core.windows.net/reprime/thumbs/435-550/RP656/RP656_Black_1.jpg",
+      "popular": false
     }
   },
   "extras": []
