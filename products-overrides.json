@@ -392,6 +392,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h56/h66/27022711226398/1200W_2716_BlkLtStn-0-S608BlkLtStnModelFront6/1200W-2716-BlkLtStn-0-S608BlkLtStnModelFront6.jpg",
       "popular": false
     },
+    "21134": {
+      "title": "AUTHORITY - Camisa S600T",
+      "sku": "SANMAR-S600T",
+      "style": "S600T",
+      "mainCategory": "corporativo",
+      "brand": "AUTHORITY",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo S600T, color CLASSIC NAVY. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h03/h9b/30371462184990/1200W_105_Black-0-S600TBlackModelFront3/1200W-105-Black-0-S600TBlackModelFront3.jpg",
+      "popular": false
+    },
     "21135": {
       "title": "AUTHORITY - Camisa LW100",
       "sku": "SANMAR-LW100",
