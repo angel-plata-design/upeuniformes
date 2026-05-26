@@ -896,6 +896,20 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/images/h06/hbc/11237205049374/11159-Royal-1-WW5058RoyalModelFront-1200W.jpg",
       "popular": false
     },
+    "21231": {
+      "title": "Wink Women’s Long Lab Coat",
+      "sku": "SANMAR-WW4172",
+      "style": "WW4172",
+      "mainCategory": "medico",
+      "brand": "Wink",
+      "tipoprenda": "Bata",
+      "tallas": [
+        "S"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo WW4172, color WHITE. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h2a/hab/16296904654878/1200W_11164_White-0-WW4172WhiteModelFront2/1200W-11164-White-0-WW4172WhiteModelFront2.jpg",
+      "popular": false
+    },
     "21232": {
       "title": "Wink Men's Consultation Lab Coat",
       "sku": "SANMAR-WW5072",
