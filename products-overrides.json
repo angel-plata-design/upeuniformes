@@ -1007,6 +1007,20 @@
       "description": "Muestra disponible. Modelo B8210, color Cuadritos, marca Burnside. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h91/hc7/26464371998750/1200W_8472_RoyalBlk-0-W668RoyalBlkModelFront7/1200W-8472-RoyalBlk-0-W668RoyalBlkModelFront7.jpg",
       "popular": false
+    },
+    "30005": {
+      "title": "El resumen del producto presenta información clave del producto       Atajo del teclado  \n                        shift\n                        +\n                         alt\n                        +\n                        opt\n                        +\n                        D",
+      "sku": "VARIOS-PESCA",
+      "style": "PESCA",
+      "mainCategory": "corporativo",
+      "brand": "Nomad",
+      "tipoprenda": "Camisa",
+      "tallas": [
+        "L"
+      ],
+      "description": "Muestra disponible. Modelo PESCA, color AZUL ACERO, marca Nomad. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://m.media-amazon.com/images/I/5198uzIT9GL._AC_SX466_.jpg",
+      "popular": false
     }
   },
   "extras": []
