@@ -839,6 +839,20 @@
       "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM2013, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/hf2/h5c/30237064429598/1200W_22296_DeepBlack-0-MM2013DeepBlackModelFront2/1200W-22296-DeepBlack-0-MM2013DeepBlackModelFront2.jpg",
       "popular": false
+    },
+    "21214": {
+      "title": "Mercer+Mettle Relaxed Knit Blazer",
+      "sku": "SANMAR-MM3030",
+      "style": "MM3030",
+      "mainCategory": "corporativo",
+      "brand": "MERCER+METTLE",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM3030, color BLACK. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/images/h2b/hd1/14538504372254/1200W-null.jpg",
+      "popular": false
     }
   },
   "extras": []
