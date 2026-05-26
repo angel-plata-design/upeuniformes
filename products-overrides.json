@@ -1,1 +1,19 @@
-{"overrides":{},"extras":[]}
+{
+  "overrides": {
+    "21164": {
+      "title": "AUTHORITY - Chamarra J754",
+      "sku": "SANMAR-J754",
+      "style": "J754",
+      "mainCategory": "corporativo",
+      "brand": "AUTHORITY",
+      "tipoprenda": "Chamarra",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo J754, color STEEL GREY. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hc1/hdd/28386563555358/1200W_1890_TrBlkGray-0-J754TrBlkGrayModelFront/1200W-1890-TrBlkGray-0-J754TrBlkGrayModelFront.jpg",
+      "popular": false
+    }
+  },
+  "extras": []
+}
