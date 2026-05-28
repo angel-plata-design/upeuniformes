@@ -977,7 +977,8 @@
         "32"
       ],
       "description": "Muestra disponible. Modelo PANT-PREMIUM-32, color Black, marca Lica. Validar disponibilidad, precio e inventario con asesor.",
-      "popular": false
+      "popular": false,
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Lica-PANT-PREMIUM-32-Black.webp"
     },
     "30002": {
       "title": "Lica - Camisa CAMISAMEZCLILLA",
@@ -990,7 +991,8 @@
         "XL"
       ],
       "description": "Muestra disponible. Modelo CAMISAMEZCLILLA, color Mezcilla, marca Lica. Validar disponibilidad, precio e inventario con asesor.",
-      "popular": false
+      "popular": false,
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Lica-CAMISAMEZCLILLA.webp"
     },
     "30004": {
       "title": "Burnside - Camisa B8210",
@@ -1031,7 +1033,13 @@
         "38"
       ],
       "description": "Muestra disponible. Modelo OVEROL, color Navy, marca Barlem. Validar disponibilidad, precio e inventario con asesor.",
-      "popular": false
+      "popular": false,
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Barlem-OVEROL.webp"
+    },
+    "30008": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Barlem-CAMISAMEZCLILLA.webp",
+      "brand": "Barlem",
+      "style": "CAMISAMEZCLILLA"
     },
     "30009": {
       "title": "Barlem - Chaleco CHALECOBRIGADISTA",
@@ -1044,12 +1052,23 @@
         "Talla por confirmar"
       ],
       "description": "Muestra disponible. Modelo CHALECOBRIGADISTA, color NAVY, marca Barlem. Validar disponibilidad, precio e inventario con asesor.",
-      "popular": false
+      "popular": false,
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Barlem-CHALECOBRIGADISTA.webp"
+    },
+    "30010": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Barlem-CHALECOBRIGADISTA.webp",
+      "brand": "Barlem",
+      "style": "CHALECOBRIGADISTA"
+    },
+    "30011": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Barlem-CHALECOBRIGADISTA.webp",
+      "brand": "Barlem",
+      "style": "CHALECOBRIGADISTA"
     },
     "30012": {
       "title": "Barlem - Chaleco CHALECOREGIO",
       "sku": "BARLEM-CHALECOREGIO",
-      "style": "CHALECOREGIO",
+      "style": "CHALECORESCATISTA",
       "mainCategory": "industrial",
       "brand": "Barlem",
       "tipoprenda": "Chaleco",
@@ -1057,7 +1076,8 @@
         "Talla por confirmar"
       ],
       "description": "Muestra disponible. Modelo CHALECOREGIO, color ROJO, marca Barlem. Validar disponibilidad, precio e inventario con asesor.",
-      "popular": false
+      "popular": false,
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Barlem-CHALECORESCATISTA.webp"
     },
     "30013": {
       "title": "Barlem - Chaleco CHALECOCAZADOR",
@@ -1070,7 +1090,13 @@
         "Talla por confirmar"
       ],
       "description": "Muestra disponible. Modelo CHALECOCAZADOR, color AZUL, marca Barlem. Validar disponibilidad, precio e inventario con asesor.",
-      "popular": false
+      "popular": false,
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Barlem-CHALECOCAZADOR-AZUL.webp"
+    },
+    "30014": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Barlem-CHALECOCAZADOR-FOSFO.webp",
+      "brand": "Barlem",
+      "style": "CHALECOCAZADOR"
     },
     "30015": {
       "title": "Camisa de vestir tejida con micropaneles CrownLux Performance® para mujer",
@@ -1669,7 +1695,8 @@
       ],
       "description": "Muestra disponible. Modelo CLOH09, color WHITE, marca Pipeline. Validar disponibilidad, precio e inventario con asesor.",
       "popular": false,
-      "_hidden": true
+      "_hidden": true,
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-CLOH09.webp"
     },
     "30072": {
       "title": "Pipeline - Chaleco JW11",
@@ -1684,8 +1711,13 @@
         "XL"
       ],
       "description": "Muestra disponible. Modelo JW11, color NAVY, marca Pipeline. Validar disponibilidad, precio e inventario con asesor.",
-      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-JW11.png",
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-JW11.webp",
       "popular": false
+    },
+    "30073": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-JW11.webp",
+      "brand": "Pipeline",
+      "style": "JW11"
     },
     "30074": {
       "title": "Pipeline - Chaleco JW12",
@@ -1699,7 +1731,7 @@
         "L"
       ],
       "description": "Muestra disponible. Modelo JW12, color BLACK, marca Pipeline. Validar disponibilidad, precio e inventario con asesor.",
-      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-JW12.png",
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-JW12.webp",
       "popular": false
     },
     "30075": {
@@ -1714,8 +1746,13 @@
         "M"
       ],
       "description": "Muestra disponible. Modelo LS001, color BLACK, marca Pipeline. Validar disponibilidad, precio e inventario con asesor.",
-      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-LS001.png",
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-LS001.webp",
       "popular": false
+    },
+    "30076": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-JW12.webp",
+      "brand": "Pipeline",
+      "style": "JW12"
     },
     "30077": {
       "title": "Pipeline - Polo SUP6166L",
@@ -1729,8 +1766,13 @@
         "M"
       ],
       "description": "Muestra disponible. Modelo SUP6166L, , marca Pipeline. Validar disponibilidad, precio e inventario con asesor.",
-      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-SUP6166L.png",
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-SUP6166L-BLACK.webp",
       "popular": false
+    },
+    "30078": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-SUP6166L-WHITE.webp",
+      "brand": "Pipeline",
+      "style": "SUP6166L"
     },
     "30079": {
       "title": "Pipeline - Polo SUP6166M",
@@ -1746,6 +1788,31 @@
       "description": "Muestra disponible. Modelo SUP6166M, , marca Pipeline. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-SUP6166M.png",
       "popular": false
+    },
+    "30080": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-SUP6166M.png",
+      "brand": "Pipeline",
+      "style": "SUP6166M"
+    },
+    "30081": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-SUP6166L-WINE.webp",
+      "brand": "Pipeline",
+      "style": "SUP6166L"
+    },
+    "30082": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-SUP6166L-ROYAL.webp",
+      "brand": "Pipeline",
+      "style": "SUP6166L"
+    },
+    "30083": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-SUP6166M.png",
+      "brand": "Pipeline",
+      "style": "SUP6166M"
+    },
+    "30084": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-SUP6166M.png",
+      "brand": "Pipeline",
+      "style": "SUP6166M"
     },
     "30085": {
       "_hidden": true
@@ -1793,6 +1860,11 @@
       "description": "Muestra disponible. Modelo CAMALA, color GRIS, marca Pipeline. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-CAMALA.png",
       "popular": false
+    },
+    "30089": {
+      "image": "https://angel-plata-design.github.io/upeuniformes/upe-assets/products/Pipeline-CAMALA.png",
+      "brand": "Pipeline",
+      "style": "CAMALA"
     },
     "30090": {
       "title": "Pipeline - Chamarra JW06CAP",
