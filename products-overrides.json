@@ -1655,7 +1655,8 @@
         "S"
       ],
       "description": "Muestra disponible. Modelo CLOH09, color WHITE, marca Pipeline. Validar disponibilidad, precio e inventario con asesor.",
-      "popular": false
+      "popular": false,
+      "_hidden": true
     },
     "30072": {
       "title": "Pipeline - Chaleco JW11",
