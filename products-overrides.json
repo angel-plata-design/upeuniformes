@@ -2212,6 +2212,26 @@
       "description": "Muestra disponible. Modelo 0415WH0, color WHITE, marca Red Kap. Validar disponibilidad, precio e inventario con asesor.",
       "popular": false
     },
+    "40027": {
+      "title": "Pipeline MAYA2962C",
+      "sku": "NUEVO-MAYA2962C",
+      "style": "MAYA2962C",
+      "mainCategory": "corporativo",
+      "brand": "Pipeline",
+      "tipoprenda": "Sudadera",
+      "sexo": "Unisex",
+      "tallas": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Muestra disponible. Modelo MAYA2962C, marca Pipeline. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://jorwa.com/wp-content/uploads/2025/10/186.png",
+      "popular": false
+    },
     "40039": {
       "title": "YP Classics 6006 Dad Cap",
       "sku": "NUEVO-6006",
