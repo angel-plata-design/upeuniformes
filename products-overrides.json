@@ -1636,7 +1636,8 @@
         "L"
       ],
       "description": "Muestra disponible. Modelo W20H032, color NAVY, marca Pipeline. Validar disponibilidad, precio e inventario con asesor.",
-      "popular": false
+      "popular": false,
+      "_hidden": true
     },
     "30069": {
       "_hidden": true
