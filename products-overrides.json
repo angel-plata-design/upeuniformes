@@ -784,6 +784,21 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h91/h2e/30951516176414/1200W_67793_DeepBlack-0-MM4000DeepBlackModelFront/1200W-67793-DeepBlack-0-MM4000DeepBlackModelFront.jpg",
       "popular": false
     },
+    "21204": {
+      "title": "MERCER+METTLE - Polo MM1001",
+      "sku": "SANMAR-MM1001",
+      "style": "MM1001",
+      "mainCategory": "corporativo",
+      "brand": "MERCER+METTLE",
+      "tipoprenda": "Polo",
+      "sexo": "Unisex",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM1001, color INSIGNIA BLUE. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h69/hf5/30844957622302/1200W_22291_AppleRed-0-MM1001AppleRedModelFront4/1200W-22291-AppleRed-0-MM1001AppleRedModelFront4.jpg",
+      "popular": false
+    },
     "21207": {
       "title": "MERCER+METLE - Camisa MM201",
       "sku": "SANMAR-MM201",
