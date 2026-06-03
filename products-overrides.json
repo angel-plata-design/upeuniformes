@@ -900,6 +900,21 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/images/h2b/hd1/14538504372254/1200W-null.jpg",
       "popular": false
     },
+    "21215": {
+      "title": "OGIO Jewel Polo LOG101",
+      "sku": "SANMAR-LOG101",
+      "style": "LOG101",
+      "mainCategory": "corporativo",
+      "brand": "OGIO",
+      "tipoprenda": "Polo",
+      "sexo": "Unisex",
+      "tallas": [
+        "M"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo LOG101, color DIESEL GREY. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h5d/h75/26972499542046/1200W_3542_DieselGrey-0-LOG101DieselGreyModelFront4/1200W-3542-DieselGrey-0-LOG101DieselGreyModelFront4.jpg",
+      "popular": false
+    },
     "21217": {
       "title": "OGIO Women's Connection Anorak",
       "sku": "SANMAR-LOG706",
