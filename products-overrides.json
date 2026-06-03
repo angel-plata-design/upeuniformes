@@ -871,6 +871,21 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/hf2/h5c/30237064429598/1200W_22296_DeepBlack-0-MM2013DeepBlackModelFront2/1200W-22296-DeepBlack-0-MM2013DeepBlackModelFront2.jpg",
       "popular": false
     },
+    "21212": {
+      "title": "MERCER+METTLE - Saco MM3033",
+      "sku": "SANMAR-MM3033",
+      "style": "MM3033",
+      "mainCategory": "corporativo",
+      "brand": "MERCER+METTLE",
+      "tipoprenda": "Saco",
+      "sexo": "Unisex",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM3033, color STRONG GREY. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/hfa/h18/30951484325918/1200W_67780_DeepBlack-0-MM3033DeepBlackModelFront/1200W-67780-DeepBlack-0-MM3033DeepBlackModelFront.jpg",
+      "popular": false
+    },
     "21214": {
       "title": "Mercer+Mettle Relaxed Knit Blazer",
       "sku": "SANMAR-MM3030",
