@@ -815,12 +815,13 @@
       "popular": false
     },
     "21207": {
-      "title": "MERCER+METLE - Camisa MM201",
+      "title": "MERCER+METTLE - Camisa MM201",
       "sku": "SANMAR-MM201",
       "style": "MM201",
       "mainCategory": "corporativo",
-      "brand": "MERCER+METLE",
+      "brand": "MERCER+METTLE",
       "tipoprenda": "Camisa",
+      "sexo": "Unisex",
       "tallas": [
         "M"
       ],
