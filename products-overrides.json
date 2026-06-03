@@ -799,6 +799,21 @@
       "image": "https://cdnp.sanmar.com/medias/sys_master/images/h69/hf5/30844957622302/1200W_22291_AppleRed-0-MM1001AppleRedModelFront4/1200W-22291-AppleRed-0-MM1001AppleRedModelFront4.jpg",
       "popular": false
     },
+    "21205": {
+      "title": "Port Authority Charger Jacket",
+      "sku": "SANMAR-MM104",
+      "style": "MM104",
+      "mainCategory": "corporativo",
+      "brand": "Port Authority",
+      "tipoprenda": "Chamarra",
+      "sexo": "Unisex",
+      "tallas": [
+        "L"
+      ],
+      "description": "Producto importado desde la hoja SANMAR del Excel de muestras. Modelo MM104, color NAVY. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://cdnp.sanmar.com/medias/sys_master/images/h10/h83/28386051915806/1200W_6346_TrueNavy-0-J328TrueNavyModelFront/1200W-6346-TrueNavy-0-J328TrueNavyModelFront.jpg",
+      "popular": false
+    },
     "21207": {
       "title": "MERCER+METLE - Camisa MM201",
       "sku": "SANMAR-MM201",
