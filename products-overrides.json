@@ -2979,6 +2979,26 @@
       "description": "Muestra disponible. Modelo 6006, marca YP Classics. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://griwolfe.com/cdn/shop/files/YP-Classics-6006_Custom-Hat_Black_Front.jpg?v=1765169578&width=600",
       "popular": false
+    },
+    "40098": {
+      "title": "Timberland PRO Direct Attach 6\" Steel Toe",
+      "sku": "NUEVO-TB165016713",
+      "style": "TB165016713",
+      "mainCategory": "calzado",
+      "brand": "Timberland",
+      "tipoprenda": "Calzado",
+      "sexo": "Unisex",
+      "tallas": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Muestra disponible. Modelo TB165016713, marca Timberland. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://images.timberland.com/is/image/TimberlandEU/TB0165016713-1.jpg",
+      "popular": false
     }
   },
   "extras": []
