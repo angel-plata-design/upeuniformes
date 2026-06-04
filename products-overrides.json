@@ -2999,6 +2999,26 @@
       "description": "Muestra disponible. Modelo TB165016713, marca Timberland. Validar disponibilidad, precio e inventario con asesor.",
       "image": "https://images.timberland.com/is/image/TimberlandEU/TB0165016713-1.jpg",
       "popular": false
+    },
+    "40099": {
+      "title": "Timberland Premium 6\" Waterproof Boot",
+      "sku": "NUEVO-TB110061713",
+      "style": "TB110061713",
+      "mainCategory": "calzado",
+      "brand": "Timberland",
+      "tipoprenda": "Calzado",
+      "sexo": "Unisex",
+      "tallas": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Muestra disponible. Modelo TB110061713, marca Timberland. Validar disponibilidad, precio e inventario con asesor.",
+      "image": "https://images.timberland.com/is/image/TimberlandEU/TB0110061713-1.jpg",
+      "popular": false
     }
   },
   "extras": []
