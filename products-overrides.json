@@ -1671,10 +1671,12 @@
         "AJUSTABLE"
       ],
       "description": "Muestra disponible. Modelo SURF, color Ligth Navy, marca A&S Colour. Validar disponibilidad, precio e inventario con asesor.",
-      "popular": false
+      "popular": false,
+      "image": "https://cdn11.bigcommerce.com/s-hsi95a83fz/images/stencil/1000w/products/136/8792/1114_SURF_CAP_MAIN__41558.1716847810.jpg"
     },
     "30052": {
-      "_hidden": true
+      "_hidden": true,
+      "image": "https://cdn11.bigcommerce.com/s-hsi95a83fz/images/stencil/1000w/products/241/14906/5411_PIQUE_POLO_MAIN__04910.1713304591.jpg"
     },
     "30053": {
       "_hidden": true,
